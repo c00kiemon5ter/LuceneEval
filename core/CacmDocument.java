@@ -163,7 +163,7 @@ public class CacmDocument {
 	}
 
 	public void addKeywords(String keywords) {
-		this.keywords.concat(keywords);
+		this.keywords += keywords;
 	}
 
 	public void addAuthor(String author) {
@@ -171,23 +171,23 @@ public class CacmDocument {
 	}
 
 	public void addDate(String date) {
-		this.date.concat(date);
+		this.date += date;
 	}
 
 	public void addContent(String content) {
-		this.content.concat(content);
+		this.content += content;
 	}
 
 	public void addEntrydate(String entrydate) {
-		this.entrydate.concat(entrydate);
+		this.entrydate += entrydate;
 	}
 
 	public void addTitle(String title) {
-		this.title.concat(title);
+		this.title += title;
 	}
 
 	public void addAbstractInfo(String abstractTxt) {
-		this.abstractInfo.concat(abstractTxt);
+		this.abstractInfo += abstractTxt;
 	}
 
 	public void addReference(String reference) {

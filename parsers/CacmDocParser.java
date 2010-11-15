@@ -29,8 +29,8 @@ public class CacmDocParser implements Parser {
 	}
 
 	public CacmDocParser(String docfile) throws FileNotFoundException {
-		reader = new BufferedReader(new FileReader(new File(docfile)));
-		documents = new LinkedList<CacmDocument>();
+		this.reader = new BufferedReader(new FileReader(new File(docfile)));
+		this.documents = new LinkedList<CacmDocument>();
 	}
 
 	@Override
@@ -84,14 +84,6 @@ public class CacmDocParser implements Parser {
 			}
 		}
 		reader.close();
-	}
-
-	private String parseBlock(StringBuilder text) throws IOException {
-		String line = "";
-		while ((line = reader.readLine()) != null && !line.startsWith(".")) {
-			text.append(line).append(" ");
-		}
-		return line;
 	}
 
 	public List<CacmDocument> getDocuments() {
