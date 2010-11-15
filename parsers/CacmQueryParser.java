@@ -2,11 +2,7 @@ package parsers;
 
 import java.io.File;
 
-/**
- *
- * @author c00kiemon5ter
- */
-public class CacmQueryParser {
+public class CacmQueryParser implements Parser {
 
 	private File queriesfile;
 
@@ -14,6 +10,7 @@ public class CacmQueryParser {
 		this.queriesfile = new File(queriesfile);
 	}
 
+	@Override
 	public void parse() {
 		throw new UnsupportedOperationException("Not yet implemented");
 	}
