@@ -34,7 +34,7 @@ public class CacmDocParser implements Parser {
 	}
 
 	@Override
-	public void parse() throws IOException {
+	public List<CacmDocument> parse() throws IOException {
 		CacmDocument document = null;
 		String line = "";
 		char state = 0;
@@ -49,7 +49,7 @@ public class CacmDocParser implements Parser {
 						documents.add(document);
 					}
 					document = new CacmDocument();
-					document.setId(line.substring(2));
+					document.setId(line.substring(2).trim());
 				}
 			} else {
 				switch (state) {
@@ -75,7 +75,8 @@ public class CacmDocParser implements Parser {
 						document.addAbstractInfo(line);
 						break;
 					case Fields.REFERENCE:
-						document.addReference(line);
+						String[] cols = line.split("\t");
+						document.addReference(cols[0], cols[1], cols[2]);
 						break;
 					/* Fields.ID and no state should never happen */
 					case Fields.ID:
@@ -84,9 +85,6 @@ public class CacmDocParser implements Parser {
 			}
 		}
 		reader.close();
-	}
-
-	public List<CacmDocument> getDocuments() {
 		return documents;
 	}
 }

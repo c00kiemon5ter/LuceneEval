@@ -1,23 +1,34 @@
 package core;
 
-import java.util.LinkedList;
-import java.util.List;
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
+@Root(name = "document")
 public class CacmDocument {
 
-	private List<String> authors;
+	@Element
+	private AuthorList authors;
+	@Element
 	private String date;
+	@Element(required = false)
 	private String content;
+	@Attribute
 	private String id;
+	@Element(required = false)
 	private String keywords;
+	@Element
 	private String entrydate;
+	@Element(required = false)
 	private String title;
+	@Element(name = "abstract", required = false)
 	private String abstractInfo;
-	private List<String> references;
+	@Element(required = false)
+	private ReferenceList references;
 
 	public CacmDocument() {
-		this.authors = new LinkedList<String>();
-		this.references = new LinkedList<String>();
+		this.authors = new AuthorList();
+		this.references = new ReferenceList();
 		this.abstractInfo =
 		this.entrydate =
 		this.keywords =
@@ -30,15 +41,15 @@ public class CacmDocument {
 	/**
 	 * @return the authors
 	 */
-	public List<String> getAuthors() {
+	public AuthorList getAuthors() {
 		return authors;
 	}
 
 	/**
 	 * @param authors the authors to set
 	 */
-	public void setAuthors(List<String> authors) {
-		this.authors = new LinkedList<String>(authors);
+	public void setAuthors(AuthorList authors) {
+		this.authors = new AuthorList(authors);
 	}
 
 	/**
@@ -142,55 +153,61 @@ public class CacmDocument {
 	/**
 	 * @return the references
 	 */
-	public List<String> getReferences() {
+	public ReferenceList getReferences() {
 		return references;
 	}
 
 	/**
 	 * @param references the reference to set
 	 */
-	public void setReferences(List<String> references) {
-		this.references = new LinkedList<String>(references);
+	public void setReferences(ReferenceList references) {
+		this.references = new ReferenceList(references);
 	}
 
 	@Override
 	public String toString() {
-		return String.format("DocID: %s\nTitle: %s\nAbstract: %s\n"
-				     + "Date: %s\nAuthors: %s\nKeywords: %s\n"
-				     + "Content: %s\nEntry Date: %s\nReference: %s",
-				     id, title, abstractInfo, date, authors,
-				     keywords, content, entrydate, references);
+		StringBuilder strbuf = new StringBuilder();
+		strbuf.append("DocID: ").append(id).
+			append("\nTitle: ").append(title).
+			append("\nAbstract: ").append(abstractInfo).
+			append("\nDate: ").append(date).
+			append("\nAuthors: ").append(authors).
+			append("\nKeywords: ").append(keywords).
+			append("\nContent: ").append(content).
+			append("\nEntry Date: ").append(entrydate).
+			append("\nReferences: ").append(references);
+		return strbuf.toString();
 	}
 
 	public void addKeywords(String keywords) {
-		this.keywords += keywords;
+		this.keywords += (this.keywords.isEmpty() ? "" : " ") + keywords;
 	}
 
 	public void addAuthor(String author) {
-		this.authors.add(author);
+		this.authors.getAuthors().add(new Author(author));
 	}
 
 	public void addDate(String date) {
-		this.date += date;
+		this.date += (this.date.isEmpty() ? "" : " ") + date;
 	}
 
 	public void addContent(String content) {
-		this.content += content;
+		this.content += (this.content.isEmpty() ? "" : " ") + content;
 	}
 
 	public void addEntrydate(String entrydate) {
-		this.entrydate += entrydate;
+		this.entrydate += (this.entrydate.isEmpty() ? "" : " ") + entrydate;
 	}
 
 	public void addTitle(String title) {
-		this.title += title;
+		this.title += (this.title.isEmpty() ? "" : " ") + title;
 	}
 
 	public void addAbstractInfo(String abstractTxt) {
-		this.abstractInfo += abstractTxt;
+		this.abstractInfo += (this.abstractInfo.isEmpty() ? "" : " ") + abstractTxt;
 	}
 
-	public void addReference(String reference) {
-		this.references.add(reference);
+	public void addReference(String col1, String col2, String col3) {
+		this.references.getReferences().add(new Reference(col1, col2, col3));
 	}
 }

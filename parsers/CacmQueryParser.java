@@ -1,6 +1,8 @@
 package parsers;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class CacmQueryParser implements Parser {
 
@@ -11,7 +13,7 @@ public class CacmQueryParser implements Parser {
 	}
 
 	@Override
-	public void parse() {
-		throw new UnsupportedOperationException("Not yet implemented");
+	public List parse() throws IOException {
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 }
