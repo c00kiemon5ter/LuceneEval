@@ -1,5 +1,6 @@
-package core;
+package core.lists;
 
+import core.CacmDocument;
 import java.util.LinkedList;
 import java.util.List;
 import org.simpleframework.xml.ElementList;
@@ -16,7 +17,7 @@ public class CacmDocumentList {
 	}
 
 	public CacmDocumentList(List<CacmDocument> documents) {
-		this.documents = documents;
+		this.documents = new LinkedList<CacmDocument>(documents);
 	}
 
 	public List<CacmDocument> getDocuments() {
@@ -25,5 +26,14 @@ public class CacmDocumentList {
 
 	public void setDocuments(List<CacmDocument> documents) {
 		this.documents = documents;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder strbuf = new StringBuilder();
+		for (CacmDocument doc : documents) {
+			strbuf.append(doc.toString()).append("\n");
+		}
+		return strbuf.toString();
 	}
 }

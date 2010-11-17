@@ -1,5 +1,6 @@
-package core;
+package core.lists;
 
+import core.Author;
 import java.util.LinkedList;
 import java.util.List;
 import org.simpleframework.xml.ElementList;
