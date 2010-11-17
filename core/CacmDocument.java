@@ -1,39 +1,40 @@
 package core;
 
-import core.lists.AuthorList;
-import core.lists.ReferenceList;
+import java.util.LinkedList;
+import java.util.List;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
 @Root(name = "document")
 public class CacmDocument {
 
-	@Element
-	private AuthorList authors;
+	@ElementList(entry = "author")
+	private List<Author> authors;
 	@Element
 	private String date;
 	@Element(required = false)
 	private String content;
 	@Attribute
 	private String id;
-	@Element(required = false)
-	private String keywords;
+	@ElementList(entry = "keyword", required = false)
+	private List<String> keywords;
 	@Element
 	private String entrydate;
 	@Element(required = false)
 	private String title;
 	@Element(name = "abstract", required = false)
 	private String abstractInfo;
-	@Element(required = false)
-	private ReferenceList references;
+	@ElementList(entry = "reference", required = false)
+	private List<Reference> references;
 
 	public CacmDocument() {
-		this.authors = new AuthorList();
-		this.references = new ReferenceList();
+		this.authors = new LinkedList<Author>();
+		this.references = new LinkedList<Reference>();
+		this.keywords = new LinkedList<String>();
 		this.abstractInfo =
 		this.entrydate =
-		this.keywords =
 		this.id =
 		this.content =
 		this.title =
@@ -43,15 +44,15 @@ public class CacmDocument {
 	/**
 	 * @return the authors
 	 */
-	public AuthorList getAuthors() {
+	public List<Author> getAuthors() {
 		return authors;
 	}
 
 	/**
 	 * @param authors the authors to set
 	 */
-	public void setAuthors(AuthorList authors) {
-		this.authors = new AuthorList(authors);
+	public void setAuthors(List<Author> authors) {
+		this.authors = new LinkedList<Author>(authors);
 	}
 
 	/**
@@ -99,15 +100,15 @@ public class CacmDocument {
 	/**
 	 * @return the keywords
 	 */
-	public String getKeywords() {
+	public List<String> getKeywords() {
 		return keywords;
 	}
 
 	/**
 	 * @param keywords the keywords to set
 	 */
-	public void setKeywords(String keywords) {
-		this.keywords = keywords;
+	public void setKeywords(List<String> keywords) {
+		this.keywords = new LinkedList<String>(keywords);
 	}
 
 	/**
@@ -155,15 +156,15 @@ public class CacmDocument {
 	/**
 	 * @return the references
 	 */
-	public ReferenceList getReferences() {
+	public List<Reference> getReferences() {
 		return references;
 	}
 
 	/**
 	 * @param references the reference to set
 	 */
-	public void setReferences(ReferenceList references) {
-		this.references = new ReferenceList(references);
+	public void setReferences(List<Reference> references) {
+		this.references = new LinkedList<Reference>(references);
 	}
 
 	@Override
@@ -181,12 +182,12 @@ public class CacmDocument {
 		return strbuf.toString();
 	}
 
-	public void addKeywords(String keywords) {
-		this.keywords += (this.keywords.isEmpty() ? "" : " ") + keywords;
+	public void addKeywords(String keyword) {
+		this.keywords.add(keyword);
 	}
 
 	public void addAuthor(String author) {
-		this.authors.getAuthors().add(new Author(author));
+		this.authors.add(new Author(author));
 	}
 
 	public void addDate(String date) {
@@ -210,6 +211,6 @@ public class CacmDocument {
 	}
 
 	public void addReference(String col1, String col2, String col3) {
-		this.references.getReferences().add(new Reference(col1, col2, col3));
+		this.references.add(new Reference(col1, col2, col3));
 	}
 }

@@ -1,16 +1,17 @@
 package core;
 
-import core.lists.AuthorList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CacmQuery {
 
 	private String id;
 	private String source;
-	private AuthorList authors;
+	private List<Author> authors;
 	private String query;
 
 	public CacmQuery() {
-		this.authors = new AuthorList();
+		this.authors = new LinkedList<Author>();
 		this.query =
 		this.id =
 		this.source = "";
@@ -61,19 +62,19 @@ public class CacmQuery {
 	/**
 	 * @return the authors
 	 */
-	public AuthorList getAuthors() {
+	public List<Author> getAuthors() {
 		return authors;
 	}
 
 	/**
 	 * @param authors the authors to set
 	 */
-	public void setAuthors(AuthorList authors) {
+	public void setAuthors(List<Author> authors) {
 		this.authors = authors;
 	}
 
 	public void addAuthor(String author) {
-		this.authors.getAuthors().add(new Author(author));
+		this.authors.add(new Author(author));
 	}
 
 	public void addQuery(String query) {

@@ -63,7 +63,9 @@ public class CacmDocParser implements Parser {
 						document.addContent(line);
 						break;
 					case Fields.KEYWORDS:
-						document.addKeywords(line);
+						for (String keyword : line.split(",")) {
+							document.addKeywords(keyword.trim());
+						}
 						break;
 					case Fields.ENTRYDATE:
 						document.addEntrydate(line);
