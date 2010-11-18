@@ -29,6 +29,18 @@ public class CacmDocument {
 	@ElementList(entry = "reference", required = false)
 	private List<Reference> references;
 
+	public static class Fields {
+
+		public static final String AUTHORS = "Authors";
+		public static final String DATE = "Date";
+		public static final String ID = "Id";
+		public static final String KEYWORDS = "Keywords";
+		public static final String ENTRYDATE = "EntryDate";
+		public static final String TITLE = "Title";
+		public static final String ABSTRACT = "Abstract";
+		public static final String REFERENCE = "Reference";
+	}
+
 	public CacmDocument() {
 		this.authors = new LinkedList<Author>();
 		this.references = new LinkedList<Reference>();
