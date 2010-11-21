@@ -1,9 +1,9 @@
 package parsers;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Collection;
 
 public interface Parser<T> {
 
-	public List<T> parse() throws IOException;
+	public Collection<T> parse() throws IOException;
 }

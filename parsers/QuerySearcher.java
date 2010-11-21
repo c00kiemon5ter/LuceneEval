@@ -1,14 +1,17 @@
 package parsers;
 
-import core.CacmDocument;
-import core.CacmQuery;
+import core.SearchResult;
+import core.cacm.CacmDocument;
+import core.cacm.CacmQuery;
 import core.lists.CacmDocumentList;
 import core.lists.CacmQueryList;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.SimpleAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -17,7 +20,7 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.LockObtainFailedException;
@@ -28,33 +31,41 @@ public class QuerySearcher {
 
 	private Directory index;
 	private Analyzer analyzer;
+	private Set<String> stopwords;
 
-	public QuerySearcher(CacmDocumentList doclist) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public QuerySearcher(CacmDocumentList documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
 		this.index = new RAMDirectory();
-		this.analyzer = new StandardAnalyzer(Version.LUCENE_29, new File("data/common_words"));
-		createIndex(doclist.getDocuments());
+		this.analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
+		this.analyzer = new SimpleAnalyzer();
+		createIndex(documentList.getDocuments());
 	}
 
-	private void createIndex(List<CacmDocument> doclist) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public QuerySearcher(CacmDocumentList documentList, String StopWordFilename) throws CorruptIndexException, LockObtainFailedException, IOException {
+		this.index = new RAMDirectory();
+		this.stopwords = new StopWordParser(StopWordFilename).parse();
+		this.analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
+		createIndex(documentList.getDocuments());
+	}
+
+	private void createIndex(List<CacmDocument> documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
 		IndexWriter idxwriter = new IndexWriter(index, analyzer, true, IndexWriter.MaxFieldLength.LIMITED);
-		Document document;
-		for (CacmDocument doc : doclist) {
-			document = new Document();
-			document.add(new Field(CacmDocument.Fields.ABSTRACT, doc.getAbstractInfo(),
+		for (CacmDocument cacmDocument : documentList) {
+			Document document = new Document();
+			document.add(new Field(CacmDocument.Fields.ABSTRACT, cacmDocument.getAbstractInfo(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.AUTHORS, doc.getAuthors().toString(),
+			document.add(new Field(CacmDocument.Fields.AUTHORS, cacmDocument.getAuthors().toString(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.DATE, doc.getDate(),
+			document.add(new Field(CacmDocument.Fields.DATE, cacmDocument.getDate(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.ENTRYDATE, doc.getEntrydate(),
+			document.add(new Field(CacmDocument.Fields.ENTRYDATE, cacmDocument.getEntrydate(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.ID, doc.getId(),
+			document.add(new Field(CacmDocument.Fields.ID, cacmDocument.getId(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.REFERENCE, doc.getReferences().toString(),
+			document.add(new Field(CacmDocument.Fields.REFERENCE, cacmDocument.getReferences().toString(),
 					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.KEYWORDS, doc.getKeywords().toString(),
+			document.add(new Field(CacmDocument.Fields.KEYWORDS, cacmDocument.getKeywords().toString(),
 					       Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
-			document.add(new Field(CacmDocument.Fields.TITLE, doc.getTitle(),
+			document.add(new Field(CacmDocument.Fields.TITLE, cacmDocument.getTitle(),
 					       Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
 			idxwriter.addDocument(document);
 		}
@@ -62,22 +73,28 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public List<TopDocs> search(CacmQueryList querylist) throws ParseException, CorruptIndexException, IOException {
-		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
+	public Collection<SearchResult> search(CacmQueryList queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
-		List<TopDocs> topDocs = new ArrayList<TopDocs>(querylist.getQueries().size());
-		TopScoreDocCollector collector = null;
-		for (CacmQuery cacmQuery : querylist.getQueries()) {
-			collector = TopScoreDocCollector.create(10, true);
-			String query = normalize(cacmQuery.getQuery());
+		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
+		Collection<SearchResult> searchResults = new LinkedList<SearchResult>();
+		for (CacmQuery cacmQuery : queryList.getQueries()) {
+			TopScoreDocCollector collector = TopScoreDocCollector.create(numResults, true);
+			String query = normalizeQuery(cacmQuery.getQuery());
 			idxSearcher.search(queryParser.parse(query), collector);
-			topDocs.add(collector.topDocs());
+			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
+				SearchResult searchResult = new SearchResult(cacmQuery.getId(),
+									     query,
+									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.ID).stringValue(),
+									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.TITLE).stringValue(),
+									     scoreDoc.score);
+				searchResults.add(searchResult);
+			}
 		}
-		return topDocs;
+		return searchResults;
 	}
 
-	private String normalize(String query) {
-		String pattern = "[\\\\|(|)|\"|?|*|\\-|\']";
+	private String normalizeQuery(String query) {
+		String pattern = "[\\\\|(|)|\"|?|*|;|\\-|\']";
 		return query.replaceAll(pattern, " ");
 	}
 }

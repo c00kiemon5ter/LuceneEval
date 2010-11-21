@@ -1,6 +1,6 @@
 package parsers;
 
-import core.CacmDocument;
+import core.cacm.CacmDocument;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CacmDocParser implements Parser {
+public class CacmDocParser implements Parser<CacmDocument> {
 
 	private BufferedReader reader;
 	private List<CacmDocument> documents;
@@ -28,8 +28,8 @@ public class CacmDocParser implements Parser {
 		private static final char REFERENCE = 'X';
 	}
 
-	public CacmDocParser(String docfile) throws FileNotFoundException {
-		this.reader = new BufferedReader(new FileReader(new File(docfile)));
+	public CacmDocParser(String documentsFile) throws FileNotFoundException {
+		this.reader = new BufferedReader(new FileReader(new File(documentsFile)));
 		this.documents = new LinkedList<CacmDocument>();
 	}
 
@@ -86,6 +86,7 @@ public class CacmDocParser implements Parser {
 				}
 			}
 		}
+		documents.add(document);
 		reader.close();
 		return documents;
 	}

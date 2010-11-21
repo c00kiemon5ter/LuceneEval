@@ -1,6 +1,6 @@
 package parsers;
 
-import core.CacmQuery;
+import core.cacm.CacmQuery;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CacmQueryParser implements Parser {
+public class CacmQueryParser implements Parser<CacmQuery> {
 
 	private BufferedReader reader;
 	private List<CacmQuery> queries;
@@ -63,6 +63,7 @@ public class CacmQueryParser implements Parser {
 				}
 			}
 		}
+		queries.add(query);
 		reader.close();
 		return queries;
 	}
