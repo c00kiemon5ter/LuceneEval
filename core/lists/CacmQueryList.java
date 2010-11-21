@@ -1,6 +1,6 @@
 package core.lists;
 
-import core.CacmQuery;
+import core.cacm.CacmQuery;
 import java.util.LinkedList;
 import java.util.List;
 
