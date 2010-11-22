@@ -6,7 +6,6 @@ import core.cacm.CacmQuery;
 import core.lists.CacmDocumentList;
 import core.lists.CacmQueryList;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -73,10 +72,10 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public Collection<SearchResult> search(CacmQueryList queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
+	public List<SearchResult> search(CacmQueryList queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
-		Collection<SearchResult> searchResults = new LinkedList<SearchResult>();
+		List<SearchResult> searchResults = new LinkedList<SearchResult>();
 		for (CacmQuery cacmQuery : queryList.getQueries()) {
 			TopScoreDocCollector collector = TopScoreDocCollector.create(numResults, true);
 			String query = normalizeQuery(cacmQuery.getQuery());
