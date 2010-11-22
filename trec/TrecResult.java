@@ -1,4 +1,4 @@
-package core.trec;
+package trec;
 
 import core.SearchResult;
 

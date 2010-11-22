@@ -1,4 +1,4 @@
-package core.trec;
+package trec;
 
 import java.io.BufferedWriter;
 import java.io.File;
