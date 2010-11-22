@@ -28,6 +28,6 @@ public class TrecResult {
 
 	@Override
 	public String toString() {
-		return String.format("%s\tITER\t%s\tRANK\t%f\tRUN", qid, did, score);
+		return String.format("%s\tITER\t%s\tRANK\t%f\tRUN\n", qid, did, score);
 	}
 }

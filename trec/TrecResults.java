@@ -28,6 +28,10 @@ public class TrecResults {
 
 	public void write(String resultsFilename) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(new File(resultsFilename)));
-		writer.write(trecResults.toString());
+		for (TrecResult result : trecResults) {
+			writer.write(result.toString());
+		}
+		writer.flush();
+		writer.close();
 	}
 }

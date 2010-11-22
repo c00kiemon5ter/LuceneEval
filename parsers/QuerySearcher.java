@@ -3,8 +3,6 @@ package parsers;
 import core.SearchResult;
 import core.cacm.CacmDocument;
 import core.cacm.CacmQuery;
-import core.lists.CacmDocumentList;
-import core.lists.CacmQueryList;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,18 +30,18 @@ public class QuerySearcher {
 	private Analyzer analyzer;
 	private Set<String> stopwords;
 
-	public QuerySearcher(CacmDocumentList documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public QuerySearcher(List<CacmDocument> documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
 		this.index = new RAMDirectory();
 		this.analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
 		this.analyzer = new SimpleAnalyzer();
-		createIndex(documentList.getDocuments());
+		createIndex(documentList);
 	}
 
-	public QuerySearcher(CacmDocumentList documentList, String StopWordFilename) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public QuerySearcher(List<CacmDocument> documentList, String StopWordFilename) throws CorruptIndexException, LockObtainFailedException, IOException {
 		this.index = new RAMDirectory();
 		this.stopwords = new StopWordParser(StopWordFilename).parse();
 		this.analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
-		createIndex(documentList.getDocuments());
+		createIndex(documentList);
 	}
 
 	private void createIndex(List<CacmDocument> documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
@@ -72,11 +70,11 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public List<SearchResult> search(CacmQueryList queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
+	public List<SearchResult> search(List<CacmQuery> queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
 		List<SearchResult> searchResults = new LinkedList<SearchResult>();
-		for (CacmQuery cacmQuery : queryList.getQueries()) {
+		for (CacmQuery cacmQuery : queryList) {
 			TopScoreDocCollector collector = TopScoreDocCollector.create(numResults, true);
 			String query = normalizeQuery(cacmQuery.getQuery());
 			idxSearcher.search(queryParser.parse(query), collector);
