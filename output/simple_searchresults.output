@@ -1,0 +1,1483 @@
+Parsing cacm documents from file: data/cacm/cacm.all
+Writing cacm documents to xml file: data/results/cacm.all.xml
+Loading cacm documents from xml file: data/results/cacm.all.xml
+Parsing cacm queries from file: data/cacm/query.text
+Searching cacm documents with cacm queries
+Printing results to output
+-----------------------------------
+Searching for: 1 - What articles exist which deal with TSS  Time Sharing System , an operating system for IBM computers 
+-----------------------------------
+  1752 - 0.568668        Resource Management for a Medium Scale Time-Sharing Operating system
+  1519 - 0.450195        GEORGE 3-A General Purpose Time Sharing and Operating System
+   585 - 0.423593        Initial Experience With an Operating Multiprogramming System
+  1938 - 0.412608        Some Criteria for Time-Sharing System Performance
+  2629 - 0.358562        The UNIX Time-Sharing system
+  2219 - 0.343840        A Policy-Driven Scheduler for a Time-Sharing System
+  2380 - 0.343840        TENEX, a Paged Time Sharing System for the PDP-10
+  1523 - 0.343840        SHARER, a Time Sharing System for the CDC 6600
+  3127 - 0.314995        Thoth, a Portable Real-Time Operating System
+  1544 - 0.307339        Tele-CUPL: A Telephone Time Sharing System
+  1657 - 0.307339        Implementation of the SHARER2 Time-Sharing System
+  1827 - 0.307339        Performance Monitoring in a Time-Sharing System
+  1264 - 0.295548        BLNSYS-A 1401 Operating System with Braille Capabilities
+  2597 - 0.278163        Monitors: An Operating System Structuring Concept
+  2796 - 0.278163        Monitors: An Operating System Structuring Concept (Corrigendum)
+  2868 - 0.278163        Reflections on an Operating System Design
+  2917 - 0.276219        SITAR: An Interactive Text Processing System for Small Computers (Corrigendum)
+  2947 - 0.276219        SITAR: An Interactive Text Processing System for Small Computers
+  1271 - 0.270506        Secondary Key Retrieval Using an IBM 7090-1301 System
+  2153 - 0.246639        Experiments with an Automated Instructional System for Numerical Methods
+-----------------------------------
+Searching for: 2 - I am interested in articles written either by Prieve or Udo Pooch
+-----------------------------------
+   597 - 0.182204        Modular Data Processing Systems Written in COBOL
+   204 - 0.111995        Proving Theorems by Pattern Recognition I
+   171 - 0.092482        Digital Computers in Universities (Part I)
+  1062 - 0.092482        Symbol Manipulation in FORTRAN-SASP I Subroutines
+  1569 - 0.092482        Implementing Phrase-Structure Productions in PL/I
+  1488 - 0.090689        Programming Decision Tables in FORTRAN, COBOL or ALGOL
+   210 - 0.074663        Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+  2729 - 0.074663        Comments on a Paper by T. C. Chen and I. T. Ho
+  2852 - 0.068601        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  1214 - 0.061878        Some Experiments in Algebraic Manipulation by Computer
+   626 - 0.058801        A Method of Representation, Storage and Retrieval of 13 Random Codes in a 4-Digit Number or 16 Random Codes in a 5-Digit Number
+  1243 - 0.052490        Testing the Understanding of the Difference Between Call by Name and Call by Value in ALGOL 60
+    40 - 0.051645        Fingers or Fists? (The Choice of Decimal or Binary Representation)
+    28 - 0.051126        Request for Methods or Programs
+   344 - 0.051126        Ber or Bei Function (Algorithm 57)
+   510 - 0.051126        Ber or Bei Function (Algorithm 57)
+   544 - 0.051126        Ber or Bei Function (Algorithm 57)
+  1321 - 0.047533        Outreal N (Algorithm [I5])
+  1588 - 0.047533        PL/I List Processing
+  1020 - 0.041592        Free Field Read (Algorithm 239 [I5])
+-----------------------------------
+Searching for: 3 - Intermediate languages used in construction of multi targeted compilers  TCOLL
+-----------------------------------
+  3153 - 0.208444        The Control of Response Times in Multi-Class Systems by Memory Allocations
+  1215 - 0.206314        Some Techniques Used in the ALCOR ILLINOIS 7090
+  2551 - 0.206314        Mutual Recursion in Algol 60 Using Restricted Compilers
+  1723 - 0.179023        Computer Construction of Project Networks
+   857 - 0.171929        Sorting Nonredundant Files-Techniques Used in the FACT Compiler
+  1138 - 0.163435        Formalism in Programming Languages*
+  2558 - 0.163435        Protection in Programming Languages
+  1007 - 0.162236        Extension of Existing Compilers By Sophisticated Use of Macros
+    70 - 0.159341        Construction of a Set of Test Matrices
+  1360 - 0.157326        Description of Systems Used for Data Transmission* (An ASA Tutorial)
+    51 - 0.153449        On the Construction of Micro-Flowcharts
+    77 - 0.153449        On GAT and the Construction of Translators
+  1313 - 0.153449        Construction of Nonlinear Programming Test Problems
+  3144 - 0.147246        A Model for and DIscussion of Multi-Interpreter Systems
+  2247 - 0.137543        On the Criteria To Be Used in Decomposing Systems into Modules
+  2658 - 0.137543        An Alternative Approach to Mutual Recursion in Algol 60 Using Restricted Compilers
+   689 - 0.136801        Report of a Visit to Discuss Common Programming Languages in Czechoslovakia and Poland, 1963
+  1641 - 0.136801        A Use of Fast and Slow Memories in List-Processing Languages
+  2229 - 0.132784        Construction of Rational and Negative Powers of a Formal Series
+  1267 - 0.129789        Performance of Systems Used for Data Transmission Transfer Rate of Information Bits -An ASA Tutorial Standard
+-----------------------------------
+Searching for: 4 - I m interested in mechanisms for communicating between disjoint processes, possibly, but not exclusively, in a distributed environment.  I would rather see descriptions of complete mechanisms, with or without implementations, as opposed to theoretical work on the abstract problem.  Remote procedure calls and message passing are examples of my interests.
+-----------------------------------
+  2939 - 0.109969        Abstraction Mechanisms in CLU
+  2519 - 0.095836        On the Problem of Communicating Complex Information
+   975 - 0.092665        The New Program of Work for the International Standard Vocabulary in Computers and Information Processing
+  2376 - 0.087348        Synchronization of Communicating Processes
+    84 - 0.082886        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957-II (Part 2 see CA590406)
+  1829 - 0.080789        An Interactive Graphical Display Monitor in a Batch-Processing Environment with Remote Entry
+  2534 - 0.079639        Design and Implementation of a Diagnostic Compiler for PL/I
+  2342 - 0.073512        Interference Between Communicating Parallel Processes
+  3082 - 0.072984        Time, Clocks, and the Ordering of Events in a Distributed System
+  1728 - 0.070024        Further Experimental Data on the Behavior of Programs in a Paging Environment
+  1682 - 0.069105        The Implementation of a BASIC System in a Multiprogramming Environment
+  2777 - 0.065407        On a Solution to the Cigarette Smoker's Problem (Without Conditional Statements)
+  2170 - 0.064763        Applications of Symbol Manipulation in Theoretical Physics
+  2852 - 0.063675        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  3059 - 0.060461        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+  2844 - 0.060029        Heaps Applied to Event Driven Mechanisms
+  1243 - 0.059321        Testing the Understanding of the Difference Between Call by Name and Call by Value in ALGOL 60
+   452 - 0.057876        Nesting of for Statement I (Algorithm 137)
+  1323 - 0.057786        A Correspondence Between ALGOL 60 and Church's Lambda-Notation: Part I*
+  2701 - 0.057443        A Fast and Usually Linear Algorithm for Global Flow Analysis (Abstract only--Complete paper JACM 23,1 January, 1976)
+-----------------------------------
+Searching for: 5 - I d like papers on design and implementation of editing interfaces, window managers, command interpreters, etc.  The essential issues are human interface design, with views on improvements to user efficiency, effectiveness and satisfaction.
+-----------------------------------
+  2534 - 0.239669        Design and Implementation of a Diagnostic Compiler for PL/I
+  2522 - 0.199426        The Design, Implementation, and Evaluation of a Working Set Dispatcher
+  1053 - 0.161339        Design and Implementation of a General-Purpose Input Routine
+  2820 - 0.159541        The Design and Implementation of a Table Driven, Interactive Diagnostic Programming System
+  2321 - 0.154975        On the Interface Between Computers and Data Communications Systems
+  1742 - 0.151101        On the Design of Display Processors
+    23 - 0.130094        Binary and Truth-Function Operations on a Decimal Computer with an Extract Command
+   493 - 0.121664        The Property Classification Method of File Design and Processing
+  2358 - 0.115794        The Multics Virtual Memory: Concepts and Design
+  3030 - 0.112066        An Example of Hierarchical Design and Proof
+   400 - 0.111948        Comments on the Implementation of Recursive Procedures and Blocks in ALGOL 60
+    63 - 0.106030        Octal Diagrams of Binary Conception and Their Applicability to Computer Design Logic
+  1101 - 0.100511        The Place of Logical Design and Switching Theory In The Computer Curriculum
+  2188 - 0.097216        An Approach to the Optimum Design of Computer Graphics Systems
+  2812 - 0.093388        Computer-Aided Analysis and Design of Information Systems
+  1188 - 0.090044        An ALGOL-like Computer Design Language
+  2271 - 0.089767        Aesthetics and the Human Factor in Programming (Corrigendum)
+  2868 - 0.088360        Reflections on an Operating System Design
+  2517 - 0.085067        Some Comments on the Use of Ambiguous Decision Tables and Their Conversion to Computer Programs
+  2616 - 0.085067        On the Conversion of Programs to Decision Tables: Method and Objectives
+-----------------------------------
+Searching for: 6 - Interested in articles on robotics, motion planning particularly the geometric and combinatorial aspects.  We are not interested in the dynamics of arm motion.
+-----------------------------------
+  2826 - 0.325846        Interactive Skeleton Techniques for Enhancing Motion Dynamics in Key Frame Animation
+  1543 - 0.279816        Computer Formulation of the Equations of Motion Using Tensor Notation
+  2622 - 0.178427        A User Authentication Scheme Not Requiring Secrecy in the Computer
+  2502 - 0.170588        A Comment on the Practical Aspects of Computer Science Education
+   697 - 0.162913        A Numerical Method for the Determination of Moving Field Isodose Curves for Treatment Planning in Radiotherapy
+  1456 - 0.144856        Storage and Retrieval of Aspects of Meaning in Directed Graph Structures
+  2721 - 0.132246        The Digital Simulation of River Plankton Population Dynamics
+  3035 - 0.129025        A Strategic Planning Methodology for the Computing Effort in Higher Education: An Empirical Evaluation
+   400 - 0.126709        Comments on the Implementation of Recursive Procedures and Blocks in ALGOL 60
+  1497 - 0.126709        On the Normalization Requirement of Divisor in Divide- and- Correct Methods
+   438 - 0.119421        Mechanical Pragmatics: A Time-Motion Study of a Miniature Mechanical Linguistic System
+  2184 - 0.113833        On the Meaning of Names in Programming Systems
+  2195 - 0.113833        On the Optimal Detection of Curves in Noisy Pictures
+  2295 - 0.113833        Comment on the Composition of Semantics in Algol 68
+  2372 - 0.113833        On the Implementation of Security Measures in Information Systems
+  1634 - 0.112078        27 bits Are Not Enough for 8-digit Accuracy
+  2626 - 0.110172        Protection and the Control of Information Sharing in Multics
+  2823 - 0.110172        The Status of Women and Minorities in Academic Computer Science
+  2671 - 0.109038        A Note on a Combinatorial Problem of Burnett and Coffman
+  2909 - 0.105797        What Can We Do about the Unnecessary Diversity of Notation for Syntactic Definitions?
+-----------------------------------
+Searching for: 7 - I am interested in distributed algorithms   concurrent programs in which processes communicate and synchronize by using message passing. Areas of particular interest include fault tolerance and techniques for understanding the correctness of these algorithms.
+-----------------------------------
+  1243 - 0.231450        Testing the Understanding of the Difference Between Call by Name and Call by Value in ALGOL 60
+  1846 - 0.150316        On Simulating Networks of Parallel Processes in Which Simultaneous Events May Occur
+  1353 - 0.144825        Techniques for Automatic Tolerance Control in Linear Programming
+  3140 - 0.141392        Social Processes and Proofs of Theorems and Programs
+  3082 - 0.140977        Time, Clocks, and the Ordering of Events in a Distributed System
+  1171 - 0.136260        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+  2158 - 0.123253        A Stopping Criterion for the Newton-Raphson Method in Implicit Multistep Integration Algorithms for Nonlinear Systems of Ordinary Differential Equations
+   270 - 0.115093        Techniques for Storage Allocation Algorithms
+  1411 - 0.114886        Comparison of Several Algorithms for Computation of Means, Standard Deviations and Correlation Coefficients
+  3043 - 0.113014        Distributed Processes: A Concurrent Programming Concept
+  1753 - 0.112816        Virtual Memory, Processes, and Sharing in MULTICS
+  2263 - 0.111111        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  2426 - 0.110429        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  1658 - 0.102721        Analysis of Algorithms for the Zero-One Programming Problem
+  3055 - 0.102721        An Analysis of Algorithms for the Dutch National Flag Problem
+   399 - 0.101004        Compiling Techniques for Boolean Expressions and Conditional Statements in ALGOL 60
+  2949 - 0.100951        A Correctness Proof of a Topology Information Main tenance Protocol for a Distributed Computer Network
+   371 - 0.097782        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+  2891 - 0.097058        An Anomaly in Disk Scheduling: A Comparison of FCFS and SSTF Seek Scheduling Using an Empirical Model for Disk Accesses
+  1870 - 0.090823        Some Techniques for Using Pseudorandom Numbers in Computer Simulation
+-----------------------------------
+Searching for: 8 - Addressing schemes for resources in networks  resource addressing in network operating systems
+-----------------------------------
+   912 - 0.589785        Addressing an Array Yi in k-Dimensions by Fortran for Analysis of Variance
+  2858 - 0.589785        A Process for the Determination of Addresses in Variable Length Addressing
+  2371 - 0.582834        A System for Interprocess Communication in a Resource Sharing Computer Network
+  2840 - 0.578257        Protection in Operating Systems
+  3068 - 0.491311        A Model for Verification of Data Security in Operating Systems
+   820 - 0.429196        Checking for Loops in Networks
+   332 - 0.372123        An Indirect Chaining Method for Addressing on Secondary Keys
+   615 - 0.371621        Addressing Multidimensional Arrays
+  2625 - 0.371621        Capability-Based Addressing
+  2867 - 0.361411        Modularization and Hierarchy in a Family of Operating Systems
+  1752 - 0.339831        Resource Management for a Medium Scale Time-Sharing Operating system
+  3038 - 0.306568        Using Encryption for Authentication in Large Networks of Computers
+   492 - 0.278716        Analysis of a File Addressing Method
+  1869 - 0.278716        Block Structures, Indirect Addressing, and Garbage Collection
+  2860 - 0.278716        A Practitioner's Guide To Addressing Algorithms
+  1890 - 0.273032        Simulation of Traffic Flows in a Network
+  3158 - 0.273032        Secure Personal Computing in an Insecure Network
+  1960 - 0.256086        Process Management and Resource Sharing in the Multiaccess System ESOPE
+  1928 - 0.247437        Exclusive Simulation of Activity in Digital Networks
+  2830 - 0.232263        A Practitioner's Guide to Addressing Algorithms (Corrigendum)
+-----------------------------------
+Searching for: 9 - Security considerations in local networks, network operating systems, and distributed systems.
+-----------------------------------
+  3068 - 0.993592        A Model for Verification of Data Security in Operating Systems
+  2840 - 0.767427        Protection in Operating Systems
+  1032 - 0.709336        Theoretical Considerations in Information Retrieval Systems
+  2867 - 0.666317        Modularization and Hierarchy in a Family of Operating Systems
+  2372 - 0.591114        On the Implementation of Security Measures in Information Systems
+  2849 - 0.571224        Ethernet: Distributed Packet Switching for Local Computer Networks
+  2578 - 0.533946        Self-stabilizing Systems in Spite of Distributed Control
+  1462 - 0.509655        Multilevel Operating Systems
+  1461 - 0.445949        Discussion Summary on Operating Systems
+  2741 - 0.395153        Decomposability, Instabilities, and Saturation in Multiprogramming Systems
+  3137 - 0.359263        A Methodology for the Design of Distributed Information Systems
+  2995 - 0.329294        Decomposability, Instabilities, and Saturation in Multiprogramming Systems (Corrigendum)
+  2317 - 0.329238        Programming Systems and Languages 1965-1975
+  1247 - 0.318535        An Operating Environment for Dynamic-Recursive Computer Programming Systems
+  1677 - 0.289676        Storage Organization in Programming Systems
+  2111 - 0.289676        Spelling Correction in Systems Programs
+  3147 - 0.263435        A Model for Automating File and Program Design in Business Application Systems
+  2869 - 0.259112        Security Kernel Validation in Practice
+   597 - 0.248294        Modular Data Processing Systems Written in COBOL
+   652 - 0.248294        Use of Semantic Structure in Information Systems
+-----------------------------------
+Searching for: 10 - Parallel languages  languages for parallel computation
+-----------------------------------
+  1795 - 2.048710        Optimal Code for Serial and Parallel Computation
+  1158 - 1.268255        Program Structures for Parallel Processing
+   950 - 1.087076        Parallel Methods for Integrating Ordinary Differential Equations
+  1459 - 1.038853        Requirements for Real-Time Languages
+  2254 - 1.038853        Dynamic Partitioning for Array Languages
+  2814 - 1.038853        Roster of Programming Languages for 1974-75
+  1302 - 0.905897        Parallel Signaling Speeds for Data Transmission (Proposed American Stand ard)
+  1601 - 0.905897        Parallel Numerical Methods for the Solution of Equations
+  1613 - 0.905897        One-Pass Compilation of Arithmetic Expressions for a Parallel Processor
+  1811 - 0.905897        A Case Study in Programming for Parallel-Processors
+  2570 - 0.905897        A Comparison of List Schedules for Parallel Processing Systems
+  1788 - 0.890445        Toward a General Processor for Programming Languages
+  2645 - 0.890445        Two Languages for Estimating Program Efficiency
+  2650 - 0.890445        Order-n Correction for Regular Languages
+  2714 - 0.882671        Merging with Parallel Processors
+  3075 - 0.882671        Fast Parallel Sorting Algorithms
+   249 - 0.813543        Specification Languages for Mechanical Languages and Their Processors*-A Baker's Dozen
+   141 - 0.772337        Some Thoughts on Parallel Processing
+  2342 - 0.772337        Interference Between Communicating Parallel Processes
+  2851 - 0.772337        Formal Verification of Parallel Programs
+-----------------------------------
+Searching for: 11 - SETL, Very High Level Languages
+-----------------------------------
+  2906 - 1.573506        A Very High Level Programming Language for Data Processing Applications
+  2699 - 1.258805        Automatic Data Structure Choice in a Language of Very High Level
+  2956 - 1.217972        Some Ideas on Data Types in High-Level Languages
+  2815 - 0.866229        High-Level Binding with Low-Level Linkers
+  2923 - 0.837209        High-Level Data Flow Analysis
+  1872 - 0.750001        Chebyshev Interpolation and Quadrature Formulas of Very High Degree (Errata)
+  1903 - 0.750001        Chebyshev Interpolation and Quadrature Formulas of Very High Degree
+  2527 - 0.717608        Implementation of High Level Language Machine
+  3148 - 0.717608        High Level Programming for Distributed Computing
+  2717 - 0.598007        CONVERT: A High Level Translation Definition Language for Data Conversion
+  1043 - 0.478405        Talk-A High-Level Source Language Debugging Technique With Real-Time Data Extraction
+    81 - 0.239203        NORC High-Speed Printer
+    74 - 0.209302        A High-Speed Sorting Procedure
+   232 - 0.209302        A High-Speed Sorting Procedure
+  2705 - 0.181563        Programming Languages, Natural Languages, and Mathematics
+   795 - 0.179402        Debugging Systems at the Source Language Level
+  1223 - 0.179402        High Speed Compilation of Efficient Object Code
+  1720 - 0.179402        Master's Level Computer Science Curricula
+  2621 - 0.179402        A High Security Log-in Procedure
+  2922 - 0.179402        Two-Level Control Structure for Nondeterministic Programming
+-----------------------------------
+Searching for: 12 - portable operating systems
+-----------------------------------
+  3127 - 2.205687        Thoth, a Portable Real-Time Operating System
+  1462 - 1.664878        Multilevel Operating Systems
+  2840 - 1.664878        Protection in Operating Systems
+  1461 - 1.456768        Discussion Summary on Operating Systems
+  1247 - 1.040549        An Operating Environment for Dynamic-Recursive Computer Programming Systems
+  2867 - 1.040549        Modularization and Hierarchy in a Family of Operating Systems
+  3068 - 1.040549        A Model for Verification of Data Security in Operating Systems
+  1930 - 0.814346        Extremely Portable Random Number Generator
+  2246 - 0.698011        Levels of Language for Portable Software
+  2319 - 0.539777        Operating System Performance
+   585 - 0.404833        Initial Experience With an Operating Multiprogramming System
+  1264 - 0.404833        BLNSYS-A 1401 Operating System with Braille Capabilities
+  2379 - 0.404833        The Design of the Venus Operating System
+  2424 - 0.404833        Dynamic Verification of Operating System Decisions
+  2597 - 0.404833        Monitors: An Operating System Structuring Concept
+  2740 - 0.404833        A Large Semaphore Based Operating System
+  2796 - 0.404833        Monitors: An Operating System Structuring Concept (Corrigendum)
+  2868 - 0.404833        Reflections on an Operating System Design
+  2955 - 0.365828        Buddy Systems
+  1069 - 0.337361        A Method for Comparing the Internal Operating Speeds of Computers
+-----------------------------------
+Searching for: 13 - code optimization for space efficiency
+-----------------------------------
+  1947 - 1.186539        Object code Optimization
+  2835 - 0.733639        Recursion Analysis for Compiler Optimization
+  2078 - 0.686201        Representations for Space Planning
+  2645 - 0.583319        Two Languages for Estimating Program Efficiency
+  2464 - 0.524028        The Complex Method for Constrained Optimization [E4] (Algorithm A454)
+  2611 - 0.524028        The Complex Method for Constrained Optimization (Algorithm R454)
+  2711 - 0.514650        A Vector Space Model for Automatic Indexing
+   267 - 0.486099        Some Proposals for Improving the Efficiency of ALGOL 60
+  1231 - 0.462892        Peephole Optimization
+  2389 - 0.428875        Preliminary Report on a System for General Space Planning
+  2745 - 0.428875        A Linear Space Algorithm for Computing Maximal Common Subsequences
+    48 - 0.407796        Shift-Register Code for Indexing Applications
+   230 - 0.407796        A Proposal for Character Code Compatibility
+   797 - 0.407796        American Standard Code for Information Interchange
+  1786 - 0.407796        An Improved Hash Code for Scatter Storage
+  1795 - 0.407796        Optimal Code for Serial and Parallel Computation
+   149 - 0.388879        A Decision Rule for Improved Efficiency in Solving Linear Programming Problems with the Simplex Algorithm
+  1350 - 0.388879        The Augmented Predictive Analyzer for Context-Free Languages-Its Relative Efficiency
+    66 - 0.365153        A Proposal for a Generalized Card Code for 256 Characters
+  2230 - 0.343100        A Language for Treating Geometric Patterns in a Two-dimensional space
+-----------------------------------
+Searching for: 14 - find all discussions of optimal implementations of sort algorithms for database management applications
+-----------------------------------
+   677 - 0.282355        Length of Strings for a Merge Sort
+  2263 - 0.263787        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  2227 - 0.249398        Proof of a Program: FIND
+  2266 - 0.231010        A Highly Parallel Algorithm for Approximating All Zeros of a Polynomial with Only Real Zeros
+  1066 - 0.227301        Growing Applications of Linear Programming
+  3132 - 0.204582        Experiments with Some Algorithms that Find Central Solutions for Pattern Classification
+  2444 - 0.196550        Finding All Cliques of an Undirected Graph (Algorithm A457)
+  2170 - 0.194829        Applications of Symbol Manipulation in Theoretical Physics
+  1259 - 0.194829        Applications of Binary Numbers In Computer Routines
+  1566 - 0.190920        Optimal Starting Values for Newton-Raphson Calculation of SQRT(x)
+  1886 - 0.190920        Generation of Optimal Code for Expressions via Factorization
+  2186 - 0.190920        Numerical Properties of the Ritz-Trefftz Algorithm for Optimal Control
+  2716 - 0.178141        Optimizing the Performance of a Relational Algebra Database Interface
+  2876 - 0.178141        Intentional Resolution of Privacy Protection in Database Systems
+   804 - 0.177048        Exponentiation of Series (Algorithms 134)
+  1658 - 0.174235        Analysis of Algorithms for the Zero-One Programming Problem
+  3055 - 0.174235        An Analysis of Algorithms for the Dutch National Flag Problem
+  2752 - 0.172786        Generation of All the Cycles of a Graph from a Set of Basic Cycles [H] (Algorithm 492)
+   622 - 0.172435        Optimal Classification of Objects (Algorithm 83)
+    22 - 0.162358        Unusual Applications Department--Automatic Implementation of Computer Logic
+-----------------------------------
+Searching for: 15 - Find all discussions of horizontal microcode optimization with special emphasis on optimization of loops and global optimization.
+-----------------------------------
+  3125 - 0.972713        Global Optimization by Suppression of Partial Redundancies
+  1807 - 0.689730        Optimization of Expressions in Fortran
+  1231 - 0.558593        Peephole Optimization
+  2344 - 0.516792        On the Optimization of Performance of Time-Sharing Systems by Simulation
+  1947 - 0.446874        Object code Optimization
+  2835 - 0.391015        Recursion Analysis for Compiler Optimization
+  2464 - 0.279296        The Complex Method for Constrained Optimization [E4] (Algorithm A454)
+  2611 - 0.279296        The Complex Method for Constrained Optimization (Algorithm R454)
+   658 - 0.173744        Discussion-The Pros and Cons of a Special IR Language
+  2685 - 0.169839        The Parallel Execution of DO Loops
+  2266 - 0.163758        A Highly Parallel Algorithm for Approximating All Zeros of a Polynomial with Only Real Zeros
+  2227 - 0.153161        Proof of a Program: FIND
+    89 - 0.151699        A Routine to Find the Solution of Simultaneous Linear Equations with Polynomial Coefficients
+    95 - 0.135142        Elimination of Special Functions from Differential Equations
+  2323 - 0.135142        Toward a General Theory of Special Functions
+  2444 - 0.120706        Finding All Cliques of an Undirected Graph (Algorithm A457)
+  2752 - 0.106112        Generation of All the Cycles of a Graph from a Set of Basic Cycles [H] (Algorithm 492)
+   776 - 0.103403        Partition, Quicksort, and Find (Algorithm 62, 64, & 65)
+   121 - 0.097675        Over-all Computation Control and Labelling
+  1910 - 0.095497        An Algorithm for Solving a Special Class of Tridiagonal Systems of Linear Equations
+-----------------------------------
+Searching for: 16 - find all descriptions of file handling in operating systems based on multiple processes and message passing.
+-----------------------------------
+  3119 - 0.295009        The Impact of Distributions and Disciplines on Multiple Processor Systems
+  2867 - 0.293644        Modularization and Hierarchy in a Family of Operating Systems
+  2840 - 0.232714        Protection in Operating Systems
+  2160 - 0.215163        Canonical Structure in Attribute Based File Organization
+  2378 - 0.208997        An Operating System Based on the Concept of a Supervisory Computer
+  1461 - 0.207707        Discussion Summary on Operating Systems
+  3068 - 0.206857        A Model for Verification of Data Security in Operating Systems
+  1210 - 0.199475        File-Handling Within FORTRAN
+  2688 - 0.179303        Attribute Based File Organization in a Paged Memory Environment
+  1753 - 0.176475        Virtual Memory, Processes, and Sharing in MULTICS
+  3147 - 0.173302        A Model for Automating File and Program Design in Business Application Systems
+  1846 - 0.170958        On Simulating Networks of Parallel Processes in Which Simultaneous Events May Occur
+   855 - 0.148626        Organization and Structure of Dataon Disk File Memory Systems for Efficient Sorting and Other Data Processing Programs
+  2060 - 0.145813        GEDANKEN-A Simple Typeless Language Based on the Principle of Completeness and the Reference Concept
+  2130 - 0.145813        Automatic Segmentation of Cyclic Program Structures Based on Connectivity and Processor Timing
+  2696 - 0.145813        A Method of Bivariate Interpolation and Smooth Surface Fitting Based on Local Procedures
+  3140 - 0.143834        Social Processes and Proofs of Theorems and Programs
+  2168 - 0.143349        List Tracing in Systems Allowing Multiple Cell-Types
+   695 - 0.132615        Use of the Disk File on Stretch
+  1892 - 0.132562        Degree of Multiprogramming in Page-on-Demand Systems
+-----------------------------------
+Searching for: 17 - Optimization of intermediate and machine code
+-----------------------------------
+  1947 - 0.886692        Object code Optimization
+  1807 - 0.526683        Optimization of Expressions in Fortran
+  1331 - 0.456421        Code Structures for Protection and Manipulation of Variable-Length Items
+  3125 - 0.451443        Global Optimization by Suppression of Partial Redundancies
+  1757 - 0.426875        Data Code for Calendar Date for Machine-to-Machine Data Interchange* (Proposed USA Standard)
+   210 - 0.391267        Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+   406 - 0.391267        The Use of Threaded Lists in Constructing a Combined ALGOL and Machine-Like Assembly Processor
+  1275 - 0.365137        Code Structures for Protection and Manipulation of Variable Length Items (Corrigendum)
+  2834 - 0.365137        Efficient Generation of the Binary Reflected Gray Code and Its Applications
+  1159 - 0.354923        Machine Independence: Its Technology and Economics
+  1854 - 0.354923        On Multiprogramming, Machine Coding, and Computer Organization
+  2079 - 0.354923        On Multiprogramming, Machine Coding, and Computer Organization
+  1231 - 0.345916        Peephole Optimization
+  1795 - 0.328794        Optimal Code for Serial and Parallel Computation
+  1014 - 0.312393        Machine Controls for Analysis of Variance
+  1167 - 0.312393        On the Translation of Machine Language Programs
+  2527 - 0.312393        Implementation of High Level Language Machine
+  3005 - 0.312393        Implications of Structured Programming for Machine Architecture
+  2344 - 0.310998        On the Optimization of Performance of Time-Sharing Systems by Simulation
+  1223 - 0.286263        High Speed Compilation of Efficient Object Code
+-----------------------------------
+Searching for: 18 - Languages and compilers for parallel processors, especially highly horizontal microcoded machines  code compaction
+-----------------------------------
+  1795 - 0.356467        Optimal Code for Serial and Parallel Computation
+   249 - 0.301252        Specification Languages for Mechanical Languages and Their Processors*-A Baker's Dozen
+  1811 - 0.243459        A Case Study in Programming for Parallel-Processors
+  2714 - 0.240330        Merging with Parallel Processors
+  2266 - 0.239035        A Highly Parallel Algorithm for Approximating All Zeros of a Polynomial with Only Real Zeros
+  3110 - 0.238309        Assembling Code for Machines with Span-Dependent Instructions
+   303 - 0.232452        Some Basic Terminology Connected With Mechanical Languages and Their Processors
+  2897 - 0.198831        A Case Study of a New Code Generation Technique for Compilers
+  1425 - 0.192286        Flow Diagrams, Turing Machines And Languages With Only Two Formation Rules
+   100 - 0.139011        Recursive Subscripting Compilers and List-Types Memories
+  3074 - 0.131909        A Time- and Space- Efficient Garbage Compaction Algorithm
+  1331 - 0.126999        Code Structures for Protection and Manipulation of Variable-Length Items
+  1603 - 0.124457        A Multiprogramming Monitor for Small Machines
+   651 - 0.121086        A Survey of Languages and Systems for Information Retrieval
+  2423 - 0.110534        A Parser-Generating System for Constructing Compressed Compilers
+  2317 - 0.109799        Programming Systems and Languages 1965-1975
+  2931 - 0.109799        Logic and Programming Languages
+  3188 - 0.109799        Semiotics and Programming Languages
+  2705 - 0.107806        Programming Languages, Natural Languages, and Mathematics
+  1158 - 0.106347        Program Structures for Parallel Processing
+-----------------------------------
+Searching for: 19 - Parallel algorithms
+-----------------------------------
+  3075 - 3.846127        Fast Parallel Sorting Algorithms
+  2714 - 1.070786        Merging with Parallel Processors
+   141 - 0.936938        Some Thoughts on Parallel Processing
+  1158 - 0.936938        Program Structures for Parallel Processing
+  2342 - 0.936938        Interference Between Communicating Parallel Processes
+  2851 - 0.936938        Formal Verification of Parallel Programs
+   804 - 0.852277        Exponentiation of Series (Algorithms 134)
+  1342 - 0.852277        Transportation Problem (Algorithms 293 [H])
+  1873 - 0.852277        Accelerating LP Algorithms
+  2007 - 0.852277        Algorithms Policy/Revised August 1970
+  2306 - 0.852277        Ancient Babylonian Algorithms
+   392 - 0.803089        Comment on A Paper on Parallel Processing
+   950 - 0.803089        Parallel Methods for Integrating Ordinary Differential Equations
+  1795 - 0.803089        Optimal Code for Serial and Parallel Computation
+  1828 - 0.803089        Synchronization in a Parallel-Accessed Data Base
+  2685 - 0.803089        The Parallel Execution of DO Loops
+  2896 - 0.803089        An Exercise in Proving Parallel Programs Correct
+  2973 - 0.803089        Sorting on a Mesh-Connected Parallel Computer
+  3156 - 0.803089        Computing Connected Components on Parallel Computers
+   371 - 0.753314        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+-----------------------------------
+Searching for: 20 - Graph theoretic algorithms applicable to sparse matrices
+-----------------------------------
+  2631 - 0.344522        An Information-Theoretic Approach to Text Searching in Direct Access Systems
+  2490 - 0.310184        Efficient Algorithms for Graph Manipulation [H] (Algorithm A447)
+  1660 - 0.289609        Index By Subject To algorithms, 1960-1968
+  1796 - 0.289609        Index by Subject to Algorithms, 1969
+  1952 - 0.289609        Index by Subject to Algorithms, 1970
+  3139 - 0.250196        New Methods to Color the Vertices of a Graph
+  2860 - 0.248236        A Practitioner's Guide To Addressing Algorithms
+  1504 - 0.248147        Algorithms for Finding a Fundamental Set of Cycles for an Undirected Linear Graph
+   955 - 0.222276        A Class of Matrices to Test Inversion Procedures
+  3115 - 0.222276        Orderly Enumeration of Nonsingular Binary Matrices Applied to Text Encryption
+  2267 - 0.206863        Algorithms To Reveal Properties of Floating-Point Arithmetic
+  2830 - 0.206863        A Practitioner's Guide to Addressing Algorithms (Corrigendum)
+  2986 - 0.206708        Operations on Sparse Relations
+  3176 - 0.206708        Storing a Sparse Table
+  1961 - 0.200157        An Efficient Search Algorithm to Find the Elementary Circuits of a Graph
+  2619 - 0.200157        Graph Coloring Conditions for the Existence of Solutions to the Timetable Problem
+  2134 - 0.177820        An Extension of the Munkres Algorithm for the Assignment Problem to Rectangular Matrices
+  2263 - 0.165491        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  2691 - 0.165491        Comments on the Algorithms of Verhelst for the Conversion of Limited-Entry Decision Tables to Flowcharts
+  2442 - 0.155031        A Sparse Matrix Package (Algorithm R408)
+-----------------------------------
+Searching for: 21 - computational complexity, intractability, class complete reductions, algorithms and efficiency
+-----------------------------------
+  2435 - 0.268567        A Class of Dynamic Memory Allocation Algorithms
+  2454 - 0.258291        Computational Algorithms for Closed Queueing Networks with Exponential Servers
+  1650 - 0.252700        A Unifying Computational Method for the Analysis of Complete Factorial Experiments
+  2337 - 0.240548        A Sorting Problem and Its Complexity
+  2504 - 0.200456        Concerning Music and Computer Composition in Computational Linguistics
+   371 - 0.176565        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+   319 - 0.165971        On a Class of Iteration Formulas and Some Historical Notes
+  2701 - 0.140531        A Fast and Usually Linear Algorithm for Global Flow Analysis (Abstract only--Complete paper JACM 23,1 January, 1976)
+  2932 - 0.136267        Complexity of Computations
+  3007 - 0.136267        Complexity of Computations (Corrigendum)
+  2993 - 0.132777        Occurrences of Cycling and Other Phenomena Arising in a Class of Linear Programming Models
+  2283 - 0.118080        Thinning Algorithms on Rectangular, Hexagonal, and Triangular Arrays
+  2505 - 0.118080        Reflection-Free Permutations, Rosary Permutations, and Adjacent Transposition Algorithms
+   425 - 0.116433        Complete Elliptic Integral (Algorithm 149)
+   876 - 0.116433        Complete Elliptic Integral (Algorithm 149)
+   883 - 0.116433        Complete Elliptic Integrals (Algorithm 165)
+  2702 - 0.102200        On the Complexity of LR(k) Testing
+  1943 - 0.101879        Complete Elliptic Integrals (Algorithm 165 [S21])
+  1997 - 0.101879        Increasing the Efficiency of Quicksort
+  2081 - 0.101879        Some Complete Calculi for Matrices
+-----------------------------------
+Searching for: 22 - I am interested in hidden line and hidden surface algorithms for cylinders, toroids, spheres, and cones.  This is a rather specialized topic in computer graphics.
+-----------------------------------
+  1915 - 0.231032        An Algorithm for Hidden Line Elimination
+  2384 - 0.228479        Hidden-Line Plotting Program [J6] (Algorithm A420)
+  2967 - 0.211859        A Comparison of Hardware and Software Associative Memories in the Context of Computer Graphics
+  2369 - 0.184459        Hidden Lines Elimination for a Rotating Object
+  2441 - 0.165093        Hidden-Line Plotting Program (Algorithm R420)
+  2473 - 0.165093        Hidden-Line Plotting Program (Algorithm R420)
+  2564 - 0.165093        Hidden-Line Plotting Program (Algorithm R420)
+  2637 - 0.165093        Hidden-Line Plotting Program (Algorithm R420)
+  2638 - 0.165093        Hidden-Line Plotting Program (Algorithm R420)
+  1496 - 0.125086        A Formal Semantics for Computer Languages and its Application In a Compiler-Compiler
+  1674 - 0.123540        One-Line Random Number Generators and Their Use in Combinations
+    57 - 0.119681        J.E.I.D.A. and Its Computer Center
+  2426 - 0.117302        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  2924 - 0.111824        An Interactive Computer Graphics Approach to Surface Representation
+  2534 - 0.109355        Design and Implementation of a Diagnostic Compiler for PL/I
+  2829 - 0.105614        Texture and Reflection in Computer Generated Images
+  2828 - 0.094565        Hierarchical Geometric Models for Visible Surface Algorithms
+  1678 - 0.092847        Automata, Formal Languages, Abstract Switching, and Computability in a Ph.D. Computer Science Program
+   331 - 0.088011        Successive Approximations and Computer Storage Problems in Ordinary Differential Equations
+  2504 - 0.088011        Concerning Music and Computer Composition in Computational Linguistics
+-----------------------------------
+Searching for: 23 - Distributed computing structures and algorithms
+-----------------------------------
+  3148 - 0.928686        High Level Programming for Distributed Computing
+   371 - 0.560802        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+   657 - 0.496093        Information Structures for Processing and Retrieving
+  1869 - 0.496093        Block Structures, Indirect Addressing, and Garbage Collection
+  1745 - 0.488778        A Position Paper on Computing and Communications
+  1862 - 0.488778        Computing Capabilities at Argentine and Chilean Universities
+  3082 - 0.446353        Time, Clocks, and the Ordering of Events in a Distributed System
+  1331 - 0.413411        Code Structures for Protection and Manipulation of Variable-Length Items
+  2765 - 0.413411        Analysis and performance of Inverted Data Base Structures
+  2958 - 0.413411        Abstract Data Types and the Development of Data Structures
+  1889 - 0.407315        Introducing Computing to Smaller Colleges and Universities -- A Progress Report
+  2387 - 0.407315        Maximum Computing Power and Cost Factors in the Centralization Problem
+  2283 - 0.375044        Thinning Algorithms on Rectangular, Hexagonal, and Triangular Arrays
+  2505 - 0.375044        Reflection-Free Permutations, Rosary Permutations, and Adjacent Transposition Algorithms
+  1275 - 0.330729        Code Structures for Protection and Manipulation of Variable Length Items (Corrigendum)
+  1456 - 0.330729        Storage and Retrieval of Aspects of Meaning in Directed Graph Structures
+  2130 - 0.330729        Automatic Segmentation of Cyclic Program Structures Based on Connectivity and Processor Timing
+  2615 - 0.325852        Procedures for computing Smoothing and Interpolating Natural Splines [E1] (Algorithm A480)
+  3090 - 0.325852        Automated Welfare Client-Tracking and Service Integration: The Political Economy of Computing
+  1171 - 0.300036        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+-----------------------------------
+Searching for: 24 - Applied stochastic processes
+-----------------------------------
+  2376 - 0.614302        Synchronization of Communicating Processes
+  3073 - 0.614302        Communicating Sequential Processes
+   268 - 0.576011        Stochastic Evaluation of a Static Storage Allocation
+    20 - 0.537514        Accelerating Convergence of Iterative Processes
+   412 - 0.537514        Recursive Processes and ALGOL Translation
+  2342 - 0.537514        Interference Between Communicating Parallel Processes
+  1235 - 0.480009        A Stochastic Approach to the Grammatical Coding of English
+   927 - 0.473979        Linear Programming Applied to Ultraviolet Absorption Spectroscopy
+  2844 - 0.473979        Heaps Applied to Event Driven Mechanisms
+  1753 - 0.460727        Virtual Memory, Processes, and Sharing in MULTICS
+  3043 - 0.460727        Distributed Processes: A Concurrent Programming Concept
+  1359 - 0.394983        Data Filtering Applied to Information Storage and Retrieval Applications
+  3115 - 0.394983        Orderly Enumeration of Nonsingular Binary Matrices Applied to Text Encryption
+  1696 - 0.384008        An Algorithm for Identifying the Ergodic Subchains and Transient States of a Stochastic Matrix
+  2882 - 0.384008        A Stochastic Evaluation Model for Database Organization in Data Retrieval Systems
+  3140 - 0.383939        Social Processes and Proofs of Theorems and Programs
+   293 - 0.315986        The Applied Mathematics Laboratory of the David W. Taylor Model Basin
+  1194 - 0.315986        Establishment of the ACM Repository and Principles of the IR System Applied to its Operation
+  1441 - 0.315986        Methods of Numerical Integration Applied to a System Having Trivial Function Evaluations
+  2453 - 0.315986        Information Theory Applied to the Conversion of Decision Tables to Computer Programs
+-----------------------------------
+Searching for: 25 - Performance evaluation and modelling of computer systems
+-----------------------------------
+  2318 - 1.013326        The Role of Computer System Models in Performance Evaluation
+  3136 - 0.911015        Price/Performance Patterns of U.S. Computer Systems
+  1653 - 0.829009        System Performance Evaluation: Survey and Appraisal
+  3048 - 0.643486        Performance Evaluation of Highly Concurrent Computers by Deterministic Simulation
+   436 - 0.581499        Evaluation of Polynomials by Computer
+  2812 - 0.568591        Computer-Aided Analysis and Design of Information Systems
+  2679 - 0.567510        Some Performance Tests of "quicksort" and Descendants
+  3089 - 0.566752        Performance of Rollback Recovery Systems under Intermittent Failures
+  1341 - 0.541796        Levels of Computer Systems
+  2765 - 0.472925        Analysis and performance of Inverted Data Base Structures
+  1267 - 0.466811        Performance of Systems Used for Data Transmission Transfer Rate of Information Bits -An ASA Tutorial Standard
+  2344 - 0.466811        On the Optimization of Performance of Time-Sharing Systems by Simulation
+   143 - 0.454873        A List of Computer Systems Programs for the IBM 650, DATATRON 205, and UNIVAC SS-80
+  2452 - 0.423045        Evaluation and Selection of File Organization-A Model and System
+  3070 - 0.406347        Hybrid Simulation Models of Computer Systems
+  2522 - 0.386668        The Design, Implementation, and Evaluation of a Working Set Dispatcher
+   238 - 0.371921        Simulation and Analysis of Biochemical Systems
+  2889 - 0.359431        Performance of Height-Balanced Trees
+  1435 - 0.338622        Design of Computer Simulation Experiments for Industrial Systems
+  2188 - 0.338622        An Approach to the Optimum Design of Computer Graphics Systems
+-----------------------------------
+Searching for: 26 - Concurrency control mechanisms in operating systems
+-----------------------------------
+  2840 - 1.011783        Protection in Operating Systems
+  2939 - 0.742282        Abstraction Mechanisms in CLU
+  2867 - 0.632364        Modularization and Hierarchy in a Family of Operating Systems
+  3068 - 0.632364        A Model for Verification of Data Security in Operating Systems
+  2578 - 0.607181        Self-stabilizing Systems in Spite of Distributed Control
+  1462 - 0.574158        Multilevel Operating Systems
+  1461 - 0.502388        Discussion Summary on Operating Systems
+  3153 - 0.485745        The Control of Response Times in Multi-Class Systems by Memory Allocations
+    59 - 0.364309        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+    86 - 0.364309        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+  1247 - 0.358849        An Operating Environment for Dynamic-Recursive Computer Programming Systems
+   618 - 0.342060        Computers- The Key to Total Systems Control: An Industrial Viewpoint
+   971 - 0.334352        Time Sharing in a Traffic Control Program
+  2433 - 0.334352        Control Structures in Illiac IV Fortran
+    84 - 0.303591        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957-II (Part 2 see CA590406)
+  1198 - 0.278626        Solution of a Problem in Concurrent Programming Control
+  1338 - 0.278626        Additional Comments on a Problem in Concurrent Progamming Control
+  1353 - 0.278626        Techniques for Automatic Tolerance Control in Linear Programming
+  2626 - 0.278626        Protection and the Control of Information Sharing in Multics
+  1677 - 0.264444        Storage Organization in Programming Systems
+-----------------------------------
+Searching for: 27 - Memory management aspects of operating systems
+-----------------------------------
+  2988 - 0.765022        Memory Management and Response Time
+  2198 - 0.719187        Introduction to "Feature Analysis of Generalized Data Base Management Systems"
+  2867 - 0.656676        Modularization and Hierarchy in a Family of Operating Systems
+  3068 - 0.656676        A Model for Verification of Data Security in Operating Systems
+  1462 - 0.649579        Multilevel Operating Systems
+  2840 - 0.649579        Protection in Operating Systems
+  1001 - 0.643613        Copyright Aspects of Computer Usage
+  2798 - 0.624070        Analysis of Interleaved Memory Systems Using Blockage Buffers
+  1461 - 0.568382        Discussion Summary on Operating Systems
+  1752 - 0.568181        Resource Management for a Medium Scale Time-Sharing Operating system
+  2852 - 0.503431        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  3153 - 0.499256        The Control of Response Times in Multi-Class Systems by Memory Allocations
+    59 - 0.466885        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+    86 - 0.466885        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+  2262 - 0.461100        Garbage Collection for Virtual Memory Computer Systems
+  1404 - 0.459724        Computational Aspects of Multiple Covariance Analysis on a Multifactor Structure
+  2502 - 0.459724        A Comment on the Practical Aspects of Computer Science Education
+  1959 - 0.447661        An Interrupt Based Organization for Management Information Systems
+   855 - 0.436849        Organization and Structure of Dataon Disk File Memory Systems for Efficient Sorting and Other Data Processing Programs
+  1247 - 0.405987        An Operating Environment for Dynamic-Recursive Computer Programming Systems
+-----------------------------------
+Searching for: 28 - Any information on packet radio networks.  Of particular interest are algorithms for packet routing, and for dealing with changes in network topography.  I am not interested in the hardware used in the network.
+-----------------------------------
+   383 - 0.243136        On Finding Minimum Routes in a Network With Turn Penalties
+  2849 - 0.238099        Ethernet: Distributed Packet Switching for Local Computer Networks
+  1890 - 0.208282        Simulation of Traffic Flows in a Network
+    36 - 0.208068        A Queue Network Simulator for the IBM 650 and Burroughs 220
+   975 - 0.190239        The New Program of Work for the International Standard Vocabulary in Computers and Information Processing
+  2967 - 0.180539        A Comparison of Hardware and Software Associative Memories in the Context of Computer Graphics
+  2371 - 0.173794        A System for Interprocess Communication in a Resource Sharing Computer Network
+  3158 - 0.167302        Secure Personal Computing in an Insecure Network
+  1215 - 0.167231        Some Techniques Used in the ALCOR ILLINOIS 7090
+   820 - 0.161056        Checking for Loops in Networks
+  2372 - 0.156739        On the Implementation of Security Measures in Information Systems
+  1634 - 0.154160        27 bits Are Not Enough for 8-digit Accuracy
+  2626 - 0.153711        Protection and the Control of Information Sharing in Multics
+  2622 - 0.146792        A User Authentication Scheme Not Requiring Secrecy in the Computer
+  2949 - 0.146782        A Correctness Proof of a Topology Information Main tenance Protocol for a Distributed Computer Network
+  1233 - 0.146481        Conventions for the Use of Symbols in the Preparation of Flowcharts for Information Processing Systems (A Standard Working Paper)
+  2247 - 0.144881        On the Criteria To Be Used in Decomposing Systems into Modules
+  2852 - 0.144868        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  2158 - 0.141930        A Stopping Criterion for the Newton-Raphson Method in Implicit Multistep Integration Algorithms for Nonlinear Systems of Ordinary Differential Equations
+  3038 - 0.141524        Using Encryption for Authentication in Large Networks of Computers
+-----------------------------------
+Searching for: 29 - Number theoretic algorithms, especially involving prime number series, sieves, and Chinese Remainder theorem.
+-----------------------------------
+  2089 - 0.413244        Prime Number (Algorithm 310 $A1))
+  1537 - 0.361588        Prime Number Generator 1 (Algorithm 310 [A1])
+  1538 - 0.361588        Prime Number Generator 2 (Algorithm 311 [A1])
+  1840 - 0.309933        An Efficient Prime Number Generator (Algorithm 357 [A1])
+  2462 - 0.309933        An Efficient Prime Number Generator (Algorithm R357)
+  1539 - 0.292208        Prime Number Generator 1; Prime Number Generator 2 (Algorithm 35[A1]; Algorithm 310[A1]; Algorithm 311[A1])
+  1841 - 0.258277        A Prime Number Generator Using The Treesort Principle (Algorithm 356 [A1])
+  2770 - 0.206622        The Quadratic Hash Method When the Table Size Is Not a Prime Number
+   334 - 0.166999        Division and Square Root in the Quater-Imaginary Number System
+   785 - 0.166999        Conversions Between Calendar Date And Julian day Number (Algorithm 199)
+   977 - 0.166999        Conversions Between Calendar Date and Julian Day Number (Algorithm 199 [Z])
+  1674 - 0.166999        One-Line Random Number Generators and Their Use in Combinations
+   804 - 0.165350        Exponentiation of Series (Algorithms 134)
+   197 - 0.151923        An Imaginary Number System
+   294 - 0.151923        An Imaginary Number System
+  3131 - 0.151923        FOCUS Microcomputer Number System
+   626 - 0.135596        A Method of Representation, Storage and Retrieval of 13 Random Codes in a 4-Digit Number or 16 Random Codes in a 5-Digit Number
+  1520 - 0.133599        Absolute Value and Square Root of a Complex Number (Algorithm 312 [A2])
+  1631 - 0.132932        Testing a Random Number Generator
+  1930 - 0.132932        Extremely Portable Random Number Generator
+-----------------------------------
+Searching for: 30 - Articles on text formatting systems, including  what you see is what you get  systems.  Examples: t/nroff, scribe, bravo.
+-----------------------------------
+   195 - 0.393973        What is a Code?
+   248 - 0.196987        What is Proprietary In Mathematical Programming?-Impressions of a Panel Discussion
+  1461 - 0.102928        Discussion Summary on Operating Systems
+  2631 - 0.098161        An Information-Theoretic Approach to Text Searching in Direct Access Systems
+  2909 - 0.097257        What Can We Do about the Unnecessary Diversity of Notation for Syntactic Definitions?
+    84 - 0.082855        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957-II (Part 2 see CA590406)
+  2479 - 0.077818        Curriculum Recommendations for Graduate Professional Programs in Information Systems: Recommended Addendum on Information Systems Administration
+  2955 - 0.076458        Buddy Systems
+  1892 - 0.073520        Degree of Multiprogramming in Page-on-Demand Systems
+  2184 - 0.073520        On the Meaning of Names in Programming Systems
+  2321 - 0.073520        On the Interface Between Computers and Data Communications Systems
+  2372 - 0.073520        On the Implementation of Security Measures in Information Systems
+  3119 - 0.073520        The Impact of Distributions and Disciplines on Multiple Processor Systems
+    18 - 0.061167        Simple Automatic Coding Systems
+    25 - 0.061167        General Purpose Programming Systems
+  1012 - 0.061167        Formal Parsing Systems
+  1164 - 0.061167        Emulation of Large Systems
+  1341 - 0.061167        Levels of Computer Systems
+  1462 - 0.061167        Multilevel Operating Systems
+  1754 - 0.061167        Dynamic Storage Allocation Systems
+-----------------------------------
+Searching for: 31 - I d like to find articles describing the use of singular value decomposition in digital image processing.  Applications include finding approximations to the original image and restoring images that are subject to noise. An article on the subject is H.C. Andrews and C.L. Patterson  Outer product expansions and their uses in digital image processing , American Mathematical Monthly, vol. 82.
+-----------------------------------
+  2517 - 0.181279        Some Comments on the Use of Ambiguous Decision Tables and Their Conversion to Computer Programs
+  1183 - 0.129934        A Note on the Use of a Digital Computer for Doing Tedious Algebra and Programming
+   406 - 0.129913        The Use of Threaded Lists in Constructing a Combined ALGOL and Machine-Like Assembly Processor
+  2054 - 0.127602        On the Feasibility of Voice Input to an On-line Computer Processing System
+    86 - 0.123461        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+    59 - 0.123461        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+  1908 - 0.121462        Time-Sharing and Batch-Processing:  An Experimental Comparison of Their Values in a Problem - Solving Situation
+  1660 - 0.115535        Index By Subject To algorithms, 1960-1968
+  1796 - 0.115535        Index by Subject to Algorithms, 1969
+  1952 - 0.115535        Index by Subject to Algorithms, 1970
+   415 - 0.115451        The Use of Digital Computers in Western Germany
+  2163 - 0.114362        Education Related to the Use of Computers in Organizations
+    68 - 0.113038        The Role of the University in Computers, Data Processing and Related Fields
+   975 - 0.113038        The New Program of Work for the International Standard Vocabulary in Computers and Information Processing
+  1383 - 0.111608        Implications of the Digital Computer for Education In the Mathematical Sciences
+   532 - 0.110930        On the Computation of Rational Approximations to Continuous Functions
+  3059 - 0.110440        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+  1464 - 0.107289        An ALGOL Compiler: Construction and Use in Relation to an Elaborate Operating System
+    84 - 0.102884        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957-II (Part 2 see CA590406)
+  1398 - 0.098076        Robot Data Screening: A Solution to Multivariate Type Problems in the Biological and Social Sciences
+-----------------------------------
+Searching for: 32 - I d like to find articles describing graph algorithms that are based on the eigenvalue decomposition  or singular value decomposition  of the ajacency matrix for the graph.  I m especially interested in any heuristic algorithms for graph coloring and graph isomorphism using this method.
+-----------------------------------
+  2619 - 0.422670        Graph Coloring Conditions for the Existence of Solutions to the Timetable Problem
+  2177 - 0.347294        An Algorithm for the Blocks and Cutnodes of a Graph
+  1961 - 0.307546        An Efficient Search Algorithm to Find the Elementary Circuits of a Graph
+  2289 - 0.300384        Cellular Arrays for the Solution of Graph Problems
+  2490 - 0.278574        Efficient Algorithms for Graph Manipulation [H] (Algorithm A447)
+  2161 - 0.277835        An Algorithm for the Blocks and Cutnodes of a Graph (Corrigendum)
+  2934 - 0.275100        Comment on Computing the k Shortest Paths in a Graph
+  3139 - 0.273341        New Methods to Color the Vertices of a Graph
+  1504 - 0.262164        Algorithms for Finding a Fundamental Set of Cycles for an Undirected Linear Graph
+  1839 - 0.250012        Singular Value Decomposition of a Complex Matrix (Algorithm 358 [F1, 4,5])
+  1905 - 0.241497        The Simplex Method of Linear Programming Using LU Decomposition
+  2430 - 0.223250        The Elementary Circuits of a Graph [H] (Algorithm A459)
+  2790 - 0.223250        The Elementary Circuits of a Graph (Algorithm R459)
+  2630 - 0.194644        On Computing Sets of Shortest Paths in a Graph
+  2178 - 0.191788        A Language Extension for Graph Processing and Its Formal Semantics
+  2752 - 0.181911        Generation of All the Cycles of a Graph from a Set of Basic Cycles [H] (Algorithm 492)
+  2691 - 0.169976        Comments on the Algorithms of Verhelst for the Conversion of Limited-Entry Decision Tables to Flowcharts
+  1456 - 0.155921        Storage and Retrieval of Aspects of Meaning in Directed Graph Structures
+  2368 - 0.155187        An Implemented Graph Algorithm for Winning Shannon Switching games
+  1481 - 0.151887        Graph Plotter (Algorithm 278 [J6])
+-----------------------------------
+Searching for: 33 - Articles about the sensitivity of the eigenvalue decomposition of real matrices, in particular, zero one matrices.  I m especially interested in the separation of eigenspaces corresponding to distinct eigenvalues. Articles on the subject: C. Davis and W.M. Kahn,  The rotation of eigenvectors by a permutation:, SIAM J. Numerical Analysis, vol. 7, no. 1  1970   G.W. Stewart,  Error bounds for approximate invariant subspaces of closed linear operators , SIAM J. Numerical Analysis., Vol. 8, no. 4  1971 .
+-----------------------------------
+  1658 - 0.233691        Analysis of Algorithms for the Zero-One Programming Problem
+  1636 - 0.209387        Invariant Imbeding and the Numerical Integration of Boundary-Value Problems for Unstable Linear Systems of Ordinary Differential Equations
+  2226 - 0.203188        Further Evidence for the Analysis of Algorithms for the Zero-One Programming Problem
+  1285 - 0.202466        Eigenvalues and Eigenvectors of a Real Symmetric Matrix by the QR Method (Algorithm 254 [F2])
+  1577 - 0.202466        Eigenvalues and Eigenvectors of a Real Symmetric Matrix by the QR Method (Algorithm 254 [F2])
+   980 - 0.196264        Multiple-Precision Arithmetic and the Exact Calculation of the 3-j, 6-j and 9-j Symbols
+  1766 - 0.170359        Quasilinearization and the Estimation of Differential Operators from Eigenvalues
+  1617 - 0.152635        Eigenvalues and Eigenvectors of the Symmetric System (Algorithm 297 [F2])
+   697 - 0.149196        A Numerical Method for the Determination of Moving Field Isodose Curves for Treatment Planning in Radiotherapy
+  1147 - 0.148766        On the Numerical Solution of Boundary Value Problems for Linear Ordinary Differential Equations*
+  1274 - 0.148766        On the Numerical Solution of an N-Point Boundary Value Problem for Linear Ordinary Differential Equations
+  1637 - 0.140806        Problems in the Statistical Analysis of Simulation Experiments: The Comparison of Means and the Length of Sample Records
+  2134 - 0.134839        An Extension of the Munkres Algorithm for the Assignment Problem to Rectangular Matrices
+  1978 - 0.132830        The Use of Interactive Graphics To Solve Numerical Problems
+  2281 - 0.132652        The Eigen problem of Block Tridiagonal Matrices
+  1905 - 0.131707        The Simplex Method of Linear Programming Using LU Decomposition
+   174 - 0.131641        Interval Estimation of the Time in One State to Total Time Ratio in a DoubleExponential Process
+  1286 - 0.130310        Eigenvalues of a Real Symmetric Matrix by the QR Method (Algorithm 253 [F2])
+  1576 - 0.130310        Eigenvalues of a Real Symmetric Matrix by the QR Method (Algorithm 253 [F2])
+   647 - 0.130196        Numerical Solution of the Polynomial Equation (Algorithm 30)
+-----------------------------------
+Searching for: 34 - Currently interested in isolation of root of polynomial  there is an old article by Heindel, L.E. in J. ACM, Vol. 18, 533 548.  I would like to find more recent material.
+-----------------------------------
+   679 - 0.114754        Recent Improvements in MADCAP
+    89 - 0.113082        A Routine to Find the Solution of Simultaneous Linear Equations with Polynomial Coefficients
+   177 - 0.111204        Solution of Polynomial Equation by Bairstow Hitchcock Method, A. A. Grau Communications ACM, February, 1960 (Algorithm)
+  1142 - 0.096592        An Extension of ALGOL-Like Languages
+  1961 - 0.095412        An Efficient Search Algorithm to Find the Elementary Circuits of a Graph
+  2964 - 0.092782        An Approach to Optimal Design of Storage Parameters in Databases
+  1643 - 0.089815        An Improvement to Iterative Methods of Polynomial Factorization
+   406 - 0.088165        The Use of Threaded Lists in Constructing a Combined ALGOL and Machine-Like Assembly Processor
+   653 - 0.088165        Translation of Retrieval Requests Couched in a "Semiformal" English-Like Language*
+   672 - 0.086065        Recent Developments Affecting ADP in Tax Administration
+   248 - 0.079409        What is Proprietary In Mathematical Programming?-Impressions of a Panel Discussion
+   912 - 0.078855        Addressing an Array Yi in k-Dimensions by Fortran for Analysis of Variance
+  1620 - 0.078377        Methods of Evaluating Polynomial Approximations in Function Evaluation Routines
+  1810 - 0.074702        Is Automatic "Folding" of Programs Efficient Enough To Displace Manual?
+  2208 - 0.072354        Storage Utilization in a Memory Hierarchy When Storage Assignment Is Performed by a Hashing Algorithm
+  1771 - 0.070460        CURRICULUM 68 -- Recommendations for Academic Programs in Computer Science -- A Report of the ACM Curriculum Committee on Computer science
+  1949 - 0.068605        Finiteness Assumptions and Intellectual Isolation of Computer Scientists
+  2227 - 0.067969        Proof of a Program: FIND
+  3161 - 0.067790        An ACM Executive Committee Position on the Crisis in Experimental Computer Science
+   718 - 0.067548        An Experiment in Automatic Verification of Programs
+-----------------------------------
+Searching for: 35 - Probabilistic algorithms especially those dealing with algebraic and symbolic manipulation.  Some examples: Rabiin,  Probabilistic algorithm on finite field , SIAM Waztch,  Probabilistic testing of polynomial identities , SIAM
+-----------------------------------
+  1474 - 0.307369        Tests of Probabilistic Models for Propagation of Roundoff Errors
+  1397 - 0.275440        Proceedings of the ACM Symposium on Symbolic and Algebraic Manipulation
+  3203 - 0.162870        GRAD Assistant - A Program for Symbolic Algebraic Manipulation and Differentiation
+  2090 - 0.145512        Symbolic Expansion of Algebraic Expressions (Algorithm 377 $R2))
+  2850 - 0.139743        Symbolic Execution and Program Testing
+  1214 - 0.123479        Some Experiments in Algebraic Manipulation by Computer
+  2414 - 0.122774        Arithmetic Overa Finite Field [A1] (Algorithm A469)
+   284 - 0.120871        Manipulation of Algebraic Expressions
+   762 - 0.118373        Some Remarks on the Syntax of Symbolic Programming Languages
+  3201 - 0.107813        Symbolic Manipulation of Poisson Series
+   371 - 0.096427        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+   393 - 0.088880        Two Subroutines for Symbol Manipulation with an Algebraic Compiler
+  1664 - 0.087585        An Algorithm for Deriving the Equations of Mathematical Physics by Symbolic Manipulation
+  1122 - 0.085017        A Note on Some Compiling Algorithms
+  2426 - 0.077545        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  2702 - 0.077243        On the Complexity of LR(k) Testing
+   319 - 0.075856        On a Class of Iteration Formulas and Some Historical Notes
+  1595 - 0.070438        On the Computer Enumeration of Finite Topologies
+   403 - 0.069408        Thunks -- A Way of Compiling Procedure Statements with Some Comments on Procedure Declarations
+   717 - 0.066320        Partitioning Algorithms for Finite Sets
+-----------------------------------
+Searching for: 36 - Fast algorithm for context free language recognition or parsing
+-----------------------------------
+  2110 - 1.272600        An Efficient Context-free Parsing Algorithm
+  2476 - 0.738703        Equivalence Between AND/OR Graphs and Context-Free Grammars
+  2030 - 0.561459        Context-Sensitive Parsing
+  1737 - 0.535565        A Global Parser for Context-Free Phrase Structure Grammars
+  1768 - 0.535565        A Global Parser for Context-Free Phrase Structure Grammars
+  1350 - 0.428452        The Augmented Predictive Analyzer for Context-Free Languages-Its Relative Efficiency
+  2698 - 0.428452        Syntax-Directed Least-Errors Analysis for Context-Free Languages: A Practical Approach
+  1131 - 0.421094        On Context and Ambiguity in Parsing*
+  3106 - 0.341845        A Fast Algorithm for Copying List Structures
+  1265 - 0.330602        On the Relative Efficiencies of Context-Free Grammar Recognizers
+  2061 - 0.327430        An Algorithm for the Construction Of Bounded-Context Parsers
+  3172 - 0.308669        An Algorithm for Planning Collision-Free Paths Among Polyhedral Obstacles
+  2811 - 0.298775        Structural Pattern Recognition Of Carotid Pulse Waves Using A General Waveform Parsing System
+  2050 - 0.288117        Automatic Parsing for Content Analysis
+  1669 - 0.284870        Algol Procedures for the Fast Fourier Transform (Algorithm 338 [C6])
+  1679 - 0.284870        A Fast Fourier Transform Algorithm for Real-Valued Series
+  2963 - 0.284870        A Fast Algorithm for Computing Longest Common Subsequences
+  2084 - 0.264482        A Note on the Complement of Inherently Ambiguous Context-Free Languages
+    28 - 0.263630        Request for Methods or Programs
+   344 - 0.255020        Ber or Bei Function (Algorithm 57)
+-----------------------------------
+Searching for: 37 - Articles describing the relationship between data types and concurrency  e.g. what is the type of a process   when is a synchronization attempt between two processes  type correct    in a message passing system is there any notion of the types of messages   i.e. any way to check that the sender of the message and the receiver are both treating the bit stream as some particular type 
+-----------------------------------
+  2651 - 0.307821        The Treatment of Data Types in EL1
+  1398 - 0.304064        Robot Data Screening: A Solution to Multivariate Type Problems in the Biological and Social Sciences
+   676 - 0.303531        On the Computation of a Certain Type of IncompleteBeta Functions
+  2958 - 0.296896        Abstract Data Types and the Development of Data Structures
+  1775 - 0.265149        Adjustment of the Inverse of a Symmetric Matrix when Two Symmetric Elements are Changed (Algorithm 325 [F1])
+  2020 - 0.257149        The Allocation of Computer Resources-Is Pricing the Answer?
+  2770 - 0.248923        The Quadratic Hash Method When the Table Size Is Not a Prime Number
+  2533 - 0.216424        Gray Code and the +- Sign Sequence when +-f (+-f(+-f(...+-f(x)...))) Is Ordered
+  1243 - 0.213478        Testing the Understanding of the Difference Between Call by Name and Call by Value in ALGOL 60
+    33 - 0.205199        A Programmed Binary Counter For The IBM Type 650 Calculator
+   195 - 0.195690        What is a Code?
+   860 - 0.195030        A Comparison Between the Polyphase and Oscillating Sort Techniques
+   248 - 0.189628        What is Proprietary In Mathematical Programming?-Impressions of a Panel Discussion
+  1484 - 0.188160        A Language for Describing the Functions of Synchronous Systems*
+   174 - 0.178129        Interval Estimation of the Time in One State to Total Time Ratio in a DoubleExponential Process
+  2321 - 0.171738        On the Interface Between Computers and Data Communications Systems
+  1428 - 0.165780        SHOCK III, A Computer System As an Aid in the Management of Critically III Patients
+  2718 - 0.158487        A Preliminary System for the Design of DBTG Data Structures
+   350 - 0.156330        Adjust Inverse of a Matrix When an Element is Perturbed (Algorithm 51)
+   545 - 0.156330        Adjust Inverse of a Matrix when an Element is Perturbed (Algorithm 51)
+-----------------------------------
+Searching for: 38 - What is the type of a module          I don t want the entire literature on Abstract Data Types here, but I m not sure how to phrase this to avoid it. I m interested in questions about how one can check that a module  matches  contexts in which it is used. 
+-----------------------------------
+  3177 - 0.169431        How to Share a Secret
+  2051 - 0.159215        A PL/I Program to Assist the Comparative Linguist
+  2194 - 0.148710        How To Keep the Addresses Short
+   195 - 0.147545        What is a Code?
+  1569 - 0.142538        Implementing Phrase-Structure Productions in PL/I
+   248 - 0.135662        What is Proprietary In Mathematical Programming?-Impressions of a Panel Discussion
+  1398 - 0.124747        Robot Data Screening: A Solution to Multivariate Type Problems in the Biological and Social Sciences
+  2729 - 0.120266        Comments on a Paper by T. C. Chen and I. T. Ho
+  2770 - 0.114032        The Quadratic Hash Method When the Table Size Is Not a Prime Number
+   174 - 0.113984        Interval Estimation of the Time in One State to Total Time Ratio in a DoubleExponential Process
+  2909 - 0.111976        What Can We Do about the Unnecessary Diversity of Notation for Syntactic Definitions?
+  2651 - 0.108030        The Treatment of Data Types in EL1
+  2958 - 0.106426        Abstract Data Types and the Development of Data Structures
+   887 - 0.103630        Combinatorial of M Things Taken One at a Time, Two at a Time, Up to N at a Time (Algorithm 161)
+   704 - 0.103630        Combinatorial of M Things Taken One At A Time Two At A Time, Up To N At A Time (Algorithm 161)
+  3028 - 0.099220        The Manchester Mark I and Atlas: A His torical Perspective
+  2247 - 0.095218        On the Criteria To Be Used in Decomposing Systems into Modules
+  2720 - 0.092287        Optimal Balancing of I/O Requests to Disks
+  1530 - 0.091065        The ML/I Macro Processor
+  3003 - 0.090367        A Survey of the Literature in Computer Science Education Since Curriculum '68
+-----------------------------------
+Searching for: 39 - What does type compatibility mean in languages that allow programmer defined types    You might want to restrict this to  extensible  languages that allow definition of abstract data types or programmer supplied definitions of operators like  , +. 
+-----------------------------------
+  2958 - 0.235635        Abstract Data Types and the Development of Data Structures
+  2956 - 0.229709        Some Ideas on Data Types in High-Level Languages
+  2651 - 0.208258        The Treatment of Data Types in EL1
+  3031 - 0.172377        Abstract Data Types and Software Validation
+  1142 - 0.138633        An Extension of ALGOL-Like Languages
+   724 - 0.129182        A Profile of the Programmer
+   689 - 0.116695        Report of a Visit to Discuss Common Programming Languages in Czechoslovakia and Poland, 1963
+  1389 - 0.110728        A Programmer's Description of L^6
+   990 - 0.101820        Constraint-Type Statements in Programming Languages
+  1608 - 0.100520        Numerical Integration of Function That Has a Pole
+  1379 - 0.090714        A Final Solution to the Dangling Else of ALGOL 60 and Related Languages
+  2909 - 0.084960        What Can We Do about the Unnecessary Diversity of Notation for Syntactic Definitions?
+  2647 - 0.080416        More on Algorithms that Reveal Properties of Floating Point Arithmetic Units
+  1398 - 0.080373        Robot Data Screening: A Solution to Multivariate Type Problems in the Biological and Social Sciences
+  1143 - 0.077445        Analysis of Decay-Type Data*
+  1678 - 0.075850        Automata, Formal Languages, Abstract Switching, and Computability in a Ph.D. Computer Science Program
+  2437 - 0.073863        General Performance Analysis of Key-to-Address Transformation Methods Using an Abstract File Concept
+  1470 - 0.071884        The Structure of Programming Languages
+  2814 - 0.071884        Roster of Programming Languages for 1974-75
+  1485 - 0.071884        The Structure of Programming Languages
+-----------------------------------
+Searching for: 40 - List all articles dealing with data types in the following languages: Pascal, CLU, Alphard, Russell, Ada, ALGOL 68, EL1.  List any other languages that are referenced frequently in papers on the above languages  e.g. catch any languages with interesting type structures that I might have missed .
+-----------------------------------
+  2651 - 0.211422        The Treatment of Data Types in EL1
+  2956 - 0.208401        Some Ideas on Data Types in High-Level Languages
+   990 - 0.144286        Constraint-Type Statements in Programming Languages
+  1641 - 0.126183        A Use of Fast and Slow Memories in List-Processing Languages
+   770 - 0.119581        Combination in Any Order (Algorithm 155)
+   906 - 0.119581        Combination in any Order (Algorithm 155)
+  1138 - 0.114657        Formalism in Programming Languages*
+  2558 - 0.114657        Protection in Programming Languages
+   463 - 0.114256        On Ambiguity in Phrase Structure Languages
+  1469 - 0.108864        The Next 700 Programming Languages
+  1470 - 0.095256        The Structure of Programming Languages
+  1485 - 0.095256        The Structure of Programming Languages
+  2603 - 0.092113        The Equivalence of Reducing Transition Languages and Deterministic Languages
+  2168 - 0.091778        List Tracing in Systems Allowing Multiple Cell-Types
+  1878 - 0.091695        Recovery of Reentrant List Structures in SLIP
+   762 - 0.090869        Some Remarks on the Syntax of Symbolic Programming Languages
+  2958 - 0.088360        Abstract Data Types and the Development of Data Structures
+   628 - 0.086622        On a Floating-Point Number Representation For Use with Algorithmic Languages
+   303 - 0.082547        Some Basic Terminology Connected With Mechanical Languages and Their Processors
+  2252 - 0.082547        A Method for Incrementally Compiling Languages with Nested Statement Structure
+-----------------------------------
+Searching for: 41 - Theory of distributed systems and databases.  Subtopics of special interest include reliability and fault tolerance in distributed systems, atomicity, distributed transactions, synchronization algorithms, resource allocation  lower bounds and models for asynchronous parallel systems.  Also theory of communicating processes and protocols.
+-----------------------------------
+  2578 - 0.386084        Self-stabilizing Systems in Spite of Distributed Control
+  3137 - 0.380516        A Methodology for the Design of Distributed Information Systems
+  3082 - 0.307336        Time, Clocks, and the Ordering of Events in a Distributed System
+  2376 - 0.300623        Synchronization of Communicating Processes
+  2545 - 0.261062        A Theory of Discrete Patterns and Their Implementation in SNOBOL4
+   238 - 0.232295        Simulation and Analysis of Biochemical Systems
+  2867 - 0.231836        Modularization and Hierarchy in a Family of Operating Systems
+   651 - 0.225711        A Survey of Languages and Systems for Information Retrieval
+  3144 - 0.225711        A Model for and DIscussion of Multi-Interpreter Systems
+  1101 - 0.208850        The Place of Logical Design and Switching Theory In The Computer Curriculum
+  2165 - 0.193580        General Relativity and the Application of Algebraic Manipulative Systems
+  2812 - 0.193580        Computer-Aided Analysis and Design of Information Systems
+  3119 - 0.193580        The Impact of Distributions and Disciplines on Multiple Processor Systems
+  2323 - 0.192972        Toward a General Theory of Special Functions
+  2816 - 0.190974        Optimal Reorganization of Distributed Space Disk Files
+  2317 - 0.190945        Programming Systems and Languages 1965-1975
+    86 - 0.190227        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+    59 - 0.190227        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+  2236 - 0.184539        Remarks on Characteristic Values and Associated Solutions of Mathieus Differential Equation, Exponential Integral, and Systems of Hyperbolic P.D.E. (Algorithms R352, R385, R392)
+   143 - 0.180568        A List of Computer Systems Programs for the IBM 650, DATATRON 205, and UNIVAC SS-80
+-----------------------------------
+Searching for: 42 - Computer performance evaluation techniques using pattern recognition and clustering.
+-----------------------------------
+   462 - 1.265954        Computer Pattern Recognition Techniques: Electrocardiographic Diagnosis
+  2215 - 0.717139        Application of Game Tree Searching Techniques to Sequential Pattern Recognition
+  2370 - 0.587534        An Experimental Laboratory for Pattern Recognition and Signal Processing
+  2811 - 0.543205        Structural Pattern Recognition Of Carotid Pulse Waves Using A General Waveform Parsing System
+  1653 - 0.527127        System Performance Evaluation: Survey and Appraisal
+   633 - 0.488531        Simulation and Analysis of Biochemical Systems (III. Analysis and Pattern Recognition)
+  2402 - 0.470027        Pictorial Pattern Recognition and the Phase Problem of X-ray Crystallography
+  2318 - 0.457514        The Role of Computer System Models in Performance Evaluation
+   204 - 0.425354        Proving Theorems by Pattern Recognition I
+  1870 - 0.406841        Some Techniques for Using Pseudorandom Numbers in Computer Simulation
+   851 - 0.310880        Design and Characteristics of a Variable-Length Record Sort Using New Fixed-Length Record Sorting Techniques
+  3048 - 0.255621        Performance Evaluation of Highly Concurrent Computers by Deterministic Simulation
+  1399 - 0.227189        On Top-to-Bottom Recognition and Left Recursion
+   436 - 0.222483        Evaluation of Polynomials by Computer
+  1665 - 0.221839        Automatic Generation of Efficient Lexical Processors Using Finite State Techniques
+  2679 - 0.219984        Some Performance Tests of "quicksort" and Descendants
+  2203 - 0.215779        Key-to-Address Transform Techniques: A Fundamental Performance Study on Large Existing Formatted Files
+  1030 - 0.207623        Techniques for the Simulation of Computer Logic
+  3136 - 0.195481        Price/Performance Patterns of U.S. Computer Systems
+  2437 - 0.195441        General Performance Analysis of Key-to-Address Transformation Methods Using an Abstract File Concept
+-----------------------------------
+Searching for: 43 - Analysis and perception of shape by humans and computers.  Shape descriptions, shape recognition by computer.  Two dimensional shapes. Measures of circularity.  Shape matching.
+-----------------------------------
+  2569 - 0.657778        Computer Generation of Gamma Random Variates with Non-integral Shape Parameters
+  3107 - 0.522338        Generating Beta Variates with Nonintegrel Shape Parameters
+   633 - 0.225240        Simulation and Analysis of Biochemical Systems (III. Analysis and Pattern Recognition)
+  3117 - 0.220578        The Impact and Use of Computer Technology by the Police
+  1045 - 0.207225        Programming Analysis of Variance by Sequences of Operators and Isomorphic Mappings
+   436 - 0.166776        Evaluation of Polynomials by Computer
+   464 - 0.164687        Syntactic Analysis by Digital Computer
+  1243 - 0.156973        Testing the Understanding of the Difference Between Call by Name and Call by Value in ALGOL 60
+  2812 - 0.152703        Computer-Aided Analysis and Design of Information Systems
+   531 - 0.151658        Person-Matching by Electronic Methods
+     2 - 0.145953        Extraction of Roots by Repeated Subtractions for Digital Computers
+  3048 - 0.145953        Performance Evaluation of Highly Concurrent Computers by Deterministic Simulation
+  1208 - 0.142951        Simulation of Computer Logic by Fortran Arithmetic
+  1427 - 0.142951        Simulation of Radioisotope Scans by Computer
+  1721 - 0.137371        Determination of the Intersection Points of Two Plane Curves by Means of Differential Equations
+  1049 - 0.127001        Numerical Solution of Nonlinear Two-Point Boundary Problems by Finite Difference Methods
+  1689 - 0.126781        Calculation of a Polynomial and its Derivative Values by Horner Scheme (Algorithm 337 [C1])
+   210 - 0.126781        Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+  1285 - 0.126781        Eigenvalues and Eigenvectors of a Real Symmetric Matrix by the QR Method (Algorithm 254 [F2])
+  1577 - 0.126781        Eigenvalues and Eigenvectors of a Real Symmetric Matrix by the QR Method (Algorithm 254 [F2])
+-----------------------------------
+Searching for: 44 - Texture analysis by computer.        Digitized texture analysis.  Texture synthesis. Perception of texture.
+-----------------------------------
+  2829 - 1.931947        Texture and Reflection in Computer Generated Images
+   464 - 0.445369        Syntactic Analysis by Digital Computer
+   931 - 0.309914        Systematic Mistake Analysis of Digital Computer Programs
+  1686 - 0.264647        Computer Synthesis of Holograms for 3-D Display
+   461 - 0.258261        Coding of Medical Case History Data for Computer Analysis
+   525 - 0.258261        A Computer Technique for Handling Analysis of Variance
+  2812 - 0.258261        Computer-Aided Analysis and Design of Information Systems
+  2871 - 0.247010        Logical Analysis of Programs
+  2771 - 0.239774        The Synthesis of Solids Bounded by Many Faces
+  1045 - 0.233159        Programming Analysis of Variance by Sequences of Operators and Isomorphic Mappings
+  3078 - 0.230012        Analysis of the Availability of Computer Systems Using Computer- Aided Algebra
+   912 - 0.227126        Addressing an Array Yi in k-Dimensions by Fortran for Analysis of Variance
+  1143 - 0.216134        Analysis of Decay-Type Data*
+  2494 - 0.216050        A Computer Generated Aid for Cluster Analysis
+  2848 - 0.193306        Synthesis of Decision Rules
+   238 - 0.185258        Simulation and Analysis of Biochemical Systems
+   492 - 0.185258        Analysis of a File Addressing Method
+  1014 - 0.185258        Machine Controls for Analysis of Variance
+  1529 - 0.185258        Decomposition Programming An Analysis of Matrix Substructure
+  1604 - 0.185258        Further Analysis of a Computing Center Environment
+-----------------------------------
+Searching for: 45 - The use of operations research models to optimize information system performance.  This includes fine tuning decisions such as secondary index selection, file reorganization, and distributed databases.
+-----------------------------------
+  3012 - 0.245422        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+  2452 - 0.190404        Evaluation and Selection of File Organization-A Model and System
+  2318 - 0.180616        The Role of Computer System Models in Performance Evaluation
+  2109 - 0.134400        The Use of Quadratic Residue Research
+  2816 - 0.132492        Optimal Reorganization of Distributed Space Disk Files
+   695 - 0.114514        Use of the Disk File on Stretch
+  2424 - 0.111158        Dynamic Verification of Operating System Decisions
+  3082 - 0.108225        Time, Clocks, and the Ordering of Events in a Distributed System
+  3137 - 0.105040        A Methodology for the Design of Distributed Information Systems
+    59 - 0.095775        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+    86 - 0.095775        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+  2437 - 0.095409        General Performance Analysis of Key-to-Address Transformation Methods Using an Abstract File Concept
+  1874 - 0.092981        Generating Pseudorandom Numbers on a Two's Complement Machine such as the IBM 360
+  3134 - 0.092945        The Use of Normal Multiplication Tables for Information Storage and Retrieval
+  2964 - 0.091950        An Approach to Optimal Design of Storage Parameters in Databases
+  3190 - 0.085293        Correction to Economies of Scale and the IBM System/360
+  2517 - 0.082819        Some Comments on the Use of Ambiguous Decision Tables and Their Conversion to Computer Programs
+    84 - 0.079812        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957-II (Part 2 see CA590406)
+  3183 - 0.078835        Policy, Values, and EFT Research: Anatomy of a Research Agenda
+  1194 - 0.074472        Establishment of the ACM Repository and Principles of the IR System Applied to its Operation
+-----------------------------------
+Searching for: 46 - The application of fuzzy subset theory to clustering and information retrieval problems.  This includes performance evaluation and automatic indexing considerations.
+-----------------------------------
+  1457 - 0.411794        Data Manipulation and Programming Problems in Automatic Information Retrieval
+   329 - 0.280440        Automatic Abstracting and Indexing Survey and Recommendations
+   661 - 0.246477        Indexing and the Lambda-Notation
+  1359 - 0.235380        Data Filtering Applied to Information Storage and Retrieval Applications
+  1653 - 0.216419        System Performance Evaluation: Survey and Appraisal
+  3012 - 0.216376        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+  3134 - 0.216376        The Use of Normal Multiplication Tables for Information Storage and Retrieval
+  2453 - 0.213959        Information Theory Applied to the Conversion of Decision Tables to Computer Programs
+  1032 - 0.211483        Theoretical Considerations in Information Retrieval Systems
+   651 - 0.206233        A Survey of Languages and Systems for Information Retrieval
+  2165 - 0.184585        General Relativity and the Application of Algebraic Manipulative Systems
+  1699 - 0.184150        Experimental Evaluation of Information Retrieval Through a Teletypewriter
+  1101 - 0.165460        The Place of Logical Design and Switching Theory In The Computer Curriculum
+  2883 - 0.165032        An Application of Heuristic Search Methods to Edge and Contour Detection
+  2318 - 0.164367        The Role of Computer System Models in Performance Evaluation
+  2598 - 0.163669        Extending the Information Theory Approach to Converting Limited-Entry Decision Tables to Computer Programs
+   675 - 0.162437        Coding Clinical Laboratory Data For Automatic Storage and Retrieval
+  1856 - 0.159111        The Teachable Language Comprehender: A Simulation Program and Theory of Language
+  2522 - 0.156531        The Design, Implementation, and Evaluation of a Working Set Dispatcher
+  2679 - 0.155852        Some Performance Tests of "quicksort" and Descendants
+-----------------------------------
+Searching for: 47 - The use of Bayesian decision models to optimize information retrieval system performance.  This includes stopping rules to determine when a user should cease scanning the output of a retrieval search.
+-----------------------------------
+  3012 - 0.309424        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+   239 - 0.252497        Inefficiency of the Use of Boolean Functions for Information Retrieval Systems
+  3134 - 0.245870        The Use of Normal Multiplication Tables for Information Storage and Retrieval
+  2318 - 0.244287        The Role of Computer System Models in Performance Evaluation
+  2453 - 0.223919        Information Theory Applied to the Conversion of Decision Tables to Computer Programs
+  2287 - 0.216506        A New Approach to Automatic Scanning of Contour Maps
+  2517 - 0.208316        Some Comments on the Use of Ambiguous Decision Tables and Their Conversion to Computer Programs
+   651 - 0.206286        A Survey of Languages and Systems for Information Retrieval
+  1699 - 0.206286        Experimental Evaluation of Information Retrieval Through a Teletypewriter
+  1961 - 0.199365        An Efficient Search Algorithm to Find the Elementary Circuits of a Graph
+  1185 - 0.198988        A program to Solve the Pentomino Problem by the Recursive Use of Macros
+   683 - 0.196884        A Serial Technique to Determine Minimum Paths
+  2070 - 0.189167        A Formal System for Information Retrieval from Files
+  2114 - 0.189167        A Formal System for Information Retrieval from Files
+  2561 - 0.174686        A Heuristic Approach to Inductive Inference in Fact Retrieval Systems
+  1339 - 0.174678        A Contribution to the Development of ALGOL
+  1421 - 0.174678        A Contribution to the Development of ALGOL
+   798 - 0.174674        A Catalogue Entry Retrieval System
+  2053 - 0.173608        On the Conversion of Decision Tables to Computer Programs
+  2221 - 0.173608        Comment on the Conversion of Decision Tables to Computer Programs
+-----------------------------------
+Searching for: 48 - The use of computer science principles  e.g. data structures, numerical methods  in generating optimization  e.g. linear programming  algorithms.  This includes issues of the Khachian  Russian, ellipsoidal  algorithm and complexity of such algorithms.
+-----------------------------------
+  1171 - 0.282199        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+  2823 - 0.214822        The Status of Women and Minorities in Academic Computer Science
+  1658 - 0.208404        Analysis of Algorithms for the Zero-One Programming Problem
+  2958 - 0.201137        Abstract Data Types and the Development of Data Structures
+  1945 - 0.185852        The Role of Programming in a Ph.D. Computer Science Program
+  2226 - 0.176622        Further Evidence for the Analysis of Algorithms for the Zero-One Programming Problem
+  1183 - 0.175845        A Note on the Use of a Digital Computer for Doing Tedious Algebra and Programming
+  1327 - 0.174378        Use of Decision Tables in Computer Programming
+  3117 - 0.172385        The Impact and Use of Computer Technology by the Police
+  3022 - 0.170567        Computer Science Faculties: The Current Status of Minorities and Women
+  3197 - 0.169784        Structures of Standards-Processing Organizations in the Computer Area
+  1194 - 0.168800        Establishment of the ACM Repository and Principles of the IR System Applied to its Operation
+    59 - 0.164459        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management control Systems of the Federal Government, as of December 1957-III
+    86 - 0.164459        Survey of Progress and Trend of Development and Use of Automatic Data Processing in Business and Management Control Systems of the Federal Government, as of December 1957
+  1601 - 0.163985        Parallel Numerical Methods for the Solution of Equations
+  2426 - 0.159883        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  2263 - 0.154284        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  1978 - 0.154129        The Use of Interactive Graphics To Solve Numerical Problems
+  2702 - 0.152424        On the Complexity of LR(k) Testing
+  3055 - 0.151403        An Analysis of Algorithms for the Dutch National Flag Problem
+-----------------------------------
+Searching for: 49 - The role of information retrieval in knowledge based systems  i.e., expert systems .
+-----------------------------------
+  1032 - 0.689175        Theoretical Considerations in Information Retrieval Systems
+   239 - 0.570544        Inefficiency of the Use of Boolean Functions for Information Retrieval Systems
+  2372 - 0.560935        On the Implementation of Security Measures in Information Systems
+   651 - 0.544171        A Survey of Languages and Systems for Information Retrieval
+   652 - 0.512922        Use of Semantic Structure in Information Systems
+  1959 - 0.443012        An Interrupt Based Organization for Management Information Systems
+  1233 - 0.415089        Conventions for the Use of Symbols in the Preparation of Flowcharts for Information Processing Systems (A Standard Working Paper)
+  3137 - 0.412837        A Methodology for the Design of Distributed Information Systems
+  2852 - 0.411655        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  2318 - 0.374686        The Role of Computer System Models in Performance Evaluation
+   634 - 0.363951        Manipulation of Trees in Information Retrieval*
+  2561 - 0.356494        A Heuristic Approach to Inductive Inference in Fact Retrieval Systems
+  2479 - 0.350248        Curriculum Recommendations for Graduate Professional Programs in Information Systems: Recommended Addendum on Information Systems Administration
+  2184 - 0.338750        On the Meaning of Names in Programming Systems
+  3012 - 0.335301        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+  2345 - 0.322374        Curriculum Recommendations for Graduate Professional Programs in Information Systems
+  2407 - 0.322374        Curriculum Recommendations for Undergraduate Programs in Information Systems
+    68 - 0.310356        The Role of the University in Computers, Data Processing and Related Fields
+  1945 - 0.299749        The Role of Programming in a Ph.D. Computer Science Program
+  2738 - 0.298588        Use of the Concept of Transparency in the Design of Hierarchically Structured Systems
+-----------------------------------
+Searching for: 50 - Parallel processors in information retrieval
+-----------------------------------
+  1811 - 1.386925        A Case Study in Programming for Parallel-Processors
+  2516 - 1.342883        Hierarchical Storage in Information Retrieval
+  2714 - 1.321843        Merging with Parallel Processors
+   634 - 1.151043        Manipulation of Trees in Information Retrieval*
+  1032 - 1.151043        Theoretical Considerations in Information Retrieval Systems
+  1457 - 0.959202        Data Manipulation and Programming Problems in Automatic Information Retrieval
+  3012 - 0.767362        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+   891 - 0.757405        Everyman's Information Retrieval System
+   292 - 0.649204        An Information Retrieval Language for Legal Studies
+  2990 - 0.649204        Effective Information Retrieval Using Term Accuracy
+    82 - 0.573368        Handling Identifiers as Internal Symbols in Language Processors
+   275 - 0.541004        Dynamic Storage Allocation for an Information Retrieval System
+   651 - 0.541004        A Survey of Languages and Systems for Information Retrieval
+  1359 - 0.541004        Data Filtering Applied to Information Storage and Retrieval Applications
+  1699 - 0.541004        Experimental Evaluation of Information Retrieval Through a Teletypewriter
+  2070 - 0.541004        A Formal System for Information Retrieval from Files
+  2114 - 0.541004        A Formal System for Information Retrieval from Files
+  2278 - 0.541004        On Foster's Information Storage and Retrieval Using AVL Trees
+  1828 - 0.539656        Synchronization in a Parallel-Accessed Data Base
+  2896 - 0.539656        An Exercise in Proving Parallel Programs Correct
+-----------------------------------
+Searching for: 51 - Parallel processors and paging algorithms
+-----------------------------------
+  2714 - 1.255523        Merging with Parallel Processors
+  3075 - 0.958673        Fast Parallel Sorting Algorithms
+  3006 - 0.800875        Anomalies with Variable Partition Paging Algorithms
+  1811 - 0.784702        A Case Study in Programming for Parallel-Processors
+  2365 - 0.591350        Matrix Computations with Fortran and Paging
+   303 - 0.542017        Some Basic Terminology Connected With Mechanical Languages and Their Processors
+   371 - 0.533052        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+  1795 - 0.509481        Optimal Code for Serial and Parallel Computation
+   249 - 0.433614        Specification Languages for Mechanical Languages and Their Processors*-A Baker's Dozen
+  2283 - 0.356486        Thinning Algorithms on Rectangular, Hexagonal, and Triangular Arrays
+  2505 - 0.356486        Reflection-Free Permutations, Rosary Permutations, and Adjacent Transposition Algorithms
+  2952 - 0.339654        Functions Realizable with Word-Parallel Logical and Two's-Complement Addition Instructions
+  1367 - 0.297197        Character Structure and Character Parity Sense for Parallel-by-Bit Data Communication in ASCII* (Proposed American Standard)
+  3059 - 0.297197        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+  1171 - 0.285189        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+  1411 - 0.285189        Comparison of Several Algorithms for Computation of Means, Standard Deviations and Correlation Coefficients
+  2263 - 0.285189        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  2426 - 0.285189        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  2017 - 0.281295        Sorting in a Paging Environment
+  2085 - 0.281295        Comment on a Paging Anomaly
+-----------------------------------
+Searching for: 52 - Modelling and simulation in agricultural ecosystems.
+-----------------------------------
+  1637 - 0.296463        Problems in the Statistical Analysis of Simulation Experiments: The Comparison of Means and the Length of Sample Records
+  1890 - 0.273268        Simulation of Traffic Flows in a Network
+  1928 - 0.273268        Exclusive Simulation of Activity in Digital Networks
+  2902 - 0.273268        Dynamic Memory Allocation in Computer Simulation
+  2970 - 0.273268        Achieving Specific Accuracy in Simulation Output Analysis
+   238 - 0.271407        Simulation and Analysis of Biochemical Systems
+  1261 - 0.271407        Modeling and Simulation of Digital Networks
+  2233 - 0.271407        Signature Simulation and Certain Cryptographic Codes
+  1329 - 0.227724        Simulation of Boolean Functions in a Decimal computer
+  1870 - 0.227724        Some Techniques for Using Pseudorandom Numbers in Computer Simulation
+  1366 - 0.226172        Computer Simulation-Discussion of the Technique and Comparison of Languages
+   633 - 0.199038        Simulation and Analysis of Biochemical Systems (III. Analysis and Pattern Recognition)
+   643 - 0.180938        Simulation and Analysis of Biochemcial Systems (II. Solution of Differential Equations)
+  1856 - 0.180938        The Teachable Language Comprehender: A Simulation Program and Theory of Language
+  3051 - 0.180938        A Comparison of Heaps and the TL Structure for the SImulation Event Set
+  1783 - 0.177272        In-and-Out Conversions
+  2749 - 0.137240        Significant Event Simulation
+   529 - 0.132954        Regression and Coded Patterns in Data Editing
+   949 - 0.132954        Integer and Signed Constants in ALGOL
+  1131 - 0.132954        On Context and Ambiguity in Parsing*
+-----------------------------------
+Searching for: 53 - mathematical induction, group theory, integers modulo m, probability, binomial coefficients, binomial theorem, homomorphism, morphism, transitivity, relations, relation matrix.
+-----------------------------------
+   139 - 0.407400        Binomial Coefficients (Algorithm 19)
+   514 - 0.407400        Binomial Coefficients (Algorithm 19)
+   569 - 0.407400        Binomial Coefficients (Algorithm 19)
+  1948 - 0.117321        Computers in Group Theory: a Survey
+  1887 - 0.092952        A Recursive Relation for the Determinant of a Pentadiagonal Matrix
+   373 - 0.074747        Correlation Coefficients with Matrix Multiplication (Algorithm 39)
+  2981 - 0.070117        Subgoal Induction
+  1403 - 0.063845        A Method for Finding the m Smallest Values of a Monotonic Function Defined on Ordered Sets of Positive Integers
+  2192 - 0.056093        Another Recursion Induction Principle
+  2613 - 0.054200        Transitivity Sets [G7] (Algorithm A482)
+  2986 - 0.049136        Operations on Sparse Relations
+   725 - 0.041701        Group Participation Computer Demonstration
+   269 - 0.037749        Core Allocation Based on Probability
+   453 - 0.036488        Enlargement of a Group (Algorithm 136)
+  1557 - 0.036488        Symmetric Group Characters (Algorithm 307 [A1])
+   537 - 0.035074        A Machine Program for Theorem-Proving
+  2644 - 0.035074        A Theorem-Proving Language for Experimentation
+   815 - 0.032357        Normal Probability for Curve Fitting (Algorithm 185)
+   816 - 0.032357        Erlang Probability for Curve Fitting (Algorithm 184)
+  1217 - 0.032357        Map of Partitions into Integers (Algorithm 264 [A1])
+-----------------------------------
+Searching for: 54 - Semantics of programming languages, including abstract specifications of data types, denotational semantics, and proofs of correctness.
+-----------------------------------
+  2842 - 1.685264        The Denotational Semantics of Programming Languages
+  2958 - 0.835659        Abstract Data Types and the Development of Data Structures
+  2148 - 0.512944        The Composition of Semantics in Algol 68
+  3031 - 0.495746        Abstract Data Types and Software Validation
+  2295 - 0.427454        Comment on the Composition of Semantics in Algol 68
+  2651 - 0.392574        The Treatment of Data Types in EL1
+  1098 - 0.391273        A Comparison of List-Processing Computer Languages (Including a Detailed Comparison of COMIT, IPL-V, LISP 1.5, and SLIP)
+  3140 - 0.381006        Social Processes and Proofs of Theorems and Programs
+  1471 - 0.371187        Programming Semantics for Multiprogrammed computations
+  1703 - 0.367467        Accommodating Standards and Identification of Programming Languages
+  1496 - 0.332379        A Formal Semantics for Computer Languages and its Application In a Compiler-Compiler
+  2264 - 0.318160        Derived Semantics for Some Programming Language Constructs
+  1470 - 0.307005        The Structure of Programming Languages
+  1485 - 0.307005        The Structure of Programming Languages
+  2814 - 0.307005        Roster of Programming Languages for 1974-75
+   920 - 0.263147        Toward Better Documentation of Programming Languages
+  3102 - 0.263147        Incorporation of Units into Programming Languages
+  2178 - 0.248238        A Language Extension for Graph Processing and Its Formal Semantics
+   689 - 0.244978        Report of a Visit to Discuss Common Programming Languages in Czechoslovakia and Poland, 1963
+  3080 - 0.242497        Proving the Correctness of Heuristically Optimized Code
+-----------------------------------
+Searching for: 55 - Anything dealing with star height of regular languages or regular expressions or regular events.
+-----------------------------------
+  2650 - 0.723599        Order-n Correction for Regular Languages
+  1739 - 0.613156        Regular Expression Search Algorithm
+  1355 - 0.536511        Regular Coulomb Wave Functions (Algorithm 292 )
+  1896 - 0.459867        Regular Coulomb Wave Functions (Algorithm 292 S22])
+  1898 - 0.459867        Regular Coulomb Wave Functions (Algorithm 292 [S22])
+  1993 - 0.459867        Regular Coulomb Wave Functions (Algorithm 292 $S22))
+  2921 - 0.459867        Regular Right Part Grammars and Their Parsers
+    40 - 0.293175        Fingers or Fists? (The Choice of Decimal or Binary Representation)
+    28 - 0.186351        Request for Methods or Programs
+   344 - 0.186351        Ber or Bei Function (Algorithm 57)
+   510 - 0.186351        Ber or Bei Function (Algorithm 57)
+   544 - 0.186351        Ber or Bei Function (Algorithm 57)
+   354 - 0.168378        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+   778 - 0.168378        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+  1818 - 0.168378        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47 [S16])
+  2852 - 0.147331        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  2889 - 0.139326        Performance of Height-Balanced Trees
+  1216 - 0.133108        Symbolic Derivatives Without List Processing, Subroutines, or Recursion
+  1287 - 0.133108        Vector Coupling or Clebsch-Gordan Coefficients (Algorithm 252 [Z])
+  1488 - 0.133108        Programming Decision Tables in FORTRAN, COBOL or ALGOL
+-----------------------------------
+Searching for: 56 - Articles relation the algebraic theory of semigroups and monoids to the study of automata and regular languages.
+-----------------------------------
+  1397 - 0.401217        Proceedings of the ACM Symposium on Symbolic and Algebraic Manipulation
+  2165 - 0.401217        General Relativity and the Application of Algebraic Manipulative Systems
+  2603 - 0.400277        The Equivalence of Reducing Transition Languages and Deterministic Languages
+  2327 - 0.386890        Toward an Automata Theory of Brains
+  1379 - 0.382519        A Final Solution to the Dangling Else of ALGOL 60 and Related Languages
+  1366 - 0.361273        Computer Simulation-Discussion of the Technique and Comparison of Languages
+  1101 - 0.360168        The Place of Logical Design and Switching Theory In The Computer Curriculum
+  2326 - 0.345268        Fix point Approach to the Theory of Computation
+  1856 - 0.336897        The Teachable Language Comprehender: A Simulation Program and Theory of Language
+  1887 - 0.316482        A Recursive Relation for the Determinant of a Pentadiagonal Matrix
+  2453 - 0.297487        Information Theory Applied to the Conversion of Decision Tables to Computer Programs
+  3190 - 0.281272        Correction to Economies of Scale and the IBM System/360
+  1194 - 0.262520        Establishment of the ACM Repository and Principles of the IR System Applied to its Operation
+  2813 - 0.253588        The Computer Science and Engineering Research Study (COSERS)
+  2545 - 0.250638        A Theory of Discrete Patterns and Their Implementation in SNOBOL4
+  1470 - 0.250282        The Structure of Programming Languages
+  1485 - 0.250282        The Structure of Programming Languages
+  1334 - 0.246933        Mechanization of Tedious Algebra: The Newcomb Operators of Planetary Theory
+  1678 - 0.245411        Automata, Formal Languages, Abstract Switching, and Computability in a Ph.D. Computer Science Program
+   689 - 0.238733        Report of a Visit to Discuss Common Programming Languages in Czechoslovakia and Poland, 1963
+-----------------------------------
+Searching for: 57 - Abstracts of articles: J. Backus,  Can programming be liberated from the Von Neumann style  A functional style and its algebra of programs , CACM 21  1978 , 613 641. R.A.De Millo, R.J. Lipton, A.J. Perlis, letter to ACM Forum, CACM 22  1979 , 629 630
+-----------------------------------
+  3077 - 2.022974        Can Programming Be Liberated from the von Neumann Style?  A Functional Style and Its Algebra of Programs
+  1194 - 0.146613        Establishment of the ACM Repository and Principles of the IR System Applied to its Operation
+  1183 - 0.104923        A Note on the Use of a Digital Computer for Doing Tedious Algebra and Programming
+  1771 - 0.075409        CURRICULUM 68 -- Recommendations for Academic Programs in Computer Science -- A Report of the ACM Curriculum Committee on Computer science
+  2428 - 0.071589        Cubic Spline Solutions to a Class of Functional Differential Equations [D2] (Algorithm A461)
+  1397 - 0.069736        Proceedings of the ACM Symposium on Symbolic and Algebraic Manipulation
+  1086 - 0.065370        A Proposal for Input-Output Conventions in ALGOL 60-A Report of the Subcommittee on ALGOL of the ACM Programming Language Committee
+  2716 - 0.065324        Optimizing the Performance of a Relational Algebra Database Interface
+  1337 - 0.062612        EULER: A Generalization of ALGOL, and its Formal Definition
+  2517 - 0.062264        Some Comments on the Use of Ambiguous Decision Tables and Their Conversion to Computer Programs
+  2616 - 0.062264        On the Conversion of Programs to Decision Tables: Method and Objectives
+  2053 - 0.055422        On the Conversion of Decision Tables to Computer Programs
+  2221 - 0.055422        Comment on the Conversion of Decision Tables to Computer Programs
+  1766 - 0.055145        Quasilinearization and the Estimation of Differential Operators from Eigenvalues
+   767 - 0.054058        Certification of Algorithm 161 Combinatorial of M Things Taken One at a Time, Two at a Time, Up to N at a Time [M. L. Wolfson and H. V. Wright, Comm. ACM, Apr. 1963]
+   231 - 0.053924        A Proposal for a Set of Publication Standards for Use by the ACM
+   689 - 0.052956        Report of a Visit to Discuss Common Programming Languages in Czechoslovakia and Poland, 1963
+   143 - 0.052528        A List of Computer Systems Programs for the IBM 650, DATATRON 205, and UNIVAC SS-80
+  2834 - 0.051759        Efficient Generation of the Binary Reflected Gray Code and Its Applications
+   964 - 0.051122        Mechanization of Tedious Algebra-the e Coefficients of Theoretical Chemistry
+-----------------------------------
+Searching for: 58 - Algorithms or statistical packages for ANOVA, regression using least squares or generalized linear models.  System design, capabilities, statistical formula are of interest.  Student s t test, Wilcoxon and sign tests, multivariate and univariate components can be included.
+-----------------------------------
+  1252 - 0.179336        Symbolic Notations for Statistical Tables and an Approach Towards Automatic System Design
+  2098 - 0.130993        t-Test Probabilities (Algorithm 321); Student's t-Distribution (Algorithm 344)
+  2025 - 0.114811        Student's t-Distribution; Jacobi Polynomials; Modified Romberg Quadrature; Factorial Analysis of Variance; (Algorithms 332,344,351,359)
+  2825 - 0.112819        The BMD and BMDP Series of Statistical Computer Programs
+  3077 - 0.104987        Can Programming Be Liberated from the von Neumann Style?  A Functional Style and Its Algebra of Programs
+  2753 - 0.104625        A Heuristic Problem Solving Design System for Equipment or Furniture Layouts
+  1344 - 0.097114        Statistical Computations Based Upon Algebraically Specified Models
+  1876 - 0.097074        Generation of Test Matrices Having Certain Sign Patterns and Prescribed Positive Spectra
+  1474 - 0.094960        Tests of Probabilistic Models for Propagation of Roundoff Errors
+  1944 - 0.085727        Student's t-Distribution (Algorithm 344 [S14])
+  1986 - 0.085727        Student's t-Quantiles $S14) (Algorithm 396)
+  1987 - 0.085727        Student's t-Distribution $S14) (Algorithm 395)
+  2418 - 0.085727        Student's t Frequency [S14] (Algorithm A465)
+  1818 - 0.085498        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47 [S16])
+  2476 - 0.084409        Equivalence Between AND/OR Graphs and Context-Free Grammars
+  2684 - 0.084239        Production Systems: or Can We Do Better than BNF?
+  1637 - 0.081170        Problems in the Statistical Analysis of Simulation Experiments: The Comparison of Means and the Length of Sample Records
+  2679 - 0.080742        Some Performance Tests of "quicksort" and Descendants
+  1779 - 0.080346        t-Test Probabilities (Algorithm [S14])
+  1171 - 0.078600        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+-----------------------------------
+Searching for: 59 - Dictionary construction and accessing methods for fast retrieval of words or lexical items or morphologically related information. Hashing or indexing methods are usually applied to English spelling or natural language problems.
+-----------------------------------
+    28 - 0.597286        Request for Methods or Programs
+    40 - 0.304323        Fingers or Fists? (The Choice of Decimal or Binary Representation)
+  2852 - 0.250441        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+   344 - 0.236485        Ber or Bei Function (Algorithm 57)
+   510 - 0.236485        Ber or Bei Function (Algorithm 57)
+   544 - 0.236485        Ber or Bei Function (Algorithm 57)
+  2476 - 0.228691        Equivalence Between AND/OR Graphs and Context-Free Grammars
+   626 - 0.228200        A Method of Representation, Storage and Retrieval of 13 Random Codes in a 4-Digit Number or 16 Random Codes in a 5-Digit Number
+   354 - 0.216467        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+   778 - 0.216467        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+  1818 - 0.216467        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47 [S16])
+  1999 - 0.178673        Optimal Starting Approximations for Generating Square Root for Slow or No Divide
+  2753 - 0.175816        A Heuristic Problem Solving Design System for Equipment or Furniture Layouts
+  1216 - 0.168918        Symbolic Derivatives Without List Processing, Subroutines, or Recursion
+  1287 - 0.168918        Vector Coupling or Clebsch-Gordan Coefficients (Algorithm 252 [Z])
+  1488 - 0.168918        Programming Decision Tables in FORTRAN, COBOL or ALGOL
+  2684 - 0.168918        Production Systems: or Can We Do Better than BNF?
+  1359 - 0.165742        Data Filtering Applied to Information Storage and Retrieval Applications
+  1441 - 0.139139        Methods of Numerical Integration Applied to a System Having Trivial Function Evaluations
+  1681 - 0.130280        Easy English,a Language for Information Retrieval Through a Remote Typewriter Console
+-----------------------------------
+Searching for: 60 - Hardware and software relating to database management systems. Database packages, back end computers, special associative hardware with microcomputers attached to disk heads or things like RAP, relational or network  CODASYL  or hierarchical models, systems like SYSTEM R, IMS, ADABAS, TOTAL, etc.
+-----------------------------------
+   618 - 0.151751        Computers- The Key to Total Systems Control: An Industrial Viewpoint
+  2967 - 0.144684        A Comparison of Hardware and Software Associative Memories in the Context of Computer Graphics
+  2852 - 0.136013        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  2684 - 0.128362        Production Systems: or Can We Do Better than BNF?
+  1532 - 0.123302        The Hardware-Software Complementarity
+  3087 - 0.089468        An English Language Question Answering System for a Large Relational Database
+  2198 - 0.089386        Introduction to "Feature Analysis of Generalized Data Base Management Systems"
+  2876 - 0.089083        Intentional Resolution of Privacy Protection in Database Systems
+  2476 - 0.086149        Equivalence Between AND/OR Graphs and Context-Free Grammars
+  2593 - 0.085729        A Back-end Computer for Data Base Management
+    40 - 0.082261        Fingers or Fists? (The Choice of Decimal or Binary Representation)
+    28 - 0.081434        Request for Methods or Programs
+   344 - 0.081434        Ber or Bei Function (Algorithm 57)
+   510 - 0.081434        Ber or Bei Function (Algorithm 57)
+   544 - 0.081434        Ber or Bei Function (Algorithm 57)
+  2716 - 0.076219        Optimizing the Performance of a Relational Algebra Database Interface
+  2003 - 0.073680        An Interactive Software System for Computers-Aided Design:  An Application to Circuit Project
+  2882 - 0.071266        A Stochastic Evaluation Model for Database Organization in Data Retrieval Systems
+  2753 - 0.070213        A Heuristic Problem Solving Design System for Equipment or Furniture Layouts
+  2817 - 0.064187        The Notions of Consistency and Predicate Locks in a Database System
+-----------------------------------
+Searching for: 61 - Information retrieval articles by Gerard Salton or others about clustering, bibliographic coupling, use of citations or co citations, the vector space model, Boolean search methods using inverted files, feedback, etc.
+-----------------------------------
+  1287 - 0.211426        Vector Coupling or Clebsch-Gordan Coefficients (Algorithm 252 [Z])
+   239 - 0.165400        Inefficiency of the Use of Boolean Functions for Information Retrieval Systems
+    40 - 0.127434        Fingers or Fists? (The Choice of Decimal or Binary Representation)
+    28 - 0.120529        Request for Methods or Programs
+  2711 - 0.114474        A Vector Space Model for Automatic Indexing
+  2852 - 0.102236        The Technology of Computer Center Management: A Proposed Course for Graduate Professional Programs in Computer Science or in Information Systems
+  3012 - 0.093497        The Use of an Interactive Information Storage and Retrieval System in Medical Research
+  3134 - 0.093497        The Use of Normal Multiplication Tables for Information Storage and Retrieval
+  1683 - 0.087117        Boolean matrix Methods for the Detection of Simple Precedence Grammars
+  2816 - 0.079218        Optimal Reorganization of Distributed Space Disk Files
+   354 - 0.074824        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+   778 - 0.074824        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47)
+  1818 - 0.074824        Associated Legendre Functions of the First Kind for Real or Imaginary Arguments (Algorithm 47 [S16])
+  2114 - 0.073291        A Formal System for Information Retrieval from Files
+  2070 - 0.073291        A Formal System for Information Retrieval from Files
+  2990 - 0.071747        Effective Information Retrieval Using Term Accuracy
+   626 - 0.071493        A Method of Representation, Storage and Retrieval of 13 Random Codes in a 4-Digit Number or 16 Random Codes in a 5-Digit Number
+   849 - 0.067751        Use of Tree Structures for Processing Files
+  3117 - 0.061156        The Impact and Use of Computer Technology by the Police
+  2278 - 0.059789        On Foster's Information Storage and Retrieval Using AVL Trees
+-----------------------------------
+Searching for: 62 - Results relating parallel complexity theory  both for PRAM s and uniform circuits .
+-----------------------------------
+  1795 - 0.190281        Optimal Code for Serial and Parallel Computation
+  2337 - 0.157386        A Sorting Problem and Its Complexity
+  2952 - 0.153433        Functions Realizable with Word-Parallel Logical and Two's-Complement Addition Instructions
+   185 - 0.142431        Multiprogram Scheduling Parts 1 and 2.  Introduction and Theory*
+  1158 - 0.120404        Program Structures for Parallel Processing
+  1367 - 0.110997        Character Structure and Character Parity Sense for Parallel-by-Bit Data Communication in ASCII* (Proposed American Standard)
+  3059 - 0.110997        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+  2545 - 0.110529        A Theory of Discrete Patterns and Their Implementation in SNOBOL4
+  1563 - 0.103885        A Method for Finding Hamilton Paths and Knight's Tours
+   950 - 0.103203        Parallel Methods for Integrating Ordinary Differential Equations
+  2703 - 0.100116        The Intrinsically Exponential Complexity of the Circularity Problem for Attribute Grammars
+  1648 - 0.089157        Uniform Random (Algorithm 294 [G5])
+  2932 - 0.089157        Complexity of Computations
+  3007 - 0.089157        Complexity of Computations (Corrigendum)
+  1101 - 0.088423        The Place of Logical Design and Switching Theory In The Computer Curriculum
+  1856 - 0.088423        The Teachable Language Comprehender: A Simulation Program and Theory of Language
+  1302 - 0.086003        Parallel Signaling Speeds for Data Transmission (Proposed American Stand ard)
+  1601 - 0.086003        Parallel Numerical Methods for the Solution of Equations
+  1613 - 0.086003        One-Pass Compilation of Arithmetic Expressions for a Parallel Processor
+  1811 - 0.086003        A Case Study in Programming for Parallel-Processors
+-----------------------------------
+Searching for: 63 - Algorithms for parallel computation, and especially comparisons between parallel and sequential algorithms.
+-----------------------------------
+  1795 - 1.094933        Optimal Code for Serial and Parallel Computation
+  3075 - 0.960436        Fast Parallel Sorting Algorithms
+  1411 - 0.648108        Comparison of Several Algorithms for Computation of Means, Standard Deviations and Correlation Coefficients
+  2342 - 0.558263        Interference Between Communicating Parallel Processes
+   371 - 0.534033        Remarks on Algorithms 2 and 3, Algorithm 15 and Algorithms 25 and 26
+  3061 - 0.448637        Simulations of Dynamic Sequential Search Algorithms
+  1367 - 0.399885        Character Structure and Character Parity Sense for Parallel-by-Bit Data Communication in ASCII* (Proposed American Standard)
+  3059 - 0.399885        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+  2426 - 0.388806        Algorithms SCALE1, SCALE2, and SCALE3 for Determination of Scales on Computer Generated Plots [J6] (Algorithm A463)
+  1171 - 0.388806        A Comparison of the Primal-Simplex and Primal-Dual Algorithms for Linear Programming
+  1158 - 0.384198        Program Structures for Parallel Processing
+  2283 - 0.357142        Thinning Algorithms on Rectangular, Hexagonal, and Triangular Arrays
+  2505 - 0.357142        Reflection-Free Permutations, Rosary Permutations, and Adjacent Transposition Algorithms
+  2952 - 0.340278        Functions Realizable with Word-Parallel Logical and Two's-Complement Addition Instructions
+   950 - 0.329313        Parallel Methods for Integrating Ordinary Differential Equations
+   270 - 0.312582        Techniques for Storage Allocation Algorithms
+   717 - 0.312582        Partitioning Algorithms for Finite Sets
+  2263 - 0.285714        The Conversion of Limited-Entry Decision Tables to Optimal and Near-Optimal Flowcharts: Two New Algorithms
+  1302 - 0.274427        Parallel Signaling Speeds for Data Transmission (Proposed American Stand ard)
+  1601 - 0.274427        Parallel Numerical Methods for the Solution of Equations
+-----------------------------------
+Searching for: 64 - List all articles on EL1 and ECL  EL1 may be given as EL/1  I don t remember how they did it.
+-----------------------------------
+  2651 - 0.318693        The Treatment of Data Types in EL1
+  2729 - 0.152717        Comments on a Paper by T. C. Chen and I. T. Ho
+  1588 - 0.079421        PL/I List Processing
+   121 - 0.062526        Over-all Computation Control and Labelling
+  1846 - 0.054262        On Simulating Networks of Parallel Processes in Which Simultaneous Events May Occur
+  2247 - 0.049803        On the Criteria To Be Used in Decomposing Systems into Modules
+  1301 - 0.048920        On ALGOL I/O Conventions
+  3077 - 0.042695        Can Programming Be Liberated from the von Neumann Style?  A Functional Style and Its Algebra of Programs
+  2156 - 0.038779        Comment on Cheney's List-Compaction Algorithm
+  3177 - 0.037411        How to Share a Secret
+   100 - 0.037266        Recursive Subscripting Compilers and List-Types Memories
+   889 - 0.037176        Official Actions and Responses to ALGOL As a Programming Language
+  1113 - 0.037176        Computer-Made Perspective Movies as a Scientific and Communication Tool*
+  2879 - 0.037176        Computer Science as Empirical Inquiry: Symbols and Search
+  3059 - 0.036969        Models for Parallel Processing WIthin Programs: Application to CPU:I/O and I/O:I/O Overlap
+   144 - 0.035410        Do It by the Numbers-Digital Shorthand
+  2232 - 0.035410        Pattern Width at a Given Angle
+   477 - 0.034943        Further Remarks on Sampling a Tape File-I
+    57 - 0.033682        J.E.I.D.A. and Its Computer Center
+  1491 - 0.033682        EULER: A Generalization ALGOL, and its Formal Definition: Part I*
+Writing trec-formated results to file: data/results/trec_searchresults
+Parsing cacm qrels from file: data/cacm/qrels.text
+Writing treq-formated qrels to file: data/results/trec_qrels
+Evaluating results with trec_eval
+Evaluation results are in file: data/results/trec_results
