@@ -1,4 +1,4 @@
-package core.cacm;
+package cacm;
 
 import core.Author;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CacmQuery {
 
-	private String id;
+	private int id;
 	private String source;
 	private List<Author> authors;
 	private String query;
@@ -14,21 +14,21 @@ public class CacmQuery {
 	public CacmQuery() {
 		this.authors = new LinkedList<Author>();
 		this.query =
-		this.id =
 		this.source = "";
+		this.id = -1;
 	}
 
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

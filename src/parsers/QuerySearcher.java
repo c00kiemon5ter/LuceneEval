@@ -1,8 +1,8 @@
 package parsers;
 
 import core.SearchResult;
-import core.cacm.CacmDocument;
-import core.cacm.CacmQuery;
+import cacm.CacmDocument;
+import cacm.CacmQuery;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -79,9 +79,8 @@ public class QuerySearcher {
 			String query = normalizeQuery(cacmQuery.getQuery());
 			idxSearcher.search(queryParser.parse(query), collector);
 			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
-				SearchResult searchResult = new SearchResult(cacmQuery.getId(),
-									     query,
-									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.ID).stringValue(),
+				SearchResult searchResult = new SearchResult(cacmQuery.getId(), query,
+									     Integer.parseInt(idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.ID).stringValue()),
 									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.TITLE).stringValue(),
 									     scoreDoc.score);
 				searchResults.add(searchResult);

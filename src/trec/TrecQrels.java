@@ -15,8 +15,10 @@ public class TrecQrels {
 		this.trecqrels = new ArrayList<String>(cacmQrels.size());
 		for (String line : cacmQrels) {
 			String[] tokens = line.split("\\s+");
-			trecqrels.add(String.format("%s ITER %s %s\n", tokens[0], tokens[1],
-						    (tokens[2].equals(tokens[3]) ? "1" : "0")));
+			int qid = Integer.parseInt(tokens[0]);
+			int docId = Integer.parseInt(tokens[1]);
+			int rel = tokens[2].equals(tokens[3]) ? 1 : 0;
+			trecqrels.add(String.format("%d\tITER\t%d\t%d\n", qid, docId, rel));
 		}
 	}
 

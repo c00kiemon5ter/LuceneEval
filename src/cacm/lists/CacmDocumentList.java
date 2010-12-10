@@ -1,6 +1,6 @@
 package cacm.lists;
 
-import core.cacm.CacmDocument;
+import cacm.CacmDocument;
 import java.util.LinkedList;
 import java.util.List;
 import org.simpleframework.xml.ElementList;

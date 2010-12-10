@@ -32,7 +32,7 @@ public class LuceneEval {
 	private static final String TREC_QRELS_FILE = "data/results/trec_qrels";
 	private static final String TREC_SEARCHRESULTS_FILE = "data/results/trec_searchresults";
 	private static final String TREC_RESULTS_FILE = "data/results/trec_results";
-	private static final int RESULTS_LIMIT = 20;
+	private static final int RESULTS_LIMIT = 40;
 
 	public static void main(String[] args) {
 		try {
@@ -83,16 +83,16 @@ public class LuceneEval {
 	}
 
 	private void printSearchResults(Collection<SearchResult> results) {
-		String prevQid = "";
+		int prevQid = -1;
 		String seperator = "-----------------------------------";
 		for (SearchResult result : results) {
-			if (!result.getQid().equals(prevQid)) {
+			if (result.getQid() != prevQid) {
 				prevQid = result.getQid();
 				System.out.format("%s\nSearching for: %s - %s\n%s\n",
 						  seperator, result.getQid(),
 						  result.getQueryText(), seperator);
 			}
-			System.out.printf("%6s - %6f\t%s\n", result.getDid(),
+			System.out.printf("%6s - %6f\t%s\n", result.getDocId(),
 					  result.getScore(), result.getDocumentTitle());
 		}
 	}

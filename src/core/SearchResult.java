@@ -2,16 +2,16 @@ package core;
 
 public class SearchResult {
 
-	private String qid;
-	private String did;
+	private int qid;
+	private int docId;
 	private float score;
 	private String matchingDocument;
 	private String queryText;
 
-	public SearchResult(String qid, String queryText, String did,
+	public SearchResult(int qid, String queryText, int did,
 			    String documentTitle, float score) {
 		this.qid = qid;
-		this.did = did;
+		this.docId = did;
 		this.score = score;
 		this.matchingDocument = documentTitle;
 		this.queryText = queryText;
@@ -23,16 +23,16 @@ public class SearchResult {
 
 	@Override
 	public String toString() {
-		return String.format("%6s - %s\n%6s - %f : %s", qid, queryText,
-				     did, score, matchingDocument);
+		return String.format("%6d - %s\n%6d - %f : %s", qid, queryText,
+				     docId, score, matchingDocument);
 	}
 
-	public String getQid() {
+	public int getQid() {
 		return qid;
 	}
 
-	public String getDid() {
-		return did;
+	public int getDocId() {
+		return docId;
 	}
 
 	public String getQueryText() {

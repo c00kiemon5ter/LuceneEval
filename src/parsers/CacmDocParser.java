@@ -1,6 +1,6 @@
 package parsers;
 
-import core.cacm.CacmDocument;
+import cacm.CacmDocument;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
