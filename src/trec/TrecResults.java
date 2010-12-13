@@ -12,12 +12,14 @@ public class TrecResults {
 
 	private Collection<TrecResult> trecResults;
 
-	public TrecResults(Collection<SearchResult> searchResults) {
+	public TrecResults(Collection<Collection<SearchResult>> searchResults) {
 		this.trecResults = new ArrayList<TrecResult>(searchResults.size());
 		TrecResult trecResult;
-		for (SearchResult searchResult : searchResults) {
-			trecResult = new TrecResult(searchResult);
-			this.trecResults.add(trecResult);
+		for (Collection<SearchResult> queryResults : searchResults) {
+			for (SearchResult searchResult : queryResults) {
+				trecResult = new TrecResult(searchResult);
+				this.trecResults.add(trecResult);
+			}
 		}
 	}
 

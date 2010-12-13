@@ -4,6 +4,8 @@ import core.SearchResult;
 import cacm.CacmDocument;
 import cacm.CacmQuery;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -70,11 +72,12 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public List<SearchResult> search(List<CacmQuery> queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
+	public Collection<Collection<SearchResult>> search(List<CacmQuery> queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
-		List<SearchResult> searchResults = new LinkedList<SearchResult>();
+		Collection<Collection<SearchResult>> searchResults = new ArrayList<Collection<SearchResult>>(queryList.size());
 		for (CacmQuery cacmQuery : queryList) {
+			List<SearchResult> queryResults = new ArrayList<SearchResult>(numResults);
 			TopScoreDocCollector collector = TopScoreDocCollector.create(numResults, true);
 			String query = normalizeQuery(cacmQuery.getQuery());
 			idxSearcher.search(queryParser.parse(query), collector);
@@ -83,8 +86,9 @@ public class QuerySearcher {
 									     Integer.parseInt(idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.ID).stringValue()),
 									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.TITLE).stringValue(),
 									     scoreDoc.score);
-				searchResults.add(searchResult);
+				queryResults.add(searchResult);
 			}
+			searchResults.add(queryResults);
 		}
 		return searchResults;
 	}

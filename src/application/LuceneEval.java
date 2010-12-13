@@ -12,6 +12,7 @@ import io.XmlReader;
 import io.XmlWriter;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,6 +34,7 @@ public class LuceneEval {
 	private static final String TREC_SEARCHRESULTS_FILE = "data/results/trec_searchresults";
 	private static final String TREC_RESULTS_FILE = "data/results/trec_results";
 	private static final int RESULTS_LIMIT = 40;
+	private static final int ROCCHIO_LIMIT = 20;
 
 	public static void main(String[] args) {
 		try {
@@ -60,7 +62,7 @@ public class LuceneEval {
 		/* do not use stopwords */
 //		List<SearchResult> results = new QuerySearcher(documentList.getDocuments()).search(queryList.getQueries(), RESULTS_LIMIT);
 		/* use stopwords */
-		List<SearchResult> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
+		Collection<Collection<SearchResult>> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
 
 		/* uncomment to print search results */
 //		System.out.println("Printing results to output");
