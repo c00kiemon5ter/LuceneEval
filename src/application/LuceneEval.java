@@ -61,13 +61,9 @@ public class LuceneEval {
 
 		System.out.println("Searching cacm documents with cacm queries");
 		/* do not use stopwords */
-//		List<SearchResult> results = new QuerySearcher(documentList.getDocuments()).search(queryList.getQueries(), RESULTS_LIMIT);
+//		Collection<QueryResults> results = new QuerySearcher(documentList.getDocuments()).search(queryList.getQueries(), RESULTS_LIMIT);
 		/* use stopwords */
 		Collection<QueryResults> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
-
-		/* uncomment to print search results */
-//		System.out.println("Printing results to output");
-//		printSearchResults(results);
 
 		System.out.printf("Writing trec-formated results to file: %s\n", TREC_SEARCHRESULTS_FILE);
 		new TrecResults(results).write(TREC_SEARCHRESULTS_FILE);
@@ -84,23 +80,5 @@ public class LuceneEval {
 		if (status != 0) {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, "Error: trec_eval exit status is ", status);
 		}
-
-
-		System.exit(status);
 	}
-
-//	private void printSearchResults(Collection<SearchResult> results) {
-//		int prevQid = -1;
-//		String seperator = "-----------------------------------";
-//		for (SearchResult result : results) {
-//			if (result.getQid() != prevQid) {
-//				prevQid = result.getQid();
-//				System.out.format("%s\nSearching for: %s - %s\n%s\n",
-//						  seperator, result.getQid(),
-//						  result.getQueryText(), seperator);
-//			}
-//			System.out.printf("%6s - %6f\t%s\n", result.getDocId(),
-//					  result.getScore(), result.getDocumentTitle());
-//		}
-//	}
 }
