@@ -1,26 +1,34 @@
 package application;
 
-import core.SearchResult;
+import cacm.CacmDocument;
 import java.io.FileNotFoundException;
 import org.apache.lucene.store.LockObtainFailedException;
-import parsers.QuerySearcher;
+import queryutils.QuerySearcher;
 import cacm.lists.CacmDocumentList;
 import cacm.lists.CacmQueryList;
-import core.QueryResults;
+import queryutils.QueryResults;
 import trec.TrecQrels;
 import trec.TrecResults;
 import io.XmlReader;
 import io.XmlWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.util.Version;
 import parsers.CacmDocParser;
 import parsers.CacmQrelsParser;
 import parsers.CacmQueryParser;
+import parsers.StopWordParser;
+import rocchio.QueryExpander;
+import rocchio.RocchioExpander;
 import trec.TrecProcess;
 
 public class LuceneEval {
@@ -36,6 +44,7 @@ public class LuceneEval {
 	private static final String TREC_RESULTS_FILE = "data/results/trec_results";
 	private static final int RESULTS_LIMIT = 40;
 	private static final int ROCCHIO_LIMIT = 20;
+	private static final String searchField = CacmDocument.Fields.TITLE;
 
 	public static void main(String[] args) {
 		try {
@@ -44,9 +53,14 @@ public class LuceneEval {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.SEVERE, "Fatal Error: ", ex);
 			System.exit(1);
 		}
+		System.exit(0);
 	}
 
-	private LuceneEval() throws FileNotFoundException, LockObtainFailedException, IOException, ParseException, Exception {
+	private LuceneEval() throws FileNotFoundException, LockObtainFailedException,
+				    IOException, ParseException, Exception {
+		Set<String> stopwords = new StopWordParser(STOPWORDLIST).parse();
+		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
+
 		System.out.printf("Parsing cacm documents from file: %s\n", DATAFILE);
 		CacmDocumentList documentList = new CacmDocumentList(new CacmDocParser(DATAFILE).parse());
 
@@ -60,13 +74,12 @@ public class LuceneEval {
 		CacmQueryList queryList = new CacmQueryList(new CacmQueryParser(QUERYFILE).parse());
 
 		System.out.println("Searching cacm documents with cacm queries");
-		/* do not use stopwords */
-//		Collection<QueryResults> results = new QuerySearcher(documentList.getDocuments()).search(queryList.getQueries(), RESULTS_LIMIT);
-		/* use stopwords */
-		Collection<QueryResults> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
+		Collection<QueryResults> queriesResults = new QuerySearcher(
+			documentList.getDocuments(), analyzer).search(
+			queryList.getQueries(), searchField, RESULTS_LIMIT);
 
 		System.out.printf("Writing trec-formated results to file: %s\n", TREC_SEARCHRESULTS_FILE);
-		new TrecResults(results).write(TREC_SEARCHRESULTS_FILE);
+		new TrecResults(queriesResults).write(TREC_SEARCHRESULTS_FILE);
 
 		System.out.printf("Parsing cacm qrels from file: %s\n", CACM_QRELS_FILE);
 		List<String> cacmqrels = new CacmQrelsParser(CACM_QRELS_FILE).parse();
@@ -78,7 +91,16 @@ public class LuceneEval {
 		int status = new TrecProcess(TREC_QRELS_FILE, TREC_SEARCHRESULTS_FILE, TREC_RESULTS_FILE).run();
 		System.out.printf("Evaluation results are in file: %s\n", TREC_RESULTS_FILE);
 		if (status != 0) {
-			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, "Error: trec_eval exit status is ", status);
+			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, String.format(
+				"Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
+		}
+
+		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%f b=%f c=%f\n",
+				  ROCCHIO_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
+		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
+		QueryExpander expander = new RocchioExpander(analyzer, searchField, ROCCHIO_LIMIT);
+		for (QueryResults queryResults : queriesResults) {
+			rocchioQueries.add(expander.expand(queryResults));
 		}
 	}
 }
