@@ -1,4 +1,4 @@
-package core;
+package queryutils;
 
 import cacm.CacmQuery;
 import java.util.HashMap;

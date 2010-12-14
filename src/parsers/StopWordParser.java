@@ -8,12 +8,12 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-class StopWordParser implements Parser<String> {
+public class StopWordParser implements Parser<String> {
 
 	private BufferedReader reader;
 	private Set<String> stopwords;
 
-	StopWordParser(String stopwordfile) throws FileNotFoundException {
+	public StopWordParser(String stopwordfile) throws FileNotFoundException {
 		this.reader = new BufferedReader(new FileReader(new File(stopwordfile)));
 		stopwords = new HashSet<String>();
 	}

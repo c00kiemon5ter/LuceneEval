@@ -1,7 +1,7 @@
 package trec;
 
 import cacm.CacmDocument;
-import core.QueryResults;
+import queryutils.QueryResults;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
