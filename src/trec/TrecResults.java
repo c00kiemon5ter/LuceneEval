@@ -19,7 +19,7 @@ public class TrecResults {
 		TrecResult trecResult;
 		for (QueryResults queryResults : searchResults) {
 			for (Document document : queryResults.queryResults().keySet()) {
-				int qid = queryResults.query().getId();
+				int qid = queryResults.getQueryId();
 				int docid = Integer.parseInt(document.get(CacmDocument.Fields.ID));
 				float score = queryResults.queryResults().get(document);
 				trecResult = new TrecResult(qid, docid, score);

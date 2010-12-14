@@ -1,17 +1,23 @@
 package queryutils;
 
-import cacm.CacmQuery;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.lucene.document.Document;
+import org.apache.lucene.search.Query;
 
 public class QueryResults {
 
-	private CacmQuery query;
+	private Query query;
+	private int queryId;
 	private Map<Document, Float> relevantDocuments;
 
-	public QueryResults(CacmQuery query, int resultLimit) {
+	public QueryResults(Query query, int queryId) {
+		this(query, queryId, 60);
+	}
+
+	public QueryResults(Query query, int queryId, int resultLimit) {
 		this.query = query;
+		this.queryId = queryId;
 		this.relevantDocuments = new HashMap<Document, Float>(resultLimit);
 	}
 
@@ -19,7 +25,11 @@ public class QueryResults {
 		return this.relevantDocuments.put(document, score);
 	}
 
-	public CacmQuery query() {
+	public int getQueryId() {
+		return queryId;
+	}
+
+	public Query query() {
 		return query;
 	}
 

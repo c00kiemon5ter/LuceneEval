@@ -13,6 +13,7 @@ import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
@@ -61,8 +62,9 @@ public class QuerySearcher {
 		Collection<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
 		for (CacmQuery cacmQuery : queryList) {
 			TopScoreDocCollector collector = TopScoreDocCollector.create(resultsLimit, true);
-			idxSearcher.search(QueryUtils.normalizeQuery(cacmQuery.getQuery(), field, analyzer), collector);
-			QueryResults queryResults = new QueryResults(cacmQuery, resultsLimit);
+			Query query = QueryUtils.normalizeQuery(cacmQuery.getQuery(), field, analyzer);
+			idxSearcher.search(query, collector);
+			QueryResults queryResults = new QueryResults(query, cacmQuery.getId(), resultsLimit);
 			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
 				queryResults.addRelevantDoc(idxSearcher.doc(scoreDoc.doc), scoreDoc.score);
 			}
