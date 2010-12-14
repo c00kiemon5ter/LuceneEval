@@ -69,11 +69,11 @@ public class LuceneEval {
 		System.out.printf("Parsing cacm documents from file: %s\n", DATAFILE);
 		CacmDocumentList documentList = new CacmDocumentList(new CacmDocParser(DATAFILE).parse());
 
-		System.out.printf("Writing cacm documents to xml file: %s\n", CACM_XML);
-		new XmlWriter<CacmDocumentList>(CACM_XML).write(documentList);
-
-		System.out.printf("Loading cacm documents from xml file: %s\n", CACM_XML);
-		documentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
+//		System.out.printf("Writing cacm documents to xml file: %s\n", CACM_XML);
+//		new XmlWriter<CacmDocumentList>(CACM_XML).write(documentList);
+//
+//		System.out.printf("Loading cacm documents from xml file: %s\n", CACM_XML);
+//		documentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
 
 		System.out.printf("Parsing cacm queries from file: %s\n", QUERYFILE);
 		CacmQueryList queryList = new CacmQueryList(new CacmQueryParser(QUERYFILE).parse());
@@ -105,7 +105,9 @@ public class LuceneEval {
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField);
 		for (QueryResults queryResults : queriesResults) {
-			rocchioQueries.add(expander.expand(queryResults, ROCCHIO_LIMIT, TERM_LIMIT));
+			rocchioQueries.add(expander.expand(queryResults.query(),
+							   queryResults.queryResults().keySet(),
+							   ROCCHIO_LIMIT, TERM_LIMIT));
 		}
 	}
 }
