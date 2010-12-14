@@ -11,8 +11,9 @@ import org.apache.lucene.search.Query;
 public interface QueryExpander {
 
 	public static final float ALPHA = 1.0F;
-	public static final float BETA = 0.8F;
+	public static final float BETA = 0.75F;
 	public static final float GAMMA = 0.0F;
 
-	Query expand(QueryResults queryResults, int docLimit) throws ParseException;
+	Query expand(final QueryResults queryResults, final int docLimit,
+		     final int termLimit) throws ParseException;
 }

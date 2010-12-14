@@ -34,17 +34,21 @@ import trec.TrecProcess;
 public class LuceneEval {
 
 	/* configuration */
+	/** input files */
 	private static final String DATAFILE = "data/cacm/cacm.all";
-	private static final String CACM_XML = "data/results/cacm.all.xml";
 	private static final String QUERYFILE = "data/cacm/query.text";
 	private static final String STOPWORDLIST = "data/cacm/common_words";
 	private static final String CACM_QRELS_FILE = "data/cacm/qrels.text";
+	/** output files */
+	private static final String CACM_XML = "data/results/cacm.all.xml";
 	private static final String TREC_QRELS_FILE = "data/results/trec_qrels";
 	private static final String TREC_SEARCHRESULTS_FILE = "data/results/trec_searchresults";
 	private static final String TREC_RESULTS_FILE = "data/results/trec_results";
+	/** search limits */
 	private static final int RESULTS_LIMIT = 40;
 	private static final int ROCCHIO_LIMIT = 20;
-	private static final String searchField = CacmDocument.Fields.TITLE;
+	private static final int TERM_LIMIT = 15;
+	/* End of configuration */
 
 	public static void main(String[] args) {
 		try {
@@ -58,6 +62,7 @@ public class LuceneEval {
 
 	private LuceneEval() throws FileNotFoundException, LockObtainFailedException,
 				    IOException, ParseException, Exception {
+		final String searchField = CacmDocument.Fields.TITLE;
 		Set<String> stopwords = new StopWordParser(STOPWORDLIST).parse();
 		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
 
@@ -100,7 +105,7 @@ public class LuceneEval {
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField);
 		for (QueryResults queryResults : queriesResults) {
-			rocchioQueries.add(expander.expand(queryResults, ROCCHIO_LIMIT));
+			rocchioQueries.add(expander.expand(queryResults, ROCCHIO_LIMIT, TERM_LIMIT));
 		}
 	}
 }
