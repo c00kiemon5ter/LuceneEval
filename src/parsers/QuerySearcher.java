@@ -1,12 +1,11 @@
 package parsers;
 
-import core.SearchResult;
 import cacm.CacmDocument;
 import cacm.CacmQuery;
+import core.QueryResults;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import org.apache.lucene.analysis.Analyzer;
@@ -72,21 +71,17 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public Collection<Collection<SearchResult>> search(List<CacmQuery> queryList, int numResults) throws ParseException, CorruptIndexException, IOException {
+	public Collection<QueryResults> search(List<CacmQuery> queryList, int resultsLimit) throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		QueryParser queryParser = new QueryParser(Version.LUCENE_29, CacmDocument.Fields.TITLE, analyzer);
-		Collection<Collection<SearchResult>> searchResults = new ArrayList<Collection<SearchResult>>(queryList.size());
+		Collection<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
 		for (CacmQuery cacmQuery : queryList) {
-			List<SearchResult> queryResults = new ArrayList<SearchResult>(numResults);
-			TopScoreDocCollector collector = TopScoreDocCollector.create(numResults, true);
+			QueryResults queryResults = new QueryResults(cacmQuery, resultsLimit);
+			TopScoreDocCollector collector = TopScoreDocCollector.create(resultsLimit, true);
 			String query = normalizeQuery(cacmQuery.getQuery());
 			idxSearcher.search(queryParser.parse(query), collector);
 			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
-				SearchResult searchResult = new SearchResult(cacmQuery.getId(), query,
-									     Integer.parseInt(idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.ID).stringValue()),
-									     idxSearcher.doc(scoreDoc.doc).getField(CacmDocument.Fields.TITLE).stringValue(),
-									     scoreDoc.score);
-				queryResults.add(searchResult);
+				queryResults.addRelevantDoc(idxSearcher.doc(scoreDoc.doc), scoreDoc.score);
 			}
 			searchResults.add(queryResults);
 		}

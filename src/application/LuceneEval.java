@@ -6,6 +6,7 @@ import org.apache.lucene.store.LockObtainFailedException;
 import parsers.QuerySearcher;
 import cacm.lists.CacmDocumentList;
 import cacm.lists.CacmQueryList;
+import core.QueryResults;
 import trec.TrecQrels;
 import trec.TrecResults;
 import io.XmlReader;
@@ -62,7 +63,7 @@ public class LuceneEval {
 		/* do not use stopwords */
 //		List<SearchResult> results = new QuerySearcher(documentList.getDocuments()).search(queryList.getQueries(), RESULTS_LIMIT);
 		/* use stopwords */
-		Collection<Collection<SearchResult>> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
+		Collection<QueryResults> results = new QuerySearcher(documentList.getDocuments(), STOPWORDLIST).search(queryList.getQueries(), RESULTS_LIMIT);
 
 		/* uncomment to print search results */
 //		System.out.println("Printing results to output");
@@ -80,22 +81,26 @@ public class LuceneEval {
 		System.out.printf("Evaluating results with %s\n", TrecProcess.TREC_EXECUTABLE);
 		int status = new TrecProcess(TREC_QRELS_FILE, TREC_SEARCHRESULTS_FILE, TREC_RESULTS_FILE).run();
 		System.out.printf("Evaluation results are in file: %s\n", TREC_RESULTS_FILE);
+		if (status != 0) {
+			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, "Error: trec_eval exit status is ", status);
+		}
+
 
 		System.exit(status);
 	}
 
-	private void printSearchResults(Collection<SearchResult> results) {
-		int prevQid = -1;
-		String seperator = "-----------------------------------";
-		for (SearchResult result : results) {
-			if (result.getQid() != prevQid) {
-				prevQid = result.getQid();
-				System.out.format("%s\nSearching for: %s - %s\n%s\n",
-						  seperator, result.getQid(),
-						  result.getQueryText(), seperator);
-			}
-			System.out.printf("%6s - %6f\t%s\n", result.getDocId(),
-					  result.getScore(), result.getDocumentTitle());
-		}
-	}
+//	private void printSearchResults(Collection<SearchResult> results) {
+//		int prevQid = -1;
+//		String seperator = "-----------------------------------";
+//		for (SearchResult result : results) {
+//			if (result.getQid() != prevQid) {
+//				prevQid = result.getQid();
+//				System.out.format("%s\nSearching for: %s - %s\n%s\n",
+//						  seperator, result.getQid(),
+//						  result.getQueryText(), seperator);
+//			}
+//			System.out.printf("%6s - %6f\t%s\n", result.getDocId(),
+//					  result.getScore(), result.getDocumentTitle());
+//		}
+//	}
 }

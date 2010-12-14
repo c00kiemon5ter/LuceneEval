@@ -1,15 +1,17 @@
 package core;
 
+@Deprecated
 public class SearchResult {
 
 	private int qid;
-	private int docId;
-	private float score;
-	private String matchingDocument;
 	private String queryText;
+	private int docId;
+	private String matchingDocument;
+	private float score;
 
-	public SearchResult(int qid, String queryText, int did,
-			    String documentTitle, float score) {
+	public SearchResult(int qid, String queryText,
+			    int did, String documentTitle,
+			    float score) {
 		this.qid = qid;
 		this.docId = did;
 		this.score = score;
