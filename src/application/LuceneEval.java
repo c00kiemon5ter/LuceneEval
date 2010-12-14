@@ -98,9 +98,9 @@ public class LuceneEval {
 		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%f b=%f c=%f\n",
 				  ROCCHIO_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
-		QueryExpander expander = new RocchioExpander(analyzer, searchField, ROCCHIO_LIMIT);
+		QueryExpander expander = new RocchioExpander(analyzer, searchField);
 		for (QueryResults queryResults : queriesResults) {
-			rocchioQueries.add(expander.expand(queryResults));
+			rocchioQueries.add(expander.expand(queryResults, ROCCHIO_LIMIT));
 		}
 	}
 }

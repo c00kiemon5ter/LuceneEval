@@ -14,5 +14,5 @@ public interface QueryExpander {
 	public static final float BETA = 0.8F;
 	public static final float GAMMA = 0.0F;
 
-	Query expand(QueryResults queryResults) throws ParseException;
+	Query expand(QueryResults queryResults, int docLimit) throws ParseException;
 }
