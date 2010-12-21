@@ -25,39 +25,59 @@ public class QuerySearcher {
 	private Directory index;
 	private Analyzer analyzer;
 
-	public QuerySearcher(List<CacmDocument> documentList, Analyzer analyzer) throws CorruptIndexException, LockObtainFailedException, IOException {
+	public QuerySearcher(List<CacmDocument> documentList, Analyzer analyzer)
+		throws CorruptIndexException, LockObtainFailedException, IOException {
 		this.index = new RAMDirectory();
 		this.analyzer = analyzer;
 		createIndex(documentList);
 	}
 
-	private void createIndex(List<CacmDocument> documentList) throws CorruptIndexException, LockObtainFailedException, IOException {
+	private void createIndex(List<CacmDocument> documentList)
+		throws CorruptIndexException, LockObtainFailedException, IOException {
 		IndexWriter idxwriter = new IndexWriter(index, analyzer, true, IndexWriter.MaxFieldLength.LIMITED);
 		for (CacmDocument cacmDocument : documentList) {
 			Document document = new Document();
-			document.add(new Field(CacmDocument.Fields.ABSTRACT, cacmDocument.getAbstractInfo(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.AUTHORS, cacmDocument.getAuthors().toString(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.DATE, cacmDocument.getDate(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.ENTRYDATE, cacmDocument.getEntrydate(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.ID, cacmDocument.getId(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.REFERENCE, cacmDocument.getReferences().toString(),
-					       Field.Store.YES, Field.Index.NO, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.KEYWORDS, cacmDocument.getKeywords().toString(),
-					       Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.NO));
-			document.add(new Field(CacmDocument.Fields.TITLE, cacmDocument.getTitle(),
-					       Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
+			document.add(new Field(CacmDocument.Fields.ABSTRACT,
+					       cacmDocument.getAbstractInfo(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.AUTHORS,
+					       cacmDocument.getAuthors().toString(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.DATE,
+					       cacmDocument.getDate(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.ENTRYDATE,
+					       cacmDocument.getEntrydate(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.ID,
+					       String.valueOf(cacmDocument.getId()),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.REFERENCE,
+					       cacmDocument.getReferences().toString(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.KEYWORDS,
+					       cacmDocument.getKeywords().toString(),
+					       Field.Store.YES, Field.Index.NO,
+					       Field.TermVector.NO));
+			document.add(new Field(CacmDocument.Fields.TITLE,
+					       cacmDocument.getTitle(),
+					       Field.Store.YES, Field.Index.ANALYZED,
+					       Field.TermVector.YES));
 			idxwriter.addDocument(document);
 		}
 		idxwriter.optimize();
 		idxwriter.close();
 	}
 
-	public Collection<QueryResults> search(List<CacmQuery> queryList, String field, int resultsLimit) throws ParseException, CorruptIndexException, IOException {
+	public Collection<QueryResults> search(List<CacmQuery> queryList,
+					       String field, int resultsLimit)
+		throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		Collection<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
 		for (CacmQuery cacmQuery : queryList) {

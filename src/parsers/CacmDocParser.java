@@ -49,7 +49,7 @@ public class CacmDocParser implements Parser<CacmDocument> {
 						documents.add(document);
 					}
 					document = new CacmDocument();
-					document.setId(line.substring(2).trim());
+					document.setId(Integer.parseInt(line.substring(2).trim()));
 				}
 			} else {
 				switch (state) {

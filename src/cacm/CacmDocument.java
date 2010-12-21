@@ -19,7 +19,7 @@ public class CacmDocument {
 	@Element(required = false)
 	private String content;
 	@Attribute
-	private String id;
+	private int id;
 	@ElementList(entry = "keyword", required = false)
 	private List<String> keywords;
 	@Element
@@ -49,10 +49,10 @@ public class CacmDocument {
 		this.keywords = new LinkedList<String>();
 		this.abstractInfo =
 		this.entrydate =
-		this.id =
 		this.content =
 		this.title =
 		this.date = "";
+		this.id = -1;
 	}
 
 	/**
@@ -100,14 +100,14 @@ public class CacmDocument {
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
