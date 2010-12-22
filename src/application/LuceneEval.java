@@ -100,7 +100,7 @@ public class LuceneEval {
 				"Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
 		}
 
-		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%f b=%f c=%f\n",
+		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
 				  ROCCHIO_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField);
