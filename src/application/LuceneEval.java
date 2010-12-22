@@ -14,6 +14,7 @@ import io.XmlWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -46,8 +47,8 @@ public class LuceneEval {
 	private static final String TREC_RESULTS_FILE = "data/results/trec_results";
 	/** search limits */
 	private static final int RESULTS_LIMIT = 40;
-	private static final int ROCCHIO_LIMIT = 20;
-	private static final int TERM_LIMIT = 15;
+	private static final int ROCCHIO_DOC_LIMIT = 20;
+	private static final int ROCCHIO_EXTRA_TERMS = 10;
 	/* End of configuration */
 
 	public static void main(String[] args) {
@@ -101,13 +102,13 @@ public class LuceneEval {
 		}
 
 		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
-				  ROCCHIO_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
+				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField);
 		for (QueryResults queryResults : queriesResults) {
 			rocchioQueries.add(expander.expand(queryResults.query(),
 							   queryResults.queryResults().keySet(),
-							   ROCCHIO_LIMIT, TERM_LIMIT));
+							   ROCCHIO_DOC_LIMIT, ROCCHIO_EXTRA_TERMS));
 		}
 	}
 }

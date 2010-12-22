@@ -2,6 +2,7 @@ package rocchio;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,15 +49,14 @@ public class RocchioExpander implements QueryExpander {
 
 	@Override
 	public Query expand(final Query original, final Collection<Document> relevantDocs,
-			    int docLimit, int termsLimit)
+			    int docLimit, int extraTermsLimit)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException {
-		StringBuilder rocchioTerms = new StringBuilder(original.toString(field));
-		Map<String, Float> termScoreMap = new HashMap<String, Float>(termsLimit);
 		Directory index = createIndex(relevantDocs, docLimit);
 		IndexReader idxreader = IndexReader.open(index, true);
 		TermEnum termEnum = idxreader.terms();
 		TermDocs termDocs = idxreader.termDocs();
+		Map<String, Float> termScoreMap = new HashMap<String, Float>(extraTermsLimit);
 		while (termEnum.next()) {
 			termDocs.seek(termEnum);
 			while (termDocs.next()) {
@@ -76,9 +76,16 @@ public class RocchioExpander implements QueryExpander {
 				return a.getValue().compareTo(b.getValue());
 			}
 		});
+		Set<String> terms = new HashSet<String>(Arrays.asList(original.toString(field).split("\\s+")));
 		Iterator<Entry<String, Float>> iter = sortedTermScore.iterator();
-		while (iter.hasNext() && --termsLimit >= 0) {
-			rocchioTerms.append(' ').append(iter.next().getKey());
+		while (iter.hasNext() && extraTermsLimit > 0) {
+			if (terms.add(iter.next().getKey())) {
+				--extraTermsLimit;
+			}
+		}
+		StringBuilder rocchioTerms = new StringBuilder(terms.size());
+		for (String term : terms) {
+			rocchioTerms.append(' ').append(term);
 		}
 		return QueryUtils.normalizeQuery(rocchioTerms.toString(), field, analyzer);
 	}

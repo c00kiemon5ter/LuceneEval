@@ -19,7 +19,7 @@ public interface QueryExpander {
 	public static final float GAMMA = 0.0F;
 
 	Query expand(final Query original, final Collection<Document> relevantDocs,
-		     final int docLimit, final int termLimit)
+		     final int docLimit, final int extraTermsLimit)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException;
 }
