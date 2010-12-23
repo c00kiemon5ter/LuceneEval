@@ -102,13 +102,15 @@ public class LuceneEval {
 		}
 
 		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
-				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA, QueryExpander.BETA, QueryExpander.GAMMA);
+				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA,
+				  QueryExpander.BETA, QueryExpander.GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
-		QueryExpander expander = new RocchioExpander(analyzer, searchField);
+		QueryExpander expander = new RocchioExpander(analyzer, searchField,
+							     ROCCHIO_DOC_LIMIT,
+							     ROCCHIO_EXTRA_TERMS);
 		for (QueryResults queryResults : queriesResults) {
 			rocchioQueries.add(expander.expand(queryResults.query(),
-							   queryResults.queryResults().keySet(),
-							   ROCCHIO_DOC_LIMIT, ROCCHIO_EXTRA_TERMS));
+							   queryResults.queryResults().keySet()));
 		}
 	}
 }

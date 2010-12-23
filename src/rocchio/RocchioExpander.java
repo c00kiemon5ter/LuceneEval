@@ -32,55 +32,40 @@ public class RocchioExpander implements QueryExpander {
 
 	private final float alpha;
 	private final float beta;
+	private final int docsLimit;
+	private final int termsLimit;
 	private Analyzer analyzer;
 	private final String field;
 
-	public RocchioExpander(Analyzer analyzer, final String field) {
-		this(analyzer, field, ALPHA, BETA);
+	public RocchioExpander(Analyzer analyzer, final String field,
+			       int docsLimit, int extraTermsLimit) {
+		this(analyzer, field, docsLimit, extraTermsLimit, ALPHA, BETA);
 	}
 
 	public RocchioExpander(Analyzer analyzer, final String field,
-			       final float alpha, final float beta) {
+			       int docsLimit, int extraTermsLimit,
+			       float alpha, float beta) {
 		this.alpha = alpha;
 		this.beta = beta;
+		this.docsLimit = docsLimit;
+		this.termsLimit = extraTermsLimit;
 		this.analyzer = analyzer;
 		this.field = field;
 	}
 
 	@Override
-	public Query expand(final Query original, final Collection<Document> relevantDocs,
-			    int docLimit, int extraTermsLimit)
+	public Query expand(final Query original, final Collection<Document> relevantDocs)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException {
-		Directory index = createIndex(relevantDocs, docLimit);
-		IndexReader idxreader = IndexReader.open(index, true);
-		TermEnum termEnum = idxreader.terms();
-		TermDocs termDocs = idxreader.termDocs();
-		Map<String, Float> termScoreMap = new HashMap<String, Float>(extraTermsLimit);
-		while (termEnum.next()) {
-			termDocs.seek(termEnum);
-			while (termDocs.next()) {
-				int docsnum = idxreader.numDocs();
-				int tf = termDocs.freq();
-				int df = termEnum.docFreq();
-				float idf = Similarity.getDefault().idf(df, docsnum);
-				float tfidf = tf * idf;
-				termScoreMap.put(termEnum.term().text(), tfidf);
-			}
-		}
-		List<Entry<String, Float>> sortedTermScore = new ArrayList<Entry<String, Float>>(termScoreMap.entrySet());
-		Collections.sort(sortedTermScore, new Comparator<Entry<String, Float>>() {
-
-			@Override
-			public int compare(Entry<String, Float> a, Entry<String, Float> b) {
-				return a.getValue().compareTo(b.getValue());
-			}
-		});
+		Directory index = createIndex(relevantDocs, docsLimit);
+		Map<String, Float> termScoreMap = getTermScoreMap(index);
+		List<Entry<String, Float>> sortedTermScoreList = getSortedTermScores(termScoreMap);
 		Set<String> terms = new HashSet<String>(Arrays.asList(original.toString(field).split("\\s+")));
-		Iterator<Entry<String, Float>> iter = sortedTermScore.iterator();
-		while (iter.hasNext() && extraTermsLimit > 0) {
+		Iterator<Entry<String, Float>> iter = sortedTermScoreList.iterator();
+		int limit = termsLimit;
+		while (iter.hasNext() && limit > 0) {
 			if (terms.add(iter.next().getKey())) {
-				--extraTermsLimit;
+				--limit;
 			}
 		}
 		StringBuilder rocchioTerms = new StringBuilder(terms.size());
@@ -102,5 +87,36 @@ public class RocchioExpander implements QueryExpander {
 		idxWriter.optimize();
 		idxWriter.close();
 		return index;
+	}
+
+	private Map<String, Float> getTermScoreMap(Directory index) throws CorruptIndexException, IOException {
+		Map<String, Float> termScoreMap = new HashMap<String, Float>();
+		IndexReader idxreader = IndexReader.open(index, true);
+		TermEnum termEnum = idxreader.terms();
+		TermDocs termDocs = idxreader.termDocs();
+		while (termEnum.next()) {
+			termDocs.seek(termEnum);
+			while (termDocs.next()) {
+				int docsnum = idxreader.numDocs();
+				int tf = termDocs.freq();
+				int df = termEnum.docFreq();
+				float idf = Similarity.getDefault().idf(df, docsnum);
+				float tfidf = tf * idf;
+				termScoreMap.put(termEnum.term().text(), tfidf);
+			}
+		}
+		return termScoreMap;
+	}
+
+	private List<Entry<String, Float>> getSortedTermScores(Map<String, Float> termScoreMap) {
+		List<Entry<String, Float>> sortedTermScoreList = new ArrayList<Entry<String, Float>>(termScoreMap.entrySet());
+		Collections.sort(sortedTermScoreList, new Comparator<Entry<String, Float>>() {
+
+			@Override
+			public int compare(Entry<String, Float> a, Entry<String, Float> b) {
+				return a.getValue().compareTo(b.getValue());
+			}
+		});
+		return sortedTermScoreList;
 	}
 }
