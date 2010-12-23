@@ -51,9 +51,9 @@ public class LuceneEval {
 	private static final String TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE = "data/results/trec_rocchio_searchresults";
 	private static final String TREC_ROCCHIO_RESULTS_FILE = "data/results/trec_rocchio_results";
 	/** search limits */
-	private static final int RESULTS_LIMIT = 40;
-	private static final int ROCCHIO_DOC_LIMIT = 0;
-	private static final int ROCCHIO_EXTRA_TERMS = 0;
+	private static final int RESULTS_LIMIT = 1000;
+	private static final int ROCCHIO_DOC_LIMIT = 60;
+	private static final int ROCCHIO_EXTRA_TERMS = 40;
 	/** analyzation type and fields */
 	private final Set<String> stopwords;
 	private final Analyzer analyzer;
