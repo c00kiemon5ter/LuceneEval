@@ -1,11 +1,11 @@
 package rocchio;
 
+import core.Query;
 import java.io.IOException;
 import java.util.Collection;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.search.Query;
 import org.apache.lucene.store.LockObtainFailedException;
 
 /**

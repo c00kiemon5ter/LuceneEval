@@ -75,16 +75,15 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public Collection<QueryResults> search(List<CacmQuery> queryList,
+	public Collection<QueryResults> search(Collection<core.Query> queryList,
 					       String field, int resultsLimit)
 		throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
 		Collection<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
-		for (CacmQuery cacmQuery : queryList) {
+		for (core.Query query : queryList) {
 			TopScoreDocCollector collector = TopScoreDocCollector.create(resultsLimit, true);
-			Query query = QueryUtils.normalizeQuery(cacmQuery.getQuery(), field, analyzer);
-			idxSearcher.search(query, collector);
-			QueryResults queryResults = new QueryResults(query, cacmQuery.getId(), resultsLimit);
+			idxSearcher.search(query.getQuery(), collector);
+			QueryResults queryResults = new QueryResults(query, resultsLimit);
 			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
 				queryResults.addRelevantDoc(idxSearcher.doc(scoreDoc.doc), scoreDoc.score);
 			}

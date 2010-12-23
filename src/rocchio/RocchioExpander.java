@@ -1,5 +1,6 @@
 package rocchio;
 
+import core.Query;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,6 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.TermDocs;
 import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.search.Query;
 import org.apache.lucene.search.Similarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
@@ -60,7 +60,7 @@ public class RocchioExpander implements QueryExpander {
 		Directory index = createIndex(relevantDocs, docsLimit);
 		Map<String, Float> termScoreMap = getTermScoreMap(index);
 		List<Entry<String, Float>> sortedTermScoreList = getSortedTermScores(termScoreMap);
-		Set<String> terms = new HashSet<String>(Arrays.asList(original.toString(field).split("\\s+")));
+		Set<String> terms = new HashSet<String>(Arrays.asList(original.getQuery().toString(field).split("\\s+")));
 		Iterator<Entry<String, Float>> iter = sortedTermScoreList.iterator();
 		int limit = termsLimit;
 		while (iter.hasNext() && limit > 0) {
@@ -72,7 +72,8 @@ public class RocchioExpander implements QueryExpander {
 		for (String term : terms) {
 			rocchioTerms.append(' ').append(term);
 		}
-		return QueryUtils.normalizeQuery(rocchioTerms.toString(), field, analyzer);
+		return new Query(original.getQid(), QueryUtils.normalizeQuery(
+			rocchioTerms.toString(), field, analyzer));
 	}
 
 	private Directory createIndex(Collection<Document> relevantDocs, int docLimit)
