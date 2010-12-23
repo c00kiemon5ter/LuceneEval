@@ -2,7 +2,7 @@ package rocchio;
 
 import core.Query;
 import java.io.IOException;
-import java.util.Collection;
+import java.util.List;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.queryParser.ParseException;
@@ -18,7 +18,7 @@ public interface QueryExpander {
 	public static final float BETA = 0.75F;
 	public static final float GAMMA = 0.0F;
 
-	Query expand(final Query original, final Collection<Document> relevantDocs)
+	Query expand(final Query original, final List<Document> relevantDocs)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException;
 }

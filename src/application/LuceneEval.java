@@ -8,11 +8,10 @@ import org.apache.lucene.store.LockObtainFailedException;
 import queryutils.QuerySearcher;
 import cacm.lists.CacmDocumentList;
 import cacm.lists.CacmQueryList;
+import core.Query;
 import queryutils.QueryResults;
 import trec.TrecQrels;
 import trec.TrecResults;
-import io.XmlReader;
-import io.XmlWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,6 +28,9 @@ import parsers.CacmQrelsParser;
 import parsers.CacmQueryParser;
 import parsers.StopWordParser;
 import core.Utils;
+import io.XmlReader;
+import io.XmlWriter;
+import java.util.List;
 import rocchio.QueryExpander;
 import rocchio.RocchioExpander;
 import trec.TrecProcess;
@@ -50,8 +52,8 @@ public class LuceneEval {
 	private static final String TREC_ROCCHIO_RESULTS_FILE = "data/results/trec_rocchio_results";
 	/** search limits */
 	private static final int RESULTS_LIMIT = 40;
-	private static final int ROCCHIO_DOC_LIMIT = 40;
-	private static final int ROCCHIO_EXTRA_TERMS = 20;
+	private static final int ROCCHIO_DOC_LIMIT = 0;
+	private static final int ROCCHIO_EXTRA_TERMS = 0;
 	/** analyzation type and fields */
 	private final Set<String> stopwords;
 	private final Analyzer analyzer;
@@ -60,22 +62,24 @@ public class LuceneEval {
 
 	public static void main(String[] args) {
 		try {
+			int status;
 			LuceneEval luceneEval = new LuceneEval();
 			Collection<Document> documents = luceneEval.loadCacmCollection();
-			Collection<core.Query> cacmQueryList = luceneEval.loadCacmQueries();
-			Collection<QueryResults> cacmQueriesResults = luceneEval.searchQueriesInDocuments(cacmQueryList, documents);
-			luceneEval.writeTrecResults(cacmQueriesResults, TREC_CACMQUERIES_SEARCHRESULTS_FILE);
+			Collection<Query> cacmQueryList = luceneEval.loadCacmQueries();
 			luceneEval.loadQrels();
-			luceneEval.evaluate(TREC_QRELS_FILE, TREC_CACMQUERIES_SEARCHRESULTS_FILE, TREC_CACM_RESULTS_FILE);
-			Collection<core.Query> rocchioQueryList = luceneEval.expandQueries(cacmQueriesResults);
-			Collection<QueryResults> rocchioQueriesResults = luceneEval.searchQueriesInDocuments(rocchioQueryList, documents);
+			List<QueryResults> cacmQueriesResults = luceneEval.searchQueriesInDocuments(cacmQueryList, documents);
+			luceneEval.writeTrecResults(cacmQueriesResults, TREC_CACMQUERIES_SEARCHRESULTS_FILE);
+			status = luceneEval.evaluate(TREC_QRELS_FILE, TREC_CACMQUERIES_SEARCHRESULTS_FILE, TREC_CACM_RESULTS_FILE);
+			assert status == 0 : String.format("==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status);
+			Collection<Query> rocchioQueryList = luceneEval.expandQueries(cacmQueriesResults);
+			List<QueryResults> rocchioQueriesResults = luceneEval.searchQueriesInDocuments(rocchioQueryList, documents);
 			luceneEval.writeTrecResults(rocchioQueriesResults, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
-			luceneEval.evaluate(TREC_QRELS_FILE, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE, TREC_ROCCHIO_RESULTS_FILE);
+			status = luceneEval.evaluate(TREC_QRELS_FILE, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE, TREC_ROCCHIO_RESULTS_FILE);
+			assert status == 0 : String.format("==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status);
 		} catch (Exception ex) {
-			Logger.getLogger(LuceneEval.class.getName()).log(Level.SEVERE, "Fatal Error: ", ex);
+			Logger.getLogger(LuceneEval.class.getName()).log(Level.SEVERE, "==> Fatal Error: ", ex);
 			System.exit(1);
 		}
-		System.exit(0);
 	}
 
 	private LuceneEval() throws FileNotFoundException, IOException {
@@ -87,10 +91,10 @@ public class LuceneEval {
 		System.out.printf(":: Parsing cacm documents from file: %s\n", DATAFILE);
 		CacmDocumentList cacmDocumentList = new CacmDocumentList(new CacmDocParser(DATAFILE).parse());
 
-		System.out.printf(":: Writing cacm documents to xml file: %s\n", CACM_XML);
-		new XmlWriter<CacmDocumentList>(CACM_XML).write(cacmDocumentList);
-		System.out.printf(":: Loading cacm documents from xml file: %s\n", CACM_XML);
-		cacmDocumentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
+//		System.out.printf(":: Writing cacm documents to xml file: %s\n", CACM_XML);
+//		new XmlWriter<CacmDocumentList>(CACM_XML).write(cacmDocumentList);
+//		System.out.printf(":: Loading cacm documents from xml file: %s\n", CACM_XML);
+//		cacmDocumentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
 
 		System.out.printf(":: Producing Lucene documents from cacm documents");
 		Collection<Document> documentList = new ArrayList<Document>(cacmDocumentList.getDocuments().size());
@@ -100,26 +104,26 @@ public class LuceneEval {
 		return documentList;
 	}
 
-	private Collection<core.Query> loadCacmQueries() throws FileNotFoundException, IOException, ParseException {
+	private Collection<Query> loadCacmQueries() throws FileNotFoundException, IOException, ParseException {
 		System.out.printf(":: Parsing cacm queries from file: %s\n", QUERYFILE);
 		CacmQueryList cacmQueryList = new CacmQueryList(new CacmQueryParser(QUERYFILE).parse());
 
 		System.out.printf(":: Producing Lucene queries from cacm queries");
-		Collection<core.Query> queryList = new ArrayList<core.Query>(cacmQueryList.getQueries().size());
+		Collection<Query> queryList = new ArrayList<Query>(cacmQueryList.getQueries().size());
 		for (CacmQuery cacmQuery : cacmQueryList.getQueries()) {
-			queryList.add(new core.Query(cacmQuery.getId(), Utils.normalizeQuery(cacmQuery.getQuery(),
-											     searchField, analyzer)));
+			queryList.add(new Query(cacmQuery.getId(), Utils.normalizeQuery(cacmQuery.getQuery(),
+											searchField, analyzer)));
 		}
 		return queryList;
 	}
 
-	private Collection<QueryResults> searchQueriesInDocuments(Collection<core.Query> queries, Collection<Document> documents)
+	private List<QueryResults> searchQueriesInDocuments(Collection<Query> queries, Collection<Document> documents)
 		throws ParseException, CorruptIndexException, IOException {
 		System.out.println(":: Searching queries in documents");
 		return new QuerySearcher(documents, analyzer).search(queries, searchField, RESULTS_LIMIT);
 	}
 
-	private void writeTrecResults(Collection<QueryResults> queriesResults, String trecSearchResultsFile) throws IOException {
+	private void writeTrecResults(List<QueryResults> queriesResults, String trecSearchResultsFile) throws IOException {
 		System.out.printf(":: Writing trec-formated results to file: %s\n", trecSearchResultsFile);
 		new TrecResults(queriesResults).write(trecSearchResultsFile);
 	}
@@ -144,18 +148,18 @@ public class LuceneEval {
 		return status;
 	}
 
-	private Collection<core.Query> expandQueries(Collection<QueryResults> queriesResults)
+	private Collection<Query> expandQueries(Collection<QueryResults> queriesResults)
 		throws ParseException, CorruptIndexException, LockObtainFailedException, IOException {
 		System.out.printf(":: Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
 				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA,
 				  QueryExpander.BETA, QueryExpander.GAMMA);
-		Collection<core.Query> rocchioQueries = new ArrayList<core.Query>(queriesResults.size());
+		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField,
 							     ROCCHIO_DOC_LIMIT,
 							     ROCCHIO_EXTRA_TERMS);
 		for (QueryResults queryResults : queriesResults) {
-			rocchioQueries.add(expander.expand(queryResults.query(),
-							   queryResults.queryResults().keySet()));
+			Query rocchioQuery = expander.expand(queryResults.query(), queryResults.relevantDocs());
+			rocchioQueries.add(rocchioQuery);
 		}
 		return rocchioQueries;
 	}

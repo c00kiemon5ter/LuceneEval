@@ -54,7 +54,7 @@ public class RocchioExpander implements QueryExpander {
 	}
 
 	@Override
-	public Query expand(final Query original, final Collection<Document> relevantDocs)
+	public Query expand(final Query original, final List<Document> relevantDocs)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException {
 		Directory index = createIndex(relevantDocs, docsLimit);
@@ -76,13 +76,13 @@ public class RocchioExpander implements QueryExpander {
 			rocchioTerms.toString(), field, analyzer));
 	}
 
-	private Directory createIndex(Collection<Document> relevantDocs, int docLimit)
+	private Directory createIndex(List<Document> relevantDocs, int docLimit)
 		throws CorruptIndexException, LockObtainFailedException, IOException {
 		Directory index = new RAMDirectory();
 		IndexWriter idxWriter = new IndexWriter(index, analyzer, true,
 							IndexWriter.MaxFieldLength.LIMITED);
-		for (Iterator<Document> docIter = relevantDocs.iterator();
-		     docIter.hasNext() && docLimit-- > 0;) {
+		Iterator<Document> docIter = relevantDocs.iterator();
+		while (docIter.hasNext() && docLimit-- > 0) {
 			idxWriter.addDocument(docIter.next());
 		}
 		idxWriter.optimize();

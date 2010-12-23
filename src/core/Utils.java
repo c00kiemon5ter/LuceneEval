@@ -1,6 +1,9 @@
 package core;
 
 import cacm.CacmDocument;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -13,8 +16,13 @@ public class Utils {
 
 	public static Query normalizeQuery(String query, String field, Analyzer analyzer) throws ParseException {
 		QueryParser queryParser = new QueryParser(Version.LUCENE_29, field, analyzer);
-		String pattern = "[\\\\|(|)|\"|?|*|;|\\-|\']";
-		return queryParser.parse(query.replaceAll(pattern, " "));
+		String pattern = "[!|@|#|$|%|^|&|*|(|)|\\{|\\}|\\-|\\+|;|:|\'|\"|<|>|,|.|/|?|\\\\]";
+		Set<String> termSet = new HashSet<String>(Arrays.asList(query.replaceAll(pattern, " ").split("\\s+")));
+		StringBuilder terms = new StringBuilder(termSet.size());
+		for (String term : termSet) {
+			terms.append(' ').append(term);
+		}
+		return queryParser.parse(terms.toString());
 	}
 
 	public static Document convertToLDoc(CacmDocument cacmDocument) {

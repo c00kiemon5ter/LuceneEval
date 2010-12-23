@@ -1,8 +1,10 @@
 package queryutils;
 
+import core.Query;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
@@ -36,17 +38,16 @@ public class QuerySearcher {
 		idxwriter.close();
 	}
 
-	public Collection<QueryResults> search(Collection<core.Query> queryList,
-					       String field, int resultsLimit)
+	public List<QueryResults> search(Collection<Query> queryList, String field, int resultsLimit)
 		throws ParseException, CorruptIndexException, IOException {
 		IndexSearcher idxSearcher = new IndexSearcher(index, true);
-		Collection<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
-		for (core.Query query : queryList) {
+		List<QueryResults> searchResults = new ArrayList<QueryResults>(queryList.size());
+		for (Query query : queryList) {
 			TopScoreDocCollector collector = TopScoreDocCollector.create(resultsLimit, true);
 			idxSearcher.search(query.getQuery(), collector);
 			QueryResults queryResults = new QueryResults(query, resultsLimit);
 			for (ScoreDoc scoreDoc : collector.topDocs().scoreDocs) {
-				queryResults.addRelevantDoc(idxSearcher.doc(scoreDoc.doc), scoreDoc.score);
+				queryResults.addResult(idxSearcher.doc(scoreDoc.doc), scoreDoc.score);
 			}
 			searchResults.add(queryResults);
 		}

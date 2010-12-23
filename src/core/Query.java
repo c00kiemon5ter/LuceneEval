@@ -9,11 +9,6 @@ public class Query {
 		this.query = query;
 	}
 
-	@Override
-	public String toString() {
-		return super.toString();
-	}
-
 	public int getQid() {
 		return qid;
 	}

@@ -7,22 +7,21 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import org.apache.lucene.document.Document;
 
 public class TrecResults {
 
-	private Collection<TrecResult> trecResults;
+	private List<TrecResult> trecResults;
 
-	public TrecResults(Collection<QueryResults> searchResults) {
+	public TrecResults(List<QueryResults> searchResults) {
 		this.trecResults = new ArrayList<TrecResult>(searchResults.size());
-		TrecResult trecResult;
 		for (QueryResults queryResults : searchResults) {
-			for (Document document : queryResults.queryResults().keySet()) {
+			for (Document document : queryResults.relevantDocs()) {
 				int qid = queryResults.query().getQid();
 				int docid = Integer.parseInt(document.get(CacmDocument.Fields.ID));
 				float score = queryResults.queryResults().get(document);
-				trecResult = new TrecResult(qid, docid, score);
+				TrecResult trecResult = new TrecResult(qid, docid, score);
 				this.trecResults.add(trecResult);
 			}
 		}
