@@ -50,8 +50,8 @@ public class LuceneEval {
 	private static final String TREC_ROCCHIO_RESULTS_FILE = "data/results/trec_rocchio_results";
 	/** search limits */
 	private static final int RESULTS_LIMIT = 40;
-	private static final int ROCCHIO_DOC_LIMIT = 20;
-	private static final int ROCCHIO_EXTRA_TERMS = 10;
+	private static final int ROCCHIO_DOC_LIMIT = 40;
+	private static final int ROCCHIO_EXTRA_TERMS = 20;
 	/** analyzation type and fields */
 	private final Set<String> stopwords;
 	private final Analyzer analyzer;
@@ -64,12 +64,12 @@ public class LuceneEval {
 			Collection<Document> documents = luceneEval.loadCacmCollection();
 			Collection<core.Query> cacmQueryList = luceneEval.loadCacmQueries();
 			Collection<QueryResults> cacmQueriesResults = luceneEval.searchQueriesInDocuments(cacmQueryList, documents);
-			luceneEval.writeTrecResults(cacmQueriesResults);
+			luceneEval.writeTrecResults(cacmQueriesResults, TREC_CACMQUERIES_SEARCHRESULTS_FILE);
 			luceneEval.loadQrels();
 			luceneEval.evaluate(TREC_QRELS_FILE, TREC_CACMQUERIES_SEARCHRESULTS_FILE, TREC_CACM_RESULTS_FILE);
 			Collection<core.Query> rocchioQueryList = luceneEval.expandQueries(cacmQueriesResults);
 			Collection<QueryResults> rocchioQueriesResults = luceneEval.searchQueriesInDocuments(rocchioQueryList, documents);
-			luceneEval.writeTrecResults(rocchioQueriesResults);
+			luceneEval.writeTrecResults(rocchioQueriesResults, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
 			luceneEval.evaluate(TREC_QRELS_FILE, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE, TREC_ROCCHIO_RESULTS_FILE);
 		} catch (Exception ex) {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.SEVERE, "Fatal Error: ", ex);
@@ -89,7 +89,6 @@ public class LuceneEval {
 
 		System.out.printf(":: Writing cacm documents to xml file: %s\n", CACM_XML);
 		new XmlWriter<CacmDocumentList>(CACM_XML).write(cacmDocumentList);
-
 		System.out.printf(":: Loading cacm documents from xml file: %s\n", CACM_XML);
 		cacmDocumentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
 
@@ -120,9 +119,9 @@ public class LuceneEval {
 		return new QuerySearcher(documents, analyzer).search(queries, searchField, RESULTS_LIMIT);
 	}
 
-	private void writeTrecResults(Collection<QueryResults> queriesResults) throws IOException {
-		System.out.printf(":: Writing trec-formated results to file: %s\n", TREC_CACMQUERIES_SEARCHRESULTS_FILE);
-		new TrecResults(queriesResults).write(TREC_CACMQUERIES_SEARCHRESULTS_FILE);
+	private void writeTrecResults(Collection<QueryResults> queriesResults, String trecSearchResultsFile) throws IOException {
+		System.out.printf(":: Writing trec-formated results to file: %s\n", trecSearchResultsFile);
+		new TrecResults(queriesResults).write(trecSearchResultsFile);
 	}
 
 	private void loadQrels() throws IOException {
