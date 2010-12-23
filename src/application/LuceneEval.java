@@ -71,7 +71,7 @@ public class LuceneEval {
 		Set<String> stopwords = new StopWordParser(STOPWORDLIST).parse();
 		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
 
-		System.out.printf("Parsing cacm documents from file: %s\n", DATAFILE);
+		System.out.printf(":: Parsing cacm documents from file: %s\n", DATAFILE);
 		CacmDocumentList documentList = new CacmDocumentList(new CacmDocParser(DATAFILE).parse());
 
 //		System.out.printf("Writing cacm documents to xml file: %s\n", CACM_XML);
@@ -80,39 +80,39 @@ public class LuceneEval {
 //		System.out.printf("Loading cacm documents from xml file: %s\n", CACM_XML);
 //		documentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
 
-		System.out.printf("Parsing cacm queries from file: %s\n", QUERYFILE);
+		System.out.printf(":: Parsing cacm queries from file: %s\n", QUERYFILE);
 		CacmQueryList cacmQueryList = new CacmQueryList(new CacmQueryParser(QUERYFILE).parse());
 
-		System.out.printf("Producing Lucene queries from cacm queries");
+		System.out.printf(":: Producing Lucene queries from cacm queries");
 		List<core.Query> queryList = new ArrayList<core.Query>(cacmQueryList.getQueries().size());
 		for (CacmQuery cacmQuery : cacmQueryList.getQueries()) {
 			queryList.add(new core.Query(cacmQuery.getId(), QueryUtils.normalizeQuery(
 				cacmQuery.getQuery(), searchField, analyzer)));
 		}
 
-		System.out.println("Searching cacm documents with cacm queries");
+		System.out.println(":: Searching cacm documents with cacm queries");
 		Collection<QueryResults> queriesResults = new QuerySearcher(
 			documentList.getDocuments(), analyzer).search(
 			queryList, searchField, RESULTS_LIMIT);
 
-		System.out.printf("Writing trec-formated results to file: %s\n", TREC_CACMQUERIES_SEARCHRESULTS_FILE);
+		System.out.printf(":: Writing trec-formated results to file: %s\n", TREC_CACMQUERIES_SEARCHRESULTS_FILE);
 		new TrecResults(queriesResults).write(TREC_CACMQUERIES_SEARCHRESULTS_FILE);
 
-		System.out.printf("Parsing cacm qrels from file: %s\n", CACM_QRELS_FILE);
+		System.out.printf(":: Parsing cacm qrels from file: %s\n", CACM_QRELS_FILE);
 		List<String> cacmqrels = new CacmQrelsParser(CACM_QRELS_FILE).parse();
 
-		System.out.printf("Writing treq-formated qrels to file: %s\n", TREC_QRELS_FILE);
+		System.out.printf(":: Writing treq-formated qrels to file: %s\n", TREC_QRELS_FILE);
 		new TrecQrels(cacmqrels).write(TREC_QRELS_FILE);
 
-		System.out.printf("Evaluating results with %s\n", TrecProcess.TREC_EXECUTABLE);
+		System.out.printf(":: Evaluating results with %s\n", TrecProcess.TREC_EXECUTABLE);
 		int status = new TrecProcess(TREC_QRELS_FILE, TREC_CACMQUERIES_SEARCHRESULTS_FILE, TREC_CACM_RESULTS_FILE).run();
-		System.out.printf("Evaluation results are in file: %s\n", TREC_CACM_RESULTS_FILE);
+		System.out.printf("==> Evaluation results are in file: %s\n", TREC_CACM_RESULTS_FILE);
 		if (status != 0) {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, String.format(
-				"Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
+				"==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
 		}
 
-		System.out.printf("Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
+		System.out.printf(":: Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
 				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA,
 				  QueryExpander.BETA, QueryExpander.GAMMA);
 		Collection<core.Query> rocchioQueries = new ArrayList<core.Query>(queriesResults.size());
@@ -124,20 +124,20 @@ public class LuceneEval {
 							   queryResults.queryResults().keySet()));
 		}
 
-		System.out.println("Searching cacm documents with cacm queries");
+		System.out.println(":: Searching cacm documents with cacm queries");
 		Collection<QueryResults> rocchioResults = new QuerySearcher(
 			documentList.getDocuments(), analyzer).search(
 			rocchioQueries, searchField, RESULTS_LIMIT);
 
-		System.out.printf("Writing trec-formated results to file: %s\n", TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
+		System.out.printf(":: Writing trec-formated results to file: %s\n", TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
 		new TrecResults(rocchioResults).write(TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
 
-		System.out.printf("Evaluating results with %s\n", TrecProcess.TREC_EXECUTABLE);
+		System.out.printf(":: Evaluating results with %s\n", TrecProcess.TREC_EXECUTABLE);
 		status = new TrecProcess(TREC_QRELS_FILE, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE, TREC_ROCCHIO_RESULTS_FILE).run();
-		System.out.printf("Evaluation results are in file: %s\n", TREC_ROCCHIO_RESULTS_FILE);
+		System.out.printf("==> Evaluation results are in file: %s\n", TREC_ROCCHIO_RESULTS_FILE);
 		if (status != 0) {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.WARNING, String.format(
-				"Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
+				"==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status));
 		}
 	}
 }
