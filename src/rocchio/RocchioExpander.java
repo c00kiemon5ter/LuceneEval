@@ -26,7 +26,7 @@ import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.search.Similarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
-import queryutils.QueryUtils;
+import core.Utils;
 
 public class RocchioExpander implements QueryExpander {
 
@@ -72,7 +72,7 @@ public class RocchioExpander implements QueryExpander {
 		for (String term : terms) {
 			rocchioTerms.append(' ').append(term);
 		}
-		return new Query(original.getQid(), QueryUtils.normalizeQuery(
+		return new Query(original.getQid(), Utils.normalizeQuery(
 			rocchioTerms.toString(), field, analyzer));
 	}
 

@@ -5,13 +5,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 public class TrecQrels {
 
-	private List<String> trecqrels;
+	private Collection<String> trecqrels;
 
-	public TrecQrels(List<String> cacmQrels) {
+	public TrecQrels(Collection<String> cacmQrels) {
 		this.trecqrels = new ArrayList<String>(cacmQrels.size());
 		for (String line : cacmQrels) {
 			String[] tokens = line.split("\\s+");
