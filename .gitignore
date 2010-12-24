@@ -1,0 +1,7 @@
+!/*
+build.xml
+build/
+dist/
+doc/IR*
+manifest.mf
+nbproject/
