@@ -31,25 +31,22 @@ public class RocchioExpander implements QueryExpander {
 
 	private final float alpha;
 	private final float beta;
+	private final float gama;
 	private final int docsLimit;
 	private final int termsLimit;
 	private Analyzer analyzer;
 	private final String field;
 
 	public RocchioExpander(Analyzer analyzer, final String field,
+			       float alpha, float beta, float gama,
 			       int docsLimit, int extraTermsLimit) {
-		this(analyzer, field, docsLimit, extraTermsLimit, ALPHA, BETA);
-	}
-
-	public RocchioExpander(Analyzer analyzer, final String field,
-			       int docsLimit, int extraTermsLimit,
-			       float alpha, float beta) {
-		this.alpha = alpha;
-		this.beta = beta;
-		this.docsLimit = docsLimit;
-		this.termsLimit = extraTermsLimit;
 		this.analyzer = analyzer;
 		this.field = field;
+		this.alpha = alpha;
+		this.beta = beta;
+		this.gama = gama;
+		this.docsLimit = docsLimit;
+		this.termsLimit = extraTermsLimit;
 	}
 
 	@Override

@@ -14,10 +14,6 @@ import org.apache.lucene.store.LockObtainFailedException;
  */
 public interface QueryExpander {
 
-	public static final float ALPHA = 1.0F;
-	public static final float BETA = 0.75F;
-	public static final float GAMMA = 0.0F;
-
 	Query expand(final Query original, final List<Document> relevantDocs)
 		throws ParseException, CorruptIndexException,
 		       LockObtainFailedException, IOException;

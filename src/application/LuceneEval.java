@@ -48,12 +48,16 @@ public class LuceneEval {
 	private static final String TREC_QRELS_FILE = "data/results/trec_qrels";
 	private static final String TREC_CACMQUERIES_SEARCHRESULTS_FILE = "data/results/trec_cacm_searchresults";
 	private static final String TREC_CACM_RESULTS_FILE = "data/results/trec_cacm_results";
+	/** rocchio files */
 	private static final String TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE = "data/results/trec_rocchio_searchresults";
 	private static final String TREC_ROCCHIO_RESULTS_FILE = "data/results/trec_rocchio_results";
 	/** search limits */
 	private static final int RESULTS_LIMIT = 1000;
 	private static final int ROCCHIO_DOC_LIMIT = 60;
 	private static final int ROCCHIO_EXTRA_TERMS = 40;
+	private static final float ALPHA = 1.0F;
+	private static final float BETA = 0.75F;
+	private static final float GAMMA = 0.0F;
 	/** analyzation type and fields */
 	private final Set<String> stopwords;
 	private final Analyzer analyzer;
@@ -84,6 +88,7 @@ public class LuceneEval {
 
 	private LuceneEval() throws FileNotFoundException, IOException {
 		stopwords = new StopWordParser(STOPWORDLIST).parse();
+		stopwords.addAll(StandardAnalyzer.STOP_WORDS_SET);
 		analyzer = new StandardAnalyzer(Version.LUCENE_29, stopwords);
 	}
 
@@ -150,11 +155,12 @@ public class LuceneEval {
 
 	private Collection<Query> expandQueries(Collection<QueryResults> queriesResults)
 		throws ParseException, CorruptIndexException, LockObtainFailedException, IOException {
-		System.out.printf(":: Producing Rocchio relevance feedback queries: k=%d a=%.3f b=%.3f c=%.3f\n",
-				  ROCCHIO_DOC_LIMIT, QueryExpander.ALPHA,
-				  QueryExpander.BETA, QueryExpander.GAMMA);
+		System.out.printf(":: Producing Rocchio relevance feedback queries: "
+				  + "k=%d p=%d a=%.3f b=%.3f c=%.3f\n",
+				  ROCCHIO_DOC_LIMIT, ROCCHIO_EXTRA_TERMS, ALPHA, BETA, GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField,
+							     ALPHA, BETA, GAMMA,
 							     ROCCHIO_DOC_LIMIT,
 							     ROCCHIO_EXTRA_TERMS);
 		for (QueryResults queryResults : queriesResults) {
