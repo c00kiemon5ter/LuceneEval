@@ -53,8 +53,8 @@ public class LuceneEval {
 	private static final String TREC_ROCCHIO_RESULTS_FILE = "data/results/trec_rocchio_results";
 	/** search limits */
 	private static final int RESULTS_LIMIT = 1000;
-	private static final int ROCCHIO_DOC_LIMIT = 60;
-	private static final int ROCCHIO_EXTRA_TERMS = 40;
+	private static final int ROCCHIO_DOCS_LIMIT = 60;
+	private static final int ROCCHIO_TERMS_LIMIT = 40;
 	private static final float ALPHA = 1.0F;
 	private static final float BETA = 0.75F;
 	private static final float GAMMA = 0.0F;
@@ -74,18 +74,19 @@ public class LuceneEval {
 			List<QueryResults> cacmQueriesResults = luceneEval.searchQueriesInDocuments(cacmQueryList, documents);
 			luceneEval.writeTrecResults(cacmQueriesResults, TREC_CACMQUERIES_SEARCHRESULTS_FILE);
 			status = luceneEval.evaluate(TREC_QRELS_FILE, TREC_CACMQUERIES_SEARCHRESULTS_FILE, TREC_CACM_RESULTS_FILE);
-			assert status == 0 : String.format("==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status);
+			assert status == 0 : String.format("==> Error: %s: exit status: %d", TrecProcess.TREC_EXECUTABLE, status);
 			Collection<Query> rocchioQueryList = luceneEval.expandQueries(cacmQueriesResults);
 			List<QueryResults> rocchioQueriesResults = luceneEval.searchQueriesInDocuments(rocchioQueryList, documents);
 			luceneEval.writeTrecResults(rocchioQueriesResults, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE);
 			status = luceneEval.evaluate(TREC_QRELS_FILE, TREC_ROCCHIOQUERIES_SEARCHRESULTS_FILE, TREC_ROCCHIO_RESULTS_FILE);
-			assert status == 0 : String.format("==> Error: %s: exit status %d", TrecProcess.TREC_EXECUTABLE, status);
+			assert status == 0 : String.format("==> Error: %s: exit status: %d", TrecProcess.TREC_EXECUTABLE, status);
 		} catch (Exception ex) {
 			Logger.getLogger(LuceneEval.class.getName()).log(Level.SEVERE, "==> Fatal Error: ", ex);
 			System.exit(1);
 		}
 	}
 
+	@SuppressWarnings(value = "unchecked")
 	private LuceneEval() throws FileNotFoundException, IOException {
 		stopwords = new StopWordParser(STOPWORDLIST).parse();
 		stopwords.addAll(StandardAnalyzer.STOP_WORDS_SET);
@@ -101,7 +102,7 @@ public class LuceneEval {
 //		System.out.printf(":: Loading cacm documents from xml file: %s\n", CACM_XML);
 //		cacmDocumentList = new XmlReader<CacmDocumentList>(CACM_XML, CacmDocumentList.class).read();
 
-		System.out.printf(":: Producing Lucene documents from cacm documents");
+		System.out.printf(":: Producing Lucene documents from cacm documents\n");
 		Collection<Document> documentList = new ArrayList<Document>(cacmDocumentList.getDocuments().size());
 		for (CacmDocument cacmDocument : cacmDocumentList.getDocuments()) {
 			documentList.add(Utils.convertToLDoc(cacmDocument));
@@ -113,7 +114,7 @@ public class LuceneEval {
 		System.out.printf(":: Parsing cacm queries from file: %s\n", QUERYFILE);
 		CacmQueryList cacmQueryList = new CacmQueryList(new CacmQueryParser(QUERYFILE).parse());
 
-		System.out.printf(":: Producing Lucene queries from cacm queries");
+		System.out.printf(":: Producing Lucene queries from cacm queries\n");
 		Collection<Query> queryList = new ArrayList<Query>(cacmQueryList.getQueries().size());
 		for (CacmQuery cacmQuery : cacmQueryList.getQueries()) {
 			queryList.add(new Query(cacmQuery.getId(), Utils.normalizeQuery(cacmQuery.getQuery(),
@@ -124,7 +125,7 @@ public class LuceneEval {
 
 	private List<QueryResults> searchQueriesInDocuments(Collection<Query> queries, Collection<Document> documents)
 		throws ParseException, CorruptIndexException, IOException {
-		System.out.println(":: Searching queries in documents");
+		System.out.printf(":: Searching queries in documents\n");
 		return new QuerySearcher(documents, analyzer).search(queries, searchField, RESULTS_LIMIT);
 	}
 
@@ -157,12 +158,12 @@ public class LuceneEval {
 		throws ParseException, CorruptIndexException, LockObtainFailedException, IOException {
 		System.out.printf(":: Producing Rocchio relevance feedback queries: "
 				  + "k=%d p=%d a=%.3f b=%.3f c=%.3f\n",
-				  ROCCHIO_DOC_LIMIT, ROCCHIO_EXTRA_TERMS, ALPHA, BETA, GAMMA);
+				  ROCCHIO_DOCS_LIMIT, ROCCHIO_TERMS_LIMIT, ALPHA, BETA, GAMMA);
 		Collection<Query> rocchioQueries = new ArrayList<Query>(queriesResults.size());
 		QueryExpander expander = new RocchioExpander(analyzer, searchField,
 							     ALPHA, BETA, GAMMA,
-							     ROCCHIO_DOC_LIMIT,
-							     ROCCHIO_EXTRA_TERMS);
+							     ROCCHIO_DOCS_LIMIT,
+							     ROCCHIO_TERMS_LIMIT);
 		for (QueryResults queryResults : queriesResults) {
 			Query rocchioQuery = expander.expand(queryResults.query(), queryResults.relevantDocs());
 			rocchioQueries.add(rocchioQuery);
