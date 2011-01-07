@@ -2,9 +2,9 @@ package queryutils;
 
 import org.apache.lucene.document.Document;
 import core.Query;
+import core.ScoreComparator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,18 +37,13 @@ public class QueryResults {
 	}
 
 	public List<Document> relevantDocs() {
-		List<Entry<Document, Float>> resultsList = new ArrayList<Entry<Document, Float>>(queryResults.entrySet());
-		Collections.sort(resultsList, new Comparator<Entry<Document, Float>>() {
-
-			@Override
-			public int compare(Entry<Document, Float> a, Entry<Document, Float> b) {
-				return a.getValue().compareTo(b.getValue());
-			}
-		});
-		List<Document> relevantDocs = new ArrayList<Document>(resultsList.size());
-		for (Entry<Document, Float> entry : resultsList) {
-			relevantDocs.add(entry.getKey());
+		List<Entry<Document, Float>> docScoreList = new ArrayList<Entry<Document, Float>>(queryResults.entrySet());
+		Collections.sort(docScoreList, new ScoreComparator<Document>());
+		Collections.reverse(docScoreList);
+		List<Document> mostRelDocs = new ArrayList<Document>(docScoreList.size());
+		for (Entry<Document, Float> entry : docScoreList) {
+			mostRelDocs.add(entry.getKey());
 		}
-		return relevantDocs;
+		return mostRelDocs;
 	}
 }
