@@ -1,15 +1,22 @@
 package core;
 
 import cacm.CacmDocument;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.TermDocs;
+import org.apache.lucene.index.TermEnum;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.Query;
+import org.apache.lucene.search.Similarity;
+import org.apache.lucene.store.Directory;
 import org.apache.lucene.util.Version;
 
 public class Utils {
@@ -60,5 +67,27 @@ public class Utils {
 				       Field.Store.YES, Field.Index.ANALYZED,
 				       Field.TermVector.YES));
 		return document;
+	}
+
+	public static float getScore(Directory index, String term) throws CorruptIndexException, IOException {
+		float tfidf = 0;
+		IndexReader idxreader = IndexReader.open(index, true);
+		TermEnum termEnum = idxreader.terms();
+		TermDocs termDocs = idxreader.termDocs();
+		int docsnum = idxreader.numDocs();
+		while (termEnum.next()) {
+			if (termEnum.term().text().equalsIgnoreCase(term)) {
+				termDocs.seek(termEnum);
+				if (termDocs.next()) {
+					int tf = termDocs.freq();
+					int df = termEnum.docFreq();
+					float idf = Similarity.getDefault().idf(df, docsnum);
+					tfidf = tf * idf;
+					break;
+				}
+			}
+		}
+		idxreader.close();
+		return tfidf;
 	}
 }
